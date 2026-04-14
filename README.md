@@ -15,6 +15,12 @@ Or in one command:
 brew install --cask KevoraLabs/tap/wechat-multi
 ```
 
+For `key-launch`:
+
+```bash
+brew install --cask KevoraLabs/tap/key-launch
+```
+
 If macOS blocks the app on first launch, remove the quarantine attribute:
 
 ```bash
@@ -24,3 +30,4 @@ xattr -dr com.apple.quarantine /Applications/WeChatMulti.app
 ## Included casks
 
 - `wechat-multi`
+- `key-launch`
