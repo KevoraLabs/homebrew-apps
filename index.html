@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title data-i18n="meta.title">Kevin / KevoraLabs — 独立开发者作品集 | macOS App、插件与 AI 工具</title>
-  <meta name="description" content="Kevin / KevoraLabs 个人作品展示。专注于 macOS 原生 App、浏览器插件与 AI 效率工具。" />
+  <title data-i18n="meta.title">Kevin / KevoraLabs — 独立开发者作品集 | macOS App、插件与鸿蒙应用</title>
+  <meta name="description" content="Kevin / KevoraLabs 个人作品展示。专注于 macOS 原生 App、浏览器插件与鸿蒙效率工具。" />
   <meta name="theme-color" content="#FAF5EC" />
   
   <link rel="icon" type="image/jpeg" href="assets/avatar.jpg" />
@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="styles.css?v=6" />
+  <link rel="stylesheet" href="styles.css?v=7" />
 </head>
 <body>
 
@@ -79,7 +79,7 @@
         </div>
 
         <h1 class="hero-title" data-i18n-html="hero.title">
-          手绘风极简高效的 <span class="sketch-highlight macos">macOS App</span>、<span class="sketch-highlight extension">浏览器插件</span> 与 <span class="sketch-highlight ai">AI 工具</span>
+          手绘风极简高效的 <span class="sketch-highlight macos">macOS App</span>、<span class="sketch-highlight extension">浏览器插件</span> 与 <span class="sketch-highlight ai">鸿蒙应用</span>
         </h1>
 
         <p class="hero-bio" data-i18n="hero.subtitle">
@@ -110,9 +110,7 @@
           <span class="tech-pill"><span class="pill-dot swiftui"></span>SwiftUI</span>
           <span class="tech-pill"><span class="pill-dot ts"></span>TypeScript</span>
           <span class="tech-pill"><span class="pill-dot react"></span>React</span>
-          <span class="tech-pill"><span class="pill-dot node"></span>Node.js</span>
-          <span class="tech-pill"><span class="pill-dot electron"></span>Electron</span>
-          <span class="tech-pill"><span class="pill-dot tauri"></span>Tauri</span>
+          <span class="tech-pill"><span class="pill-dot node"></span>ArkTS / ArkUI</span>
           <span class="tech-pill"><span class="pill-dot git"></span>Git</span>
         </div>
 
@@ -166,7 +164,7 @@
         <span class="section-tag" data-i18n="apps.eyebrow">App Showcase</span>
         <h2 class="section-title" data-i18n="apps.title">独立开发作品集</h2>
         <p class="section-subtitle" data-i18n="apps.subtitle">
-          涵盖 macOS 原生应用、Chrome 扩展、AI 工具与开发者软件源。
+          涵盖 macOS 原生应用、Chrome 扩展与 HarmonyOS 鸿蒙应用。
         </p>
       </div>
 
@@ -182,8 +180,8 @@
           <button class="filter-tab" data-category="extension">
             <span data-i18n="tabs.extensions">🌐 浏览器插件</span>
           </button>
-          <button class="filter-tab" data-category="ai-dev">
-            <span data-i18n="tabs.aidev">⚡ AI &amp; 开发者工具</span>
+          <button class="filter-tab" data-category="harmony">
+            <span data-i18n="tabs.harmony">🔴 鸿蒙 HarmonyOS 应用</span>
           </button>
         </div>
       </div>
@@ -252,8 +250,8 @@
           </div>
         </article>
 
-        <!-- 3. English CC -->
-        <article class="app-card" data-category="extension ai-dev">
+        <!-- 3. EnglishCC -->
+        <article class="app-card" data-category="extension">
           <div class="app-card-header">
             <img src="assets/englishcc-icon.png" alt="English CC Icon" class="app-icon" loading="lazy" />
             <div class="app-meta">
@@ -337,7 +335,7 @@
         </article>
 
         <!-- 6. WeChat Multi -->
-        <article class="app-card" data-category="macos ai-dev">
+        <article class="app-card" data-category="macos">
           <div class="app-card-header">
             <img src="assets/wechat-multi-icon.png" alt="WeChat Multi Icon" class="app-icon" loading="lazy" />
             <div class="app-meta">
@@ -362,30 +360,131 @@
           </div>
         </article>
 
-        <!-- 7. MP3 Cutter -->
-        <article class="app-card" data-category="macos ai-dev">
+        <!-- 7. 剪韵音乐剪辑 (JianYun) -->
+        <article class="app-card" data-category="harmony">
           <div class="app-card-header">
-            <img src="assets/mp3-editor-icon.png" alt="MP3 Cutter Icon" class="app-icon" loading="lazy" />
+            <div class="app-icon-placeholder">🎵</div>
             <div class="app-meta">
               <div class="app-badge-row">
-                <span class="badge badge-dev">Audio Tool</span>
-                <span class="badge badge-tech">Swift / AudioKit</span>
+                <span class="badge badge-dev">HarmonyOS</span>
+                <span class="badge badge-tech">ArkTS</span>
               </div>
-              <h3 class="app-title">MP3 剪辑器</h3>
-              <p class="app-tagline">Native audio cutter &amp; voice separator</p>
+              <h3 class="app-title" data-i18n="jianyun.name">剪韵音乐剪辑</h3>
+              <p class="app-tagline">Waveform audio editor &amp; track merger</p>
             </div>
           </div>
-          <p class="app-description">
-            原生音频剪辑与处理工具。支持音频精确波形剪切、格式转换、降噪与人声伴奏分离。
+          <p class="app-description" data-i18n="jianyun.desc">
+            高精度音频波形剪切、淡入淡出、音轨拼接与格式导出工具。
           </p>
           <ul class="app-features">
-            <li>🎵 高精度毫秒级音频波形剪切</li>
-            <li>🎛️ 音频淡入淡出与格式快速导出</li>
+            <li>🎶 毫秒级原生波形精确剪切</li>
+            <li>🎛️ 淡入淡出与多音轨合成导出</li>
           </ul>
           <div class="app-actions">
-            <span class="focus-chip">Audio Utility</span>
+            <span class="focus-chip">HarmonyOS App</span>
           </div>
         </article>
+
+        <!-- 8. 小夏图片处理 (ImageCraft) -->
+        <article class="app-card" data-category="harmony">
+          <div class="app-card-header">
+            <div class="app-icon-placeholder">🖼️</div>
+            <div class="app-meta">
+              <div class="app-badge-row">
+                <span class="badge badge-dev">HarmonyOS</span>
+                <span class="badge badge-tech">ArkTS</span>
+              </div>
+              <h3 class="app-title" data-i18n="imagecraft.name">小夏图片处理</h3>
+              <p class="app-tagline">Photo filters, collage &amp; watermark tool</p>
+            </div>
+          </div>
+          <p class="app-description" data-i18n="imagecraft.desc">
+            本地轻量图片滤镜、拼接、水印加固与高清图片处理工具。
+          </p>
+          <ul class="app-features">
+            <li>🎨 多款艺术滤镜与自由拼接</li>
+            <li>🔒 离线安全水印与无损压缩</li>
+          </ul>
+          <div class="app-actions">
+            <span class="focus-chip">HarmonyOS App</span>
+          </div>
+        </article>
+
+        <!-- 9. 小夏二维码 (QrCode) -->
+        <article class="app-card" data-category="harmony">
+          <div class="app-card-header">
+            <div class="app-icon-placeholder">🏁</div>
+            <div class="app-meta">
+              <div class="app-badge-row">
+                <span class="badge badge-dev">HarmonyOS</span>
+                <span class="badge badge-tech">ArkTS</span>
+              </div>
+              <h3 class="app-title" data-i18n="qrcode.name">小夏二维码</h3>
+              <p class="app-tagline">Offline QR &amp; Barcode generator &amp; scanner</p>
+            </div>
+          </div>
+          <p class="app-description" data-i18n="qrcode.desc">
+            极简离线二维码与条形码生成、美化与扫码识别工具。
+          </p>
+          <ul class="app-features">
+            <li>⚡ 极速本地扫码与批量识别</li>
+            <li>🎨 二维码颜色、Logo 样式美化定制</li>
+          </ul>
+          <div class="app-actions">
+            <span class="focus-chip">HarmonyOS App</span>
+          </div>
+        </article>
+
+        <!-- 10. 光影提词器 (LightScript) -->
+        <article class="app-card" data-category="harmony">
+          <div class="app-card-header">
+            <div class="app-icon-placeholder">🎬</div>
+            <div class="app-meta">
+              <div class="app-badge-row">
+                <span class="badge badge-dev">HarmonyOS</span>
+                <span class="badge badge-tech">ArkTS</span>
+              </div>
+              <h3 class="app-title" data-i18n="lightscript.name">光影提词器</h3>
+              <p class="app-tagline">Floating teleprompter &amp; camera script assistant</p>
+            </div>
+          </div>
+          <p class="app-description" data-i18n="lightscript.desc">
+            悬浮提词、智能台词滚动与短视频/直播拍摄辅助工具。
+          </p>
+          <ul class="app-features">
+            <li>💬 悬浮窗置顶与透明度自由调节</li>
+            <li>⏱️ 智能自适应语速滚动台词</li>
+          </ul>
+          <div class="app-actions">
+            <span class="focus-chip">HarmonyOS App</span>
+          </div>
+        </article>
+
+        <!-- 11. 家庭库存 (home-inventory) -->
+        <article class="app-card" data-category="harmony">
+          <div class="app-card-header">
+            <div class="app-icon-placeholder">📦</div>
+            <div class="app-meta">
+              <div class="app-badge-row">
+                <span class="badge badge-dev">HarmonyOS</span>
+                <span class="badge badge-tech">ArkTS</span>
+              </div>
+              <h3 class="app-title" data-i18n="homeinventory.name">家庭库存</h3>
+              <p class="app-tagline">Home item categorization &amp; expiration tracker</p>
+            </div>
+          </div>
+          <p class="app-description" data-i18n="homeinventory.desc">
+            离线家庭物品收纳分类、过期保质期提醒与物品资产管理。
+          </p>
+          <ul class="app-features">
+            <li>🏷️ 空间与物品多层级标签收纳</li>
+            <li>🔔 食品与药品临期智能提醒</li>
+          </ul>
+          <div class="app-actions">
+            <span class="focus-chip">HarmonyOS App</span>
+          </div>
+        </article>
+
       </div>
     </section>
 
