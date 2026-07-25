@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="KevoraLabs 官方应用与插件仓库。一键安装 KeyLaunch、PauseLoop、WeChatMulti 等 macOS 应用及 Highlight Share、Side Stash、PostBot 等浏览器插件。">
+  <meta name="description" content="KevoraLabs 官方应用与插件仓库。一键安装 KeyLaunch macOS 应用及 Highlight Share、Side Stash 等浏览器插件。">
   <meta name="theme-color" content="#0b0c10">
   <meta property="og:title" content="KevoraLabs — 原生 macOS 应用与浏览器插件精选集">
   <meta property="og:description" content="专为 Mac 与浏览器打造的高效利器集。通过 Homebrew Cask 与 Chrome 商店轻松安装与升级。">
@@ -68,11 +68,11 @@
       <div class="stats-strip reveal">
         <div class="shell stats-grid">
           <div class="stat-item">
-            <span class="stat-num">4</span>
+            <span class="stat-num">1</span>
             <span class="stat-label" data-i18n="stats.apps">macOS 原生应用</span>
           </div>
           <div class="stat-item">
-            <span class="stat-num">3</span>
+            <span class="stat-num">2</span>
             <span class="stat-label" data-i18n="stats.extensions">浏览器高效插件</span>
           </div>
           <div class="stat-item">
@@ -91,7 +91,7 @@
         <p data-i18n="casks.subtitle">通过 Homebrew Cask 轻松一键安装与升级。</p>
       </div>
 
-      <div class="apps-grid">
+      <div class="apps-grid" style="grid-template-columns: minmax(0, 500px); justify-content: center;">
         <!-- KeyLaunch Card -->
         <article class="app-card reveal">
           <div class="app-top">
@@ -120,86 +120,6 @@
             </div>
           </div>
         </article>
-
-        <!-- PauseLoop Card -->
-        <article class="app-card reveal">
-          <div class="app-top">
-            <div class="app-header">
-              <img class="app-icon" src="assets/pauseloop-icon.webp" alt="PauseLoop Icon">
-              <span class="app-badge" data-i18n="pauseloop.badge">专注与休息计时器</span>
-            </div>
-            <h3 class="app-title" data-i18n="pauseloop.name">PauseLoop</h3>
-            <p class="app-desc" data-i18n="pauseloop.desc">原生 macOS 专注与休息计时器。遵循健康的工作节奏，在合适的时刻覆盖全屏平静提示，让眼睛与大脑获得充分放松。</p>
-            <div class="app-meta">
-              <span>v1.0</span>
-              <span>macOS 14+</span>
-            </div>
-          </div>
-          <div class="app-bottom">
-            <div class="card-cmd-box">
-              <code>brew install --cask KevoraLabs/apps/pause-loop</code>
-              <button class="copy-mini-btn" data-copy="brew install --cask KevoraLabs/apps/pause-loop">
-                <span data-i18n="app.copy">复制</span>
-              </button>
-            </div>
-            <div class="app-links">
-              <a href="https://kevoralabs.github.io/pauseloop-site/" target="_blank" rel="noopener">
-                <span data-i18n="pauseloop.site">访问官网</span> →
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- WeChatMulti Card -->
-        <article class="app-card reveal">
-          <div class="app-top">
-            <div class="app-header">
-              <img class="app-icon" src="assets/wechat-multi-icon.png" alt="WeChatMulti Icon">
-              <span class="app-badge" data-i18n="wechatmulti.badge">微信多开辅助</span>
-            </div>
-            <h3 class="app-title" data-i18n="wechatmulti.name">WeChatMulti</h3>
-            <p class="app-desc" data-i18n="wechatmulti.desc">原生 macOS 微信多开管理工具。轻量安全，支持一键创建并登录多个微信实例，满足多账号办公与隔离需求。</p>
-            <div class="app-meta">
-              <span>v0.1.3</span>
-              <span>macOS 10.15+</span>
-            </div>
-          </div>
-          <div class="app-bottom">
-            <div class="card-cmd-box">
-              <code>brew install --cask KevoraLabs/apps/wechat-multi</code>
-              <button class="copy-mini-btn" data-copy="brew install --cask KevoraLabs/apps/wechat-multi">
-                <span data-i18n="app.copy">复制</span>
-              </button>
-            </div>
-            <div class="app-links">
-              <a href="https://github.com/KevoraLabs/wechat-multi" target="_blank" rel="noopener">
-                <span data-i18n="wechatmulti.repo">GitHub 仓库</span> →
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- ImageForge Card -->
-        <article class="app-card reveal">
-          <div class="app-top">
-            <div class="app-header">
-              <div class="app-icon-placeholder">🖼️</div>
-              <span class="app-badge" data-i18n="imageforge.badge">图片处理小工具</span>
-            </div>
-            <h3 class="app-title" data-i18n="imageforge.name">ImageForge</h3>
-            <p class="app-desc" data-i18n="imageforge.desc">轻量级 macOS 图片处理小工具。支持选区导出、透明化抠图与常见图像工作流批处理。</p>
-            <div class="app-meta">
-              <span>macOS Utility</span>
-            </div>
-          </div>
-          <div class="app-bottom">
-            <div class="app-links">
-              <a href="https://github.com/KevoraLabs/ImageForge" target="_blank" rel="noopener">
-                <span data-i18n="imageforge.repo">GitHub 仓库</span> →
-              </a>
-            </div>
-          </div>
-        </article>
       </div>
     </section>
 
@@ -211,7 +131,7 @@
         <p data-i18n="ext.subtitle">适配 Chrome 及 Chromium 浏览器，提升日常浏览与创作效率。</p>
       </div>
 
-      <div class="apps-grid">
+      <div class="apps-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
         <!-- Highlight Share Card -->
         <article class="app-card reveal">
           <div class="app-top">
@@ -261,29 +181,6 @@
             </div>
           </div>
         </article>
-
-        <!-- PostBot Card -->
-        <article class="app-card reveal">
-          <div class="app-top">
-            <div class="app-header">
-              <img class="app-icon" src="assets/postbot-icon.png" alt="PostBot Icon">
-              <span class="app-badge" data-i18n="postbot.badge">多平台内容同步</span>
-            </div>
-            <h3 class="app-title" data-i18n="postbot.name">PostBot</h3>
-            <p class="app-desc" data-i18n="postbot.desc">多平台内容同步分发助手。支持一键将文章、动态、图片及视频无缝同步发布至主流社交媒体平台。</p>
-            <div class="app-meta">
-              <span>v1.1.20</span>
-              <span>Plasmo Extension</span>
-            </div>
-          </div>
-          <div class="app-bottom">
-            <div class="app-links">
-              <a href="https://github.com/KevoraLabs/postbot" target="_blank" rel="noopener">
-                <span data-i18n="postbot.repo">GitHub 仓库</span> →
-              </a>
-            </div>
-          </div>
-        </article>
       </div>
     </section>
 
@@ -301,8 +198,7 @@
             <h3 data-i18n="quickstart.step1.title">方法一：直接单行命令安装（推荐）</h3>
             <p data-i18n="quickstart.step1.desc">无需手动添加 Tap，Homebrew 会自动抓取并安装对应的软件：</p>
             <div class="qs-code-box">
-              <code>brew install --cask KevoraLabs/tap/key-launch</code>
-              <code>brew install --cask KevoraLabs/tap/pause-loop</code>
+              <code>brew install --cask KevoraLabs/apps/key-launch</code>
             </div>
           </div>
 
@@ -310,7 +206,7 @@
             <h3 data-i18n="quickstart.step2.title">方法二：先添加 Tap 仓库</h3>
             <p data-i18n="quickstart.step2.desc">添加后可以随时搜索和安装 KevoraLabs 的所有 Cask：</p>
             <div class="qs-code-box">
-              <code>brew tap KevoraLabs/tap</code>
+              <code>brew tap KevoraLabs/apps</code>
               <code>brew install --cask key-launch</code>
             </div>
           </div>
@@ -320,7 +216,6 @@
             <p data-i18n="quickstart.upgrade.desc">新版本发布后，在终端运行相应的 upgrade 命令即可升至最新版：</p>
             <div class="qs-code-box">
               <code>brew upgrade --cask key-launch</code>
-              <code>brew upgrade --cask pause-loop</code>
             </div>
           </div>
         </div>
@@ -341,20 +236,6 @@
               <span data-i18n="troubleshoot.copy">复制命令</span>
             </button>
           </div>
-
-          <div class="quarantine-item">
-            <code>xattr -dr com.apple.quarantine /Applications/PauseLoop.app</code>
-            <button class="copy-mini-btn" data-copy="xattr -dr com.apple.quarantine /Applications/PauseLoop.app">
-              <span data-i18n="troubleshoot.copy">复制命令</span>
-            </button>
-          </div>
-
-          <div class="quarantine-item">
-            <code>xattr -dr com.apple.quarantine /Applications/WeChatMulti.app</code>
-            <button class="copy-mini-btn" data-copy="xattr -dr com.apple.quarantine /Applications/WeChatMulti.app">
-              <span data-i18n="troubleshoot.copy">复制命令</span>
-            </button>
-          </div>
         </div>
       </div>
     </section>
@@ -366,10 +247,8 @@
       <div class="footer-links">
         <a href="https://github.com/KevoraLabs/homebrew-apps" target="_blank" rel="noopener">Homebrew Tap</a>
         <a href="https://kevoralabs.github.io/keylaunch-site/" target="_blank" rel="noopener">KeyLaunch</a>
-        <a href="https://kevoralabs.github.io/pauseloop-site/" target="_blank" rel="noopener">PauseLoop</a>
         <a href="https://kevoralabs.github.io/highlight-share/" target="_blank" rel="noopener">Highlight Share</a>
         <a href="https://github.com/KevoraLabs/side-stash" target="_blank" rel="noopener">Side Stash</a>
-        <a href="https://github.com/KevoraLabs/postbot" target="_blank" rel="noopener">PostBot</a>
       </div>
     </div>
   </footer>
