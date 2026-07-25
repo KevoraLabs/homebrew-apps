@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="styles.css?v=2" />
+  <link rel="stylesheet" href="styles.css?v=3" />
 </head>
 <body>
   <!-- Ambient background glowing blobs -->
@@ -36,7 +36,6 @@
       <ul class="nav-menu">
         <li><a href="#about" class="nav-link" data-i18n="nav.about">关于</a></li>
         <li><a href="#apps" class="nav-link active" data-i18n="nav.apps">作品应用</a></li>
-        <li><a href="#github-repos" class="nav-link" data-i18n="nav.github">开源仓库</a></li>
         <li><a href="#quickstart" class="nav-link" data-i18n="nav.quickstart">Homebrew 指南</a></li>
         <li><a href="#contact" class="nav-link" data-i18n="nav.contact">联系</a></li>
       </ul>
@@ -494,42 +493,6 @@
             </button>
           </div>
         </article>
-      </div>
-    </section>
-
-    <!-- GitHub Repositories Section (Automatically Sync) -->
-    <section id="github-repos" class="repos-section">
-      <div class="section-header">
-        <div>
-          <span class="section-tag" data-i18n="repos.tag">Automated GitHub Sync</span>
-          <h2 class="section-title" data-i18n="repos.title">开源仓库自动同步</h2>
-          <p class="section-subtitle" data-i18n="repos.subtitle">
-            实时拉取并展示 <strong>@kevinxft</strong> 与 <strong>@KevoraLabs</strong> 的最新开源仓库。
-          </p>
-        </div>
-
-        <div class="repo-controls">
-          <div class="search-box">
-            <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-            <input type="text" id="repo-search-input" placeholder="搜索仓库..." />
-          </div>
-          <select id="repo-sort-select" class="select-box">
-            <option value="stars">按 Stars ⭐ 排序</option>
-            <option value="updated">按最近更新排序</option>
-            <option value="name">按仓库名称排序</option>
-          </select>
-        </div>
-      </div>
-
-      <!-- Live Repo Grid container -->
-      <div class="repos-grid" id="github-repos-grid">
-        <div class="loading-state">
-          <div class="spinner"></div>
-          <p>正在通过 GitHub API 加载最新仓库...</p>
-        </div>
       </div>
     </section>
 
