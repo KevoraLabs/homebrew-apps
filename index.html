@@ -3,26 +3,27 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="KevoraLabs 官方 Homebrew Tap 仓库。通过终端一键安装、升级与管理 KeyLaunch、PauseLoop、WeChatMulti 等原生 macOS 应用。">
+  <meta name="description" content="KevoraLabs 官方应用与插件仓库。一键安装 KeyLaunch、PauseLoop、WeChatMulti 等 macOS 应用及 Highlight Share、Side Stash、PostBot 等浏览器插件。">
   <meta name="theme-color" content="#0b0c10">
-  <meta property="og:title" content="KevoraLabs Homebrew Tap — macOS 精选应用 Cask 仓库">
-  <meta property="og:description" content="用 Homebrew Cask 轻松安装与管理 KevoraLabs 旗下全部原生 macOS 软件。">
-  <title data-i18n="meta.title">KevoraLabs Homebrew Tap — macOS 精选应用官方 Cask 仓库</title>
+  <meta property="og:title" content="KevoraLabs — 原生 macOS 应用与浏览器插件精选集">
+  <meta property="og:description" content="专为 Mac 与浏览器打造的高效利器集。通过 Homebrew Cask 与 Chrome 商店轻松安装与升级。">
+  <title data-i18n="meta.title">KevoraLabs — 原生 macOS 应用与浏览器插件精选集</title>
   <link rel="icon" href="assets/keylaunch-icon.png">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="header">
     <div class="shell nav-inner">
-      <a class="brand" href="#top" aria-label="KevoraLabs Homebrew Tap">
-        <span class="brand-beer">🍺</span>
-        <span>KevoraLabs / tap</span>
-        <span class="brand-tag">Official Tap</span>
+      <a class="brand" href="#top" aria-label="KevoraLabs Hub">
+        <span class="brand-beer">⚡️</span>
+        <span>KevoraLabs</span>
+        <span class="brand-tag">Products & Tap</span>
       </a>
       <nav class="nav-links" aria-label="主导航">
-        <a href="#apps" data-i18n="nav.apps">精选应用</a>
+        <a href="#casks" data-i18n="nav.casks">macOS 应用</a>
+        <a href="#extensions" data-i18n="nav.extensions">浏览器插件</a>
         <a href="#quickstart" data-i18n="nav.quickstart">快速开始</a>
-        <a href="#troubleshoot" data-i18n="nav.troubleshoot">隔离问题说明</a>
+        <a href="#troubleshoot" data-i18n="nav.troubleshoot">隔离说明</a>
       </nav>
       <div class="nav-actions">
         <label class="language-picker">
@@ -35,7 +36,7 @@
             <option value="ko">한국어</option>
           </select>
         </label>
-        <a class="gh-btn" href="https://github.com/KevoraLabs/homebrew-tap" target="_blank" rel="noopener">
+        <a class="gh-btn" href="https://github.com/KevoraLabs" target="_blank" rel="noopener">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
           <span data-i18n="nav.github">GitHub 仓库</span>
         </a>
@@ -45,9 +46,9 @@
 
   <main id="top">
     <section class="hero shell">
-      <div class="hero-eyebrow reveal" data-i18n="hero.eyebrow">KevoraLabs 官方 Homebrew Tap</div>
-      <h1 class="reveal" data-i18n-html="hero.title">macOS 原生应用<br><span>一键终端安装</span></h1>
-      <p class="hero-subtitle reveal" data-i18n="hero.subtitle">专为 Mac 打造的高效工具集。通过 Homebrew Cask 轻松安装、无缝升级与统一管理 KevoraLabs 旗下全部软件。</p>
+      <div class="hero-eyebrow reveal" data-i18n="hero.eyebrow">KevoraLabs 产品工坊</div>
+      <h1 class="reveal" data-i18n-html="hero.title">macOS 原生应用<br><span>与浏览器高效插件</span></h1>
+      <p class="hero-subtitle reveal" data-i18n="hero.subtitle">专为 Mac 与浏览器打造的高效利器集。通过 Homebrew Cask 与 Chrome 商店轻松安装、升级与统一管理。</p>
 
       <div class="hero-terminal reveal">
         <div class="terminal-bar">
@@ -67,26 +68,27 @@
       <div class="stats-strip reveal">
         <div class="shell stats-grid">
           <div class="stat-item">
-            <span class="stat-num">3+</span>
-            <span class="stat-label" data-i18n="stats.apps">原生 macOS 应用</span>
+            <span class="stat-num">4</span>
+            <span class="stat-label" data-i18n="stats.apps">macOS 原生应用</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">3</span>
+            <span class="stat-label" data-i18n="stats.extensions">浏览器高效插件</span>
           </div>
           <div class="stat-item">
             <span class="stat-num">100%</span>
             <span class="stat-label" data-i18n="stats.signed">Apple 签名与公证</span>
           </div>
-          <div class="stat-item">
-            <span class="stat-num">1-Line</span>
-            <span class="stat-label" data-i18n="stats.cask">Cask 终端一键安装</span>
-          </div>
         </div>
       </div>
     </section>
 
-    <section class="section shell" id="apps">
+    <!-- macOS Casks Section -->
+    <section class="section shell" id="casks">
       <div class="section-head reveal">
-        <div class="eyebrow" data-i18n="apps.eyebrow">Included Casks</div>
-        <h2 data-i18n="apps.title">Tap 包含的软件</h2>
-        <p data-i18n="apps.subtitle">所有应用均支持 macOS 原生体验，并经过严格打包与安装测试。</p>
+        <div class="eyebrow" data-i18n="casks.eyebrow">macOS Casks</div>
+        <h2 data-i18n="casks.title">macOS 桌面应用</h2>
+        <p data-i18n="casks.subtitle">通过 Homebrew Cask 轻松一键安装与升级。</p>
       </div>
 
       <div class="apps-grid">
@@ -176,14 +178,121 @@
             </div>
           </div>
         </article>
+
+        <!-- ImageForge Card -->
+        <article class="app-card reveal">
+          <div class="app-top">
+            <div class="app-header">
+              <div class="app-icon-placeholder">🖼️</div>
+              <span class="app-badge" data-i18n="imageforge.badge">图片处理小工具</span>
+            </div>
+            <h3 class="app-title" data-i18n="imageforge.name">ImageForge</h3>
+            <p class="app-desc" data-i18n="imageforge.desc">轻量级 macOS 图片处理小工具。支持选区导出、透明化抠图与常见图像工作流批处理。</p>
+            <div class="app-meta">
+              <span>macOS Utility</span>
+            </div>
+          </div>
+          <div class="app-bottom">
+            <div class="app-links">
+              <a href="https://github.com/KevoraLabs/ImageForge" target="_blank" rel="noopener">
+                <span data-i18n="imageforge.repo">GitHub 仓库</span> →
+              </a>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
+    <!-- Browser Extensions Section -->
+    <section class="section shell" id="extensions">
+      <div class="section-head reveal">
+        <div class="eyebrow" data-i18n="ext.eyebrow">Browser Extensions</div>
+        <h2 data-i18n="ext.title">浏览器插件与扩展</h2>
+        <p data-i18n="ext.subtitle">适配 Chrome 及 Chromium 浏览器，提升日常浏览与创作效率。</p>
+      </div>
+
+      <div class="apps-grid">
+        <!-- Highlight Share Card -->
+        <article class="app-card reveal">
+          <div class="app-top">
+            <div class="app-header">
+              <img class="app-icon" src="assets/highlight-share-icon.png" alt="Highlight Share Icon">
+              <span class="app-badge" data-i18n="highlightshare.badge">Chrome 划词卡片</span>
+            </div>
+            <h3 class="app-title" data-i18n="highlightshare.name">Highlight Share</h3>
+            <p class="app-desc" data-i18n="highlightshare.desc">选中任意网页文本，一键生成精致排版的文字或代码分享卡片，快速导出与社交分享。</p>
+            <div class="app-meta">
+              <span>Chrome / Edge</span>
+              <span>WXT Extension</span>
+            </div>
+          </div>
+          <div class="app-bottom">
+            <div class="app-links">
+              <a href="https://chromewebstore.google.com/detail/nmjdekhjdeebjbckapcpjagkjcabcgla" target="_blank" rel="noopener">
+                <span data-i18n="highlightshare.store">Chrome 商店</span> ↗
+              </a>
+              <span style="color: rgba(255,255,255,0.2);">|</span>
+              <a href="https://kevoralabs.github.io/highlight-share/" target="_blank" rel="noopener">
+                <span data-i18n="highlightshare.site">官网</span> →
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Side Stash Card -->
+        <article class="app-card reveal">
+          <div class="app-top">
+            <div class="app-header">
+              <img class="app-icon" src="assets/side-stash-icon.png" alt="Side Stash Icon">
+              <span class="app-badge" data-i18n="sidestash.badge">侧边栏收藏助手</span>
+            </div>
+            <h3 class="app-title" data-i18n="sidestash.name">Side Stash</h3>
+            <p class="app-desc" data-i18n="sidestash.desc">轻量级浏览器侧边栏收藏工具。右键保存文本、链接与图片，支持 Alt+S 快捷键、标签筛选与 Markdown 导出，全本地存储。</p>
+            <div class="app-meta">
+              <span>Chrome SidePanel</span>
+              <span>Local Privacy</span>
+            </div>
+          </div>
+          <div class="app-bottom">
+            <div class="app-links">
+              <a href="https://github.com/KevoraLabs/side-stash" target="_blank" rel="noopener">
+                <span data-i18n="sidestash.repo">GitHub 仓库</span> →
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- PostBot Card -->
+        <article class="app-card reveal">
+          <div class="app-top">
+            <div class="app-header">
+              <img class="app-icon" src="assets/postbot-icon.png" alt="PostBot Icon">
+              <span class="app-badge" data-i18n="postbot.badge">多平台内容同步</span>
+            </div>
+            <h3 class="app-title" data-i18n="postbot.name">PostBot</h3>
+            <p class="app-desc" data-i18n="postbot.desc">多平台内容同步分发助手。支持一键将文章、动态、图片及视频无缝同步发布至主流社交媒体平台。</p>
+            <div class="app-meta">
+              <span>v1.1.20</span>
+              <span>Plasmo Extension</span>
+            </div>
+          </div>
+          <div class="app-bottom">
+            <div class="app-links">
+              <a href="https://github.com/KevoraLabs/postbot" target="_blank" rel="noopener">
+                <span data-i18n="postbot.repo">GitHub 仓库</span> →
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Quick Start Section -->
     <section class="section quickstart-section" id="quickstart">
       <div class="shell">
         <div class="section-head reveal">
           <div class="eyebrow" data-i18n="quickstart.eyebrow">Quick Start</div>
-          <h2 data-i18n="quickstart.title">快速安装与更新</h2>
+          <h2 data-i18n="quickstart.title">终端安装与更新指南</h2>
           <p data-i18n="quickstart.desc">你可以直接通过完整的 Cask 名称一步安装，或者先添加 KevoraLabs Tap 再进行管理。</p>
         </div>
 
@@ -218,6 +327,7 @@
       </div>
     </section>
 
+    <!-- Troubleshoot Section -->
     <section class="section shell" id="troubleshoot">
       <div class="troubleshoot-card reveal">
         <div class="eyebrow" style="color: var(--amber);" data-i18n="troubleshoot.eyebrow">FAQ & Quarantine</div>
@@ -257,7 +367,9 @@
         <a href="https://github.com/KevoraLabs/homebrew-tap" target="_blank" rel="noopener">Homebrew Tap</a>
         <a href="https://kevoralabs.github.io/keylaunch-site/" target="_blank" rel="noopener">KeyLaunch</a>
         <a href="https://kevoralabs.github.io/pauseloop-site/" target="_blank" rel="noopener">PauseLoop</a>
-        <a href="https://github.com/KevoraLabs/wechat-multi" target="_blank" rel="noopener">WeChatMulti</a>
+        <a href="https://kevoralabs.github.io/highlight-share/" target="_blank" rel="noopener">Highlight Share</a>
+        <a href="https://github.com/KevoraLabs/side-stash" target="_blank" rel="noopener">Side Stash</a>
+        <a href="https://github.com/KevoraLabs/postbot" target="_blank" rel="noopener">PostBot</a>
       </div>
     </div>
   </footer>

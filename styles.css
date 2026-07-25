@@ -408,6 +408,18 @@ button, select { font: inherit; }
   object-fit: cover;
 }
 
+.app-icon-placeholder {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: rgba(114, 87, 232, 0.15);
+  border: 1px solid rgba(114, 87, 232, 0.3);
+  display: grid;
+  place-items: center;
+  font-size: 30px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+}
+
 .app-badge {
   font-size: 11px;
   font-weight: 700;
