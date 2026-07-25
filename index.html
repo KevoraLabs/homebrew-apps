@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="KevoraLabs 官方应用与插件仓库。一键安装 KeyLaunch、PauseLoop macOS 应用及 EnglishCC、Highlight Share、Side Stash 等浏览器插件。">
+  <meta name="description" content="KevoraLabs 官方应用与插件矩阵。涵盖 KeyLaunch、PauseLoop、MP3剪辑器、写歌大师、剪韵音乐剪辑、Music-Master-Electron 及浏览器插件。">
   <meta name="theme-color" content="#0b0c10">
-  <meta property="og:title" content="KevoraLabs — 原生 macOS 应用与浏览器插件精选集">
-  <meta property="og:description" content="专为 Mac 与浏览器打造的高效利器集。通过 Homebrew Cask 与 Chrome 商店轻松安装与升级。">
-  <title data-i18n="meta.title">KevoraLabs — 原生 macOS 应用与浏览器插件精选集</title>
+  <meta property="og:title" content="KevoraLabs — 全平台原生应用、小程序与浏览器插件集锦">
+  <meta property="og:description" content="专为 Mac、iOS、小程序与浏览器打造的高效利器集。通过 Homebrew Cask、App Store 及微信小程序轻松体验。">
+  <title data-i18n="meta.title">KevoraLabs — 全平台原生应用、小程序与浏览器插件集锦</title>
   <link rel="icon" href="assets/keylaunch-icon.png">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -17,10 +17,12 @@
       <a class="brand" href="#top" aria-label="KevoraLabs Hub">
         <span class="brand-beer">⚡️</span>
         <span>KevoraLabs</span>
-        <span class="brand-tag">Products & Tap</span>
+        <span class="brand-tag">Products Hub</span>
       </a>
       <nav class="nav-links" aria-label="主导航">
         <a href="#casks" data-i18n="nav.casks">macOS 应用</a>
+        <a href="#apps" data-i18n="nav.apps">移动与桌面 App</a>
+        <a href="#miniprograms" data-i18n="nav.miniprograms">微信小程序</a>
         <a href="#extensions" data-i18n="nav.extensions">浏览器插件</a>
         <a href="#quickstart" data-i18n="nav.quickstart">快速开始</a>
         <a href="#troubleshoot" data-i18n="nav.troubleshoot">隔离说明</a>
@@ -46,8 +48,8 @@
   <main id="top">
     <section class="hero shell">
       <div class="hero-eyebrow reveal" data-i18n="hero.eyebrow">KevoraLabs 产品工坊</div>
-      <h1 class="reveal" data-i18n-html="hero.title">macOS 原生应用<br><span>与浏览器高效插件</span></h1>
-      <p class="hero-subtitle reveal" data-i18n="hero.subtitle">专为 Mac 与浏览器打造的高效利器集。通过 Homebrew Cask 与 Chrome 商店轻松安装、升级与统一管理。</p>
+      <h1 class="reveal" data-i18n-html="hero.title">全平台原生应用<br><span>小程序与浏览器插件</span></h1>
+      <p class="hero-subtitle reveal" data-i18n="hero.subtitle">专为 Mac、iOS、小程序与浏览器打造的高效利器集。通过 Homebrew Cask、App Store 及微信小程序轻松体验。</p>
 
       <div class="hero-terminal reveal">
         <div class="terminal-bar">
@@ -67,16 +69,16 @@
       <div class="stats-strip reveal">
         <div class="shell stats-grid">
           <div class="stat-item">
-            <span class="stat-num">2</span>
-            <span class="stat-label" data-i18n="stats.apps">macOS 原生应用</span>
+            <span class="stat-num">5</span>
+            <span class="stat-label" data-i18n="stats.apps">原生 App & 桌面端</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">3</span>
+            <span class="stat-label" data-i18n="stats.miniprograms">微信小程序</span>
           </div>
           <div class="stat-item">
             <span class="stat-num">3</span>
             <span class="stat-label" data-i18n="stats.extensions">浏览器高效插件</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-num">100%</span>
-            <span class="stat-label" data-i18n="stats.signed">Apple 签名与公证</span>
           </div>
         </div>
       </div>
@@ -86,7 +88,7 @@
     <section class="section shell" id="casks">
       <div class="section-head reveal">
         <div class="eyebrow" data-i18n="casks.eyebrow">macOS Casks</div>
-        <h2 data-i18n="casks.title">macOS 桌面应用</h2>
+        <h2 data-i18n="casks.title">Homebrew 桌面应用</h2>
         <p data-i18n="casks.subtitle">通过 Homebrew Cask 轻松一键安装与升级。</p>
       </div>
 
@@ -151,6 +153,160 @@
       </div>
     </section>
 
+    <!-- Mobile & Desktop Apps Section -->
+    <section class="section shell" id="apps">
+      <div class="section-head reveal">
+        <div class="eyebrow" data-i18n="apps.eyebrow">Mobile & Desktop Apps</div>
+        <h2 data-i18n="apps.title">移动与桌面应用矩阵</h2>
+        <p data-i18n="apps.subtitle">涵盖 iOS 原生应用、跨平台 React Native App 与 Electron 桌面工具。</p>
+      </div>
+
+      <div class="apps-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+        <!-- MP3剪辑器 iOS Card -->
+        <article class="app-card reveal">
+          <div class="app-top">
+            <div class="app-header">
+              <img class="app-icon" src="assets/mp3-editor-icon.png" alt="MP3剪辑器 Icon">
+              <span class="app-badge" data-i18n="mp3ios.badge">iOS 原生 App</span>
+            </div>
+            <h3 class="app-title" data-i18n="mp3ios.name">MP3剪辑器 (iOS版)</h3>
+            <p class="app-desc" data-i18n="mp3ios.desc">原生 iOS 音频剪辑与处理应用。支持音频剪切、拼接、混音、格式转换、降噪与人声分离。</p>
+            <div class="app-meta">
+              <span data-i18n="mp3ios.meta">Swift 5 · iOS 16.0+</span>
+            </div>
+          </div>
+          <div class="app-bottom">
+            <div class="app-links">
+              <a href="https://github.com/KevoraLabs/kevin-monorepo/tree/main/apps/ios/mp3-editor-ios" target="_blank" rel="noopener">
+                <span>查看项目源码</span> →
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 写歌大师 APP Card -->
+        <article class="app-card reveal">
+          <div class="app-top">
+            <div class="app-header">
+              <img class="app-icon" src="assets/music-generator-icon.png" alt="写歌大师 Icon">
+              <span class="app-badge" data-i18n="musicapp.badge">iOS / Android App</span>
+            </div>
+            <h3 class="app-title" data-i18n="musicapp.name">写歌大师 (APP)</h3>
+            <p class="app-desc" data-i18n="musicapp.desc">AI 灵感创作与写歌 APP。支持 AI 歌词与音频生成、音视频拆分提音、人声分离及内购订阅。</p>
+            <div class="app-meta">
+              <span data-i18n="musicapp.meta">React Native · Expo 54</span>
+            </div>
+          </div>
+          <div class="app-bottom">
+            <div class="app-links">
+              <a href="https://github.com/KevoraLabs/kevin-monorepo/tree/main/apps/rn/music-generator-app" target="_blank" rel="noopener">
+                <span>查看项目源码</span> →
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Music-Master-Electron Card -->
+        <article class="app-card reveal">
+          <div class="app-top">
+            <div class="app-header">
+              <img class="app-icon" src="assets/music-master-electron-icon.png" alt="Music Master Electron Icon">
+              <span class="app-badge" data-i18n="musicmaster.badge">桌面端工作站</span>
+            </div>
+            <h3 class="app-title" data-i18n="musicmaster.name">Music-Master-Electron</h3>
+            <p class="app-desc" data-i18n="musicmaster.desc">跨平台桌面端音频创作与管理工作站，支持多轨道音频编辑、格式转换与高效批处理。</p>
+            <div class="app-meta">
+              <span data-i18n="musicmaster.meta">Electron · Mac & Windows</span>
+            </div>
+          </div>
+          <div class="app-bottom">
+            <div class="app-links">
+              <a href="https://github.com/KevoraLabs/kevin-monorepo/tree/main/apps/electron/Music-Master-Electron" target="_blank" rel="noopener">
+                <span>查看项目源码</span> →
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- WeChat Mini-Programs Section -->
+    <section class="section shell" id="miniprograms">
+      <div class="section-head reveal">
+        <div class="eyebrow" data-i18n="mini.eyebrow">WeChat Mini Programs</div>
+        <h2 data-i18n="mini.title">微信小程序矩阵</h2>
+        <p data-i18n="mini.subtitle">即开即用，支持音频剪辑、AI 音乐创作与音视频工具。</p>
+      </div>
+
+      <div class="apps-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+        <!-- 写歌大师 小程序 Card -->
+        <article class="app-card reveal">
+          <div class="app-top">
+            <div class="app-header">
+              <div class="app-icon-placeholder">🎵</div>
+              <span class="app-badge" data-i18n="mgweapp.badge">微信小程序</span>
+            </div>
+            <h3 class="app-title" data-i18n="mgweapp.name">写歌大师 (小程序)</h3>
+            <p class="app-desc" data-i18n="mgweapp.desc">AI 音乐创作与灵感写歌小程序，支持创作灵感获取、AI 歌词生成与作品保存。</p>
+            <div class="app-meta">
+              <span data-i18n="mgweapp.meta">Taro + Vue3</span>
+            </div>
+          </div>
+          <div class="app-bottom">
+            <div class="app-links">
+              <a href="https://github.com/KevoraLabs/kevin-monorepo/tree/main/apps/weapp/music-generator-weapp" target="_blank" rel="noopener">
+                <span>小程序源码</span> →
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 剪韵音乐剪辑 Card -->
+        <article class="app-card reveal">
+          <div class="app-top">
+            <div class="app-header">
+              <div class="app-icon-placeholder">✂️</div>
+              <span class="app-badge" data-i18n="jianyuns.badge">微信小程序</span>
+            </div>
+            <h3 class="app-title" data-i18n="jianyuns.name">剪韵音乐剪辑</h3>
+            <p class="app-desc" data-i18n="jianyuns.desc">全功能微信音频剪辑小程序，支持音频剪切、合成、格式转换、混音、变速变调、降噪与人声分离。</p>
+            <div class="app-meta">
+              <span data-i18n="jianyuns.meta">AppID: wx5c72966d917dcfaa</span>
+            </div>
+          </div>
+          <div class="app-bottom">
+            <div class="app-links">
+              <a href="https://github.com/KevoraLabs/kevin-monorepo/tree/main/apps/weapp/jian-yun-editor-weapp" target="_blank" rel="noopener">
+                <span>小程序源码</span> →
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- MP3剪辑器 小程序 Card -->
+        <article class="app-card reveal">
+          <div class="app-top">
+            <div class="app-header">
+              <div class="app-icon-placeholder">🎧</div>
+              <span class="app-badge" data-i18n="mp3weapp.badge">微信小程序</span>
+            </div>
+            <h3 class="app-title" data-i18n="mp3weapp.name">MP3剪辑器 (小程序)</h3>
+            <p class="app-desc" data-i18n="mp3weapp.desc">轻量快捷的微信 MP3 音频剪辑工具，支持快速分割、格式转换与淡入淡出调节。</p>
+            <div class="app-meta">
+              <span data-i18n="mp3weapp.meta">Taro + Vue3</span>
+            </div>
+          </div>
+          <div class="app-bottom">
+            <div class="app-links">
+              <a href="https://github.com/KevoraLabs/kevin-monorepo/tree/main/apps/weapp/mp3-editor-weapp" target="_blank" rel="noopener">
+                <span>小程序源码</span> →
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <!-- Browser Extensions Section -->
     <section class="section shell" id="extensions">
       <div class="section-head reveal">
@@ -168,7 +324,7 @@
               <span class="app-badge" data-i18n="englishcc.badge">YouTube 英语字幕增强</span>
             </div>
             <h3 class="app-title" data-i18n="englishcc.name">EnglishCC</h3>
-            <p class="app-desc" data-i18n="englishcc.desc">专为 YouTube 打造的英语字幕学习扩展。重新渲染沉浸式双语字幕图层、单字查词与精读高亮，提升看视频学英语体验。</p>
+            <p class="app-desc" data-i18n="englishcc.desc">专为 YouTube 打造的英语字幕学习扩展。重新渲染沉浸式双语字幕图层、单字查词与精读高亮。</p>
             <div class="app-meta">
               <span>YouTube Subtitles</span>
               <span>Learning Extension</span>
@@ -222,7 +378,7 @@
               <span class="app-badge" data-i18n="sidestash.badge">侧边栏收藏助手</span>
             </div>
             <h3 class="app-title" data-i18n="sidestash.name">Side Stash</h3>
-            <p class="app-desc" data-i18n="sidestash.desc">轻量级浏览器侧边栏收藏工具。右键保存文本、链接与图片，支持 Alt+S 快捷键、标签筛选与 Markdown 导出，全本地存储。</p>
+            <p class="app-desc" data-i18n="sidestash.desc">轻量级浏览器侧边栏收藏工具。右键保存文本、链接与图片，支持 Alt+S 快捷键与 Markdown 导出。</p>
             <div class="app-meta">
               <span>Chrome SidePanel</span>
               <span>Local Privacy</span>
