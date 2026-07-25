@@ -2,6 +2,8 @@
 
 Homebrew tap for KevoraLabs macOS apps.
 
+🌐 **Official Site**: [https://kevoralabs.github.io/homebrew-tap/](https://kevoralabs.github.io/homebrew-tap/)
+
 ## Install
 
 ```bash
