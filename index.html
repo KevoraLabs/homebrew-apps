@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="KevoraLabs 官方应用与插件全集。涵盖 KeyLaunch、PauseLoop、MP3剪辑器、写歌大师、微信小程序、音乐剪辑PC版本及浏览器插件。">
+  <meta name="description" content="KevoraLabs 个人作品展示。涵盖 KeyLaunch、PauseLoop、MP3剪辑器、写歌大师、微信小程序与浏览器插件。">
   <meta name="theme-color" content="#0b0c10">
-  <meta property="og:title" content="KevoraLabs — 全平台原生应用、小程序与浏览器插件集锦">
-  <meta property="og:description" content="专为 Mac、iOS、小程序与浏览器打造的高效利器集。通过 Homebrew Cask、App Store 及微信小程序轻松体验。">
-  <title data-i18n="meta.title">KevoraLabs — 全平台原生应用、小程序与浏览器插件集锦</title>
+  <meta property="og:title" content="KevoraLabs — 独立开发者作品集 | macOS App、小程序与插件">
+  <meta property="og:description" content="专注于 macOS、iOS、微信小程序与浏览器插件的独立开发与设计。">
+  <title data-i18n="meta.title">KevoraLabs — 独立开发者作品集 | macOS App、小程序与插件</title>
   <link rel="icon" href="assets/keylaunch-icon.png">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -17,14 +17,14 @@
       <a class="brand" href="#top" aria-label="KevoraLabs Hub">
         <span class="brand-beer">⚡️</span>
         <span>KevoraLabs</span>
-        <span class="brand-tag">Products Hub</span>
+        <span class="brand-tag">Personal Showcase</span>
       </a>
       <nav class="nav-links" aria-label="主导航">
         <a href="#casks" data-i18n="nav.casks">macOS 应用</a>
         <a href="#apps" data-i18n="nav.apps">移动与桌面 App</a>
         <a href="#miniprograms" data-i18n="nav.miniprograms">微信小程序</a>
         <a href="#extensions" data-i18n="nav.extensions">浏览器插件</a>
-        <a href="#quickstart" data-i18n="nav.quickstart">快速开始</a>
+        <a href="#quickstart" data-i18n="nav.quickstart">安装说明</a>
         <a href="#troubleshoot" data-i18n="nav.troubleshoot">隔离说明</a>
       </nav>
       <div class="nav-actions">
@@ -39,7 +39,7 @@
         </label>
         <a class="gh-btn" href="https://github.com/KevoraLabs" target="_blank" rel="noopener">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-          <span data-i18n="nav.github">GitHub 仓库</span>
+          <span data-i18n="nav.github">GitHub</span>
         </a>
       </div>
     </div>
@@ -47,9 +47,9 @@
 
   <main id="top">
     <section class="hero shell">
-      <div class="hero-eyebrow reveal" data-i18n="hero.eyebrow">KevoraLabs 产品工坊</div>
-      <h1 class="reveal" data-i18n-html="hero.title">全平台原生应用<br><span>小程序与浏览器插件</span></h1>
-      <p class="hero-subtitle reveal" data-i18n="hero.subtitle">专为 Mac、iOS、小程序与浏览器打造的高效利器集。通过 Homebrew Cask、App Store 及微信小程序轻松体验。</p>
+      <div class="hero-eyebrow reveal" data-i18n="hero.eyebrow">KevoraLabs / 个人作品集</div>
+      <h1 class="reveal" data-i18n-html="hero.title">把好用的工具<br><span>做成极简的原生应用</span></h1>
+      <p class="hero-subtitle reveal" data-i18n="hero.subtitle">专注于 macOS、iOS、微信小程序与浏览器插件的独立开发与设计。</p>
 
       <div class="hero-terminal reveal">
         <div class="terminal-bar">
@@ -78,7 +78,7 @@
           </div>
           <div class="stat-item">
             <span class="stat-num">3</span>
-            <span class="stat-label" data-i18n="stats.extensions">浏览器高效插件</span>
+            <span class="stat-label" data-i18n="stats.extensions">浏览器插件</span>
           </div>
         </div>
       </div>
@@ -87,9 +87,9 @@
     <!-- macOS Casks Section -->
     <section class="section shell" id="casks">
       <div class="section-head reveal">
-        <div class="eyebrow" data-i18n="casks.eyebrow">macOS Casks</div>
-        <h2 data-i18n="casks.title">Homebrew 桌面应用</h2>
-        <p data-i18n="casks.subtitle">通过 Homebrew Cask 轻松一键安装与升级。</p>
+        <div class="eyebrow" data-i18n="casks.eyebrow">macOS Apps</div>
+        <h2 data-i18n="casks.title">macOS 桌面应用</h2>
+        <p data-i18n="casks.subtitle">支持通过 Homebrew Cask 一键安装与自动升级。</p>
       </div>
 
       <div class="apps-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
@@ -156,9 +156,9 @@
     <!-- Mobile & Desktop Apps Section -->
     <section class="section shell" id="apps">
       <div class="section-head reveal">
-        <div class="eyebrow" data-i18n="apps.eyebrow">Mobile & Desktop Apps</div>
+        <div class="eyebrow" data-i18n="apps.eyebrow">Mobile & Desktop</div>
         <h2 data-i18n="apps.title">移动与桌面 App</h2>
-        <p data-i18n="apps.subtitle">涵盖 iOS 原生应用、跨平台 React Native App 与 Electron 桌面工具。</p>
+        <p data-i18n="apps.subtitle">涵盖 iOS 原生应用、跨平台 App 与 PC 桌面端工具。</p>
       </div>
 
       <div class="apps-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
@@ -219,9 +219,9 @@
     <!-- WeChat Mini-Programs Section -->
     <section class="section shell" id="miniprograms">
       <div class="section-head reveal">
-        <div class="eyebrow" data-i18n="mini.eyebrow">WeChat Mini Programs</div>
+        <div class="eyebrow" data-i18n="mini.eyebrow">Mini Programs</div>
         <h2 data-i18n="mini.title">微信小程序</h2>
-        <p data-i18n="mini.subtitle">即开即用，支持音频剪辑与 AI 音乐创作工具。</p>
+        <p data-i18n="mini.subtitle">无需安装、即开即用的音视频与 AI 实用小工具。</p>
       </div>
 
       <div class="apps-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
@@ -261,8 +261,8 @@
     <section class="section shell" id="extensions">
       <div class="section-head reveal">
         <div class="eyebrow" data-i18n="ext.eyebrow">Browser Extensions</div>
-        <h2 data-i18n="ext.title">浏览器插件与扩展</h2>
-        <p data-i18n="ext.subtitle">适配 Chrome 及 Chromium 浏览器，提升日常浏览与创作效率。</p>
+        <h2 data-i18n="ext.title">浏览器插件</h2>
+        <p data-i18n="ext.subtitle">提升浏览体验与信息收集效率的 Chrome 扩展。</p>
       </div>
 
       <div class="apps-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
@@ -350,14 +350,14 @@
       <div class="shell">
         <div class="section-head reveal">
           <div class="eyebrow" data-i18n="quickstart.eyebrow">Quick Start</div>
-          <h2 data-i18n="quickstart.title">终端安装与更新指南</h2>
-          <p data-i18n="quickstart.desc">你可以直接通过完整的 Cask 名称一步安装，或者先添加 KevoraLabs Tap 再进行管理。</p>
+          <h2 data-i18n="quickstart.title">Homebrew 安装说明</h2>
+          <p data-i18n="quickstart.desc">macOS 用户可以通过简单的终端命令安装与管理应用。</p>
         </div>
 
         <div class="qs-grid">
           <div class="qs-card reveal">
-            <h3 data-i18n="quickstart.step1.title">完整安装步骤（推荐）</h3>
-            <p data-i18n="quickstart.step1.desc">首次使用先添加 KevoraLabs Tap 仓库，再安装目标软件：</p>
+            <h3 data-i18n="quickstart.step1.title">推荐：先添加 Tap 仓库再安装</h3>
+            <p data-i18n="quickstart.step1.desc">添加 KevoraLabs 官方仓库后，可随时安装与保持应用更新：</p>
             <div class="qs-code-box">
               <div style="color:#7b8096; font-size:11px; margin-bottom:4px;"># 1. 添加软件仓库 (Tap)</div>
               <code style="color:var(--amber);">brew tap KevoraLabs/apps</code>
@@ -368,8 +368,8 @@
           </div>
 
           <div class="qs-card reveal">
-            <h3 data-i18n="quickstart.step2.title">方法二：先添加 Tap 仓库</h3>
-            <p data-i18n="quickstart.step2.desc">添加后可以随时搜索和安装 KevoraLabs 的所有 Cask：</p>
+            <h3 data-i18n="quickstart.step2.title">或者直接单行命令安装</h3>
+            <p data-i18n="quickstart.step2.desc">无需手动添加 Tap，Homebrew 会自动抓取对应应用：</p>
             <div class="qs-code-box">
               <code>brew tap KevoraLabs/apps</code>
               <code>brew install --cask key-launch</code>
@@ -378,8 +378,8 @@
           </div>
 
           <div class="qs-card reveal">
-            <h3 data-i18n="quickstart.upgrade.title">后续如何保持更新？</h3>
-            <p data-i18n="quickstart.upgrade.desc">新版本发布后，在终端运行相应的 upgrade 命令即可升至最新版：</p>
+            <h3 data-i18n="quickstart.upgrade.title">如何保持更新？</h3>
+            <p data-i18n="quickstart.upgrade.desc">当有新版本发布时，在终端运行 upgrade 命令即可一键更新：</p>
             <div class="qs-code-box">
               <code>brew upgrade --cask key-launch</code>
               <code>brew upgrade --cask pause-loop</code>
@@ -393,8 +393,8 @@
     <section class="section shell" id="troubleshoot">
       <div class="troubleshoot-card reveal">
         <div class="eyebrow" style="color: var(--amber);" data-i18n="troubleshoot.eyebrow">FAQ & Quarantine</div>
-        <h3 data-i18n="troubleshoot.title">首次启动“无法打开”解决办法</h3>
-        <p data-i18n="troubleshoot.desc">若由于 macOS 隔离机制（Quarantine）导致首次打开弹出安全提示，只需在终端运行以下命令清除隔离标记即可：</p>
+        <h3 data-i18n="troubleshoot.title">首次启动安全提示解决办法</h3>
+        <p data-i18n="troubleshoot.desc">若因 macOS 隔离机制（Quarantine）导致首次打开提示安全阻拦，在终端运行以下命令即可消除标记：</p>
 
         <div class="quarantine-list">
           <div class="quarantine-item">
