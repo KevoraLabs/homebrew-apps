@@ -632,7 +632,7 @@ html.dark .site-header {
 }
 
 @keyframes terminal-typing {
-  to { width: 6ch; }
+  to { width: 7ch; }
 }
 
 @keyframes terminal-caret {
@@ -641,7 +641,7 @@ html.dark .site-header {
 
 @media (prefers-reduced-motion: reduce) {
   .doodle-terminal span {
-    width: 6ch;
+    width: 7ch;
     animation: none;
   }
 }
