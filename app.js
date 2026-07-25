@@ -227,12 +227,12 @@ function initScrollSpy() {
   });
 }
 
-// Interactive 3D tilt & Universal Avatar Swap (Hover for Desktop, Click & Auto-Revert for Mobile)
+// Interactive 3D tilt & Universal Avatar Swap (Double Buffer Cross-Fade)
 function initAvatarInteractivity() {
   const container = document.querySelector('.hero-avatar-frame');
-  const layerBase = document.getElementById('avatarLayerA');
-  const layerTop = document.getElementById('avatarLayerB');
-  if (!container || !layerBase || !layerTop) return;
+  const layerA = document.getElementById('avatarLayerA');
+  const layerB = document.getElementById('avatarLayerB');
+  if (!container || !layerA || !layerB) return;
 
   const defaultSrc = 'assets/avatar-default.webp';
   const randomPool = [
@@ -247,42 +247,52 @@ function initAvatarInteractivity() {
     img.src = src;
   });
 
-  // 默认初始为 avatar-random-5
+  // 双缓冲区状态句柄 (0: layerA 1: layerB)
+  const layers = [layerA, layerB];
+  let activeIndex = 0;
   let currentSrc = defaultSrc;
-  layerBase.src = defaultSrc;
-  layerTop.src = defaultSrc;
-
   let fadeTimeout = null;
   let revertTimer = null;
   let lastRandomIndex = -1;
 
-  // 核心：防打断、无闪烁的单向覆盖淡入算法 (Non-dip Overlap Fade with Reflow Reset)
+  // 初始图层配置
+  layerA.src = defaultSrc;
+  layerB.src = defaultSrc;
+  layerA.style.opacity = '1';
+  layerA.style.zIndex = '2';
+  layerB.style.opacity = '0';
+  layerB.style.zIndex = '1';
+
+  // 终极双缓冲区交叉淡入算法 (Double Buffer Cross-Fade)
   const fadeToAvatarSrc = (nextSrc) => {
     if (nextSrc === currentSrc) return;
-
-    if (fadeTimeout) {
-      clearTimeout(fadeTimeout);
-      fadeTimeout = null;
-    }
-
-    // 先复位底层图为当前显示的图片，并强制移除 fading 类名
-    layerBase.src = currentSrc;
-    layerTop.classList.remove('is-fading');
-
-    // 强制浏览器触发重绘 (reflow)，确保从 0 -> 1 的 opacity 过渡动画必定重新执行
-    void layerTop.offsetHeight;
-
     currentSrc = nextSrc;
-    layerTop.src = nextSrc;
 
-    requestAnimationFrame(() => {
-      layerTop.classList.add('is-fading');
-    });
+    if (fadeTimeout) clearTimeout(fadeTimeout);
 
+    const currentLayer = layers[activeIndex];
+    const nextIndex = 1 - activeIndex;
+    const nextLayer = layers[nextIndex];
+
+    // 载入新图并置顶
+    nextLayer.src = nextSrc;
+    nextLayer.style.zIndex = '3';
+    currentLayer.style.zIndex = '2';
+
+    // 强制触发 reflow 确保过渡动画百分百触发
+    void nextLayer.offsetHeight;
+
+    // 渐现新图层
+    nextLayer.style.opacity = '1';
+
+    // 切换活跃索引
+    activeIndex = nextIndex;
+
+    // 过渡完成后复位旧图层
     fadeTimeout = setTimeout(() => {
-      layerBase.src = nextSrc;
-      layerTop.classList.remove('is-fading');
-    }, 620);
+      currentLayer.style.opacity = '0';
+      currentLayer.style.zIndex = '1';
+    }, 520);
   };
 
   const getNextRandomSrc = () => {
