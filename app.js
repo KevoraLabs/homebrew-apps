@@ -32,7 +32,7 @@ function initAvatarLoading() {
   });
 }
 
-// Theme Switcher (Warm Paper vs Dark Coffee)
+// Theme Switcher (Warm Paper vs Dark Coffee with System Auto Detection)
 function initThemeToggle() {
   const themeBtn = document.getElementById('themeToggleBtn');
   if (!themeBtn) return;
@@ -41,11 +41,22 @@ function initThemeToggle() {
   if (savedTheme === 'dark' || savedTheme === 'paper') {
     currentTheme = savedTheme;
   } else {
-    // Default to paper theme matching Kevin's avatar aesthetic
-    currentTheme = 'paper';
+    // 自动跟随浏览器的系统深色 / 浅色模式
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    currentTheme = prefersDark ? 'dark' : 'paper';
   }
 
   applyTheme(currentTheme);
+
+  // 监听浏览器系统主题变化（仅在用户未手动指定偏好时联动）
+  if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      if (!localStorage.getItem('kevoralabs_theme')) {
+        currentTheme = e.matches ? 'dark' : 'paper';
+        applyTheme(currentTheme);
+      }
+    });
+  }
 
   themeBtn.addEventListener('click', () => {
     currentTheme = currentTheme === 'paper' ? 'dark' : 'paper';
@@ -224,16 +235,13 @@ function initAvatarInteractivity() {
   const layerTop = document.getElementById('avatarLayerB');
   if (!container || !layerBase || !layerTop) return;
 
-  const defaultSrc = 'assets/avatar.webp';
-  const hoverAvatars = [
+  const allAvatars = [
     'assets/avatar-random-1.webp',
     'assets/avatar-random-2.webp',
     'assets/avatar-random-3.webp',
-    'assets/avatar-random-4.webp'
+    'assets/avatar-random-4.webp',
+    'assets/avatar-random-5.webp'
   ];
-
-  // 全套 5 张图片集合
-  const allAvatars = [defaultSrc, ...hoverAvatars];
 
   // 预加载所有 WebP 图片，保证全过程 0 延迟
   allAvatars.forEach(src => {
@@ -241,8 +249,11 @@ function initAvatarInteractivity() {
     img.src = src;
   });
 
-  let currentSrc = defaultSrc;
-  let lastRandomIndex = 0;
+  // 初始随机选中其中一张
+  let lastRandomIndex = Math.floor(Math.random() * allAvatars.length);
+  let currentSrc = allAvatars[lastRandomIndex];
+  layerBase.src = currentSrc;
+  layerTop.src = currentSrc;
   let fadeTimeout = null;
 
   // 核心：无 Dip、无亮暗闪烁的单向覆盖淡入算法 (Non-dip Overlap Fade)
