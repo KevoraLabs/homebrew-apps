@@ -256,13 +256,23 @@ function initAvatarInteractivity() {
   let revertTimer = null;
   let lastRandomIndex = -1;
 
-  // 核心：无 Dip、无闪烁的单向覆盖淡入算法 (Non-dip Overlap Fade)
+  // 核心：防打断、无闪烁的单向覆盖淡入算法 (Non-dip Overlap Fade with Reflow Reset)
   const fadeToAvatarSrc = (nextSrc) => {
     if (nextSrc === currentSrc) return;
+
+    if (fadeTimeout) {
+      clearTimeout(fadeTimeout);
+      fadeTimeout = null;
+    }
+
+    // 先复位底层图为当前显示的图片，并强制移除 fading 类名
+    layerBase.src = currentSrc;
+    layerTop.classList.remove('is-fading');
+
+    // 强制浏览器触发重绘 (reflow)，确保从 0 -> 1 的 opacity 过渡动画必定重新执行
+    void layerTop.offsetHeight;
+
     currentSrc = nextSrc;
-
-    if (fadeTimeout) clearTimeout(fadeTimeout);
-
     layerTop.src = nextSrc;
 
     requestAnimationFrame(() => {
