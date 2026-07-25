@@ -1,35 +1,28 @@
 <!DOCTYPE html>
-<html lang="zh-Hans" class="dark">
+<html lang="zh-Hans" class="theme-paper">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title data-i18n="meta.title">Kevin / KevoraLabs — 独立开发者作品集 | macOS App、插件与 AI 工具</title>
   <meta name="description" content="Kevin / KevoraLabs 个人作品展示。专注于 macOS 原生 App、浏览器插件与 AI 效率工具。" />
-  <meta name="theme-color" content="#07090e" />
+  <meta name="theme-color" content="#FAF5EC" />
   
-  <link rel="icon" type="image/png" href="assets/keylaunch-icon.png" />
+  <link rel="icon" type="image/jpeg" href="assets/avatar.jpg" />
 
-  <!-- Google Fonts: Inter & Outfit -->
+  <!-- Google Fonts: Inter, Outfit, Caveat & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="styles.css?v=5" />
+  <link rel="stylesheet" href="styles.css?v=6" />
 </head>
 <body>
-  <!-- Ambient background glowing blobs -->
-  <div class="ambient-bg">
-    <div class="glow-orb orb-1"></div>
-    <div class="glow-orb orb-2"></div>
-    <div class="glow-orb orb-3"></div>
-    <div class="grid-overlay"></div>
-  </div>
 
   <!-- Navigation Bar -->
   <header class="site-header">
     <nav class="nav-container">
       <a href="#hero" class="nav-brand">
-        <span class="brand-avatar">K</span>
+        <img src="assets/avatar.jpg" alt="Kevin Avatar" class="brand-avatar-img" />
         <span class="brand-name">Kevin <span class="brand-badge">✦ KevoraLabs</span></span>
       </a>
 
@@ -40,6 +33,12 @@
       </ul>
 
       <div class="nav-actions">
+        <!-- Theme Toggle Button -->
+        <button id="themeToggleBtn" class="btn-theme-toggle" aria-label="Toggle Theme">
+          <span id="themeToggleIcon">☀️</span>
+          <span id="themeToggleText" data-i18n="theme.togglePaper">☀️ 纸张手绘</span>
+        </button>
+
         <!-- Language Selector -->
         <div class="lang-selector-wrapper">
           <select id="languageSelect" class="select-lang" aria-label="Language">
@@ -51,16 +50,16 @@
           </select>
         </div>
 
-        <button id="copy-email-btn" class="btn btn-nav" data-email="kevinxft@gmail.com">
-          <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <button id="copy-email-btn" class="btn btn-sm btn-secondary" data-email="kevinxft@gmail.com">
+          <svg class="btn-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
             <polyline points="22,6 12,13 2,6"/>
           </svg>
           <span data-i18n="common.copyEmail">复制邮箱</span>
         </button>
         
-        <a href="https://github.com/KevoraLabs" target="_blank" rel="noopener noreferrer" class="btn btn-primary-outline">
-          <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+        <a href="https://github.com/KevoraLabs" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
+          <svg class="btn-icon" width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
           </svg>
           <span>GitHub</span>
@@ -72,14 +71,15 @@
   <main class="content-wrapper">
     <!-- Hero Section -->
     <section id="hero" class="hero-section">
+      <!-- Hero Left Column -->
       <div class="hero-content">
         <div class="hero-badge">
           <span class="status-pulse"></span>
-          <span data-i18n="hero.eyebrow">独立开发者 • 专注轻量极简与本地优先应用</span>
+          <span data-i18n="hero.eyebrow">☕ Late-Night Code &amp; Coffee • 独立开发者</span>
         </div>
 
         <h1 class="hero-title" data-i18n-html="hero.title">
-          打造极简、高效的 <span class="text-gradient-apple">macOS</span>、<span class="text-gradient-cyan">浏览器插件</span> 与 <span class="text-gradient-purple">AI 工具</span>
+          手绘风极简高效的 <span class="sketch-highlight macos">macOS App</span>、<span class="sketch-highlight extension">浏览器插件</span> 与 <span class="sketch-highlight ai">AI 工具</span>
         </h1>
 
         <p class="hero-bio" data-i18n="hero.subtitle">
@@ -89,9 +89,9 @@
         <!-- Homebrew Terminal Bar -->
         <div class="hero-terminal">
           <div class="terminal-bar">
-            <div class="dots"><i></i><i></i><i></i></div>
+            <div class="terminal-dots"><i></i><i></i><i></i></div>
             <span class="term-title">Homebrew Tap Command</span>
-            <button class="btn-copy-cmd copy-btn-hero" data-cmd="brew tap KevoraLabs/apps">
+            <button class="btn-copy-cmd copy-btn-hero btn-sm" data-cmd="brew tap KevoraLabs/apps">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                 <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
@@ -120,9 +120,42 @@
           <a href="#apps" class="btn btn-primary">
             <span data-i18n="hero.exploreApps">浏览作品集 ↓</span>
           </a>
-          <a href="https://github.com/kevinxft" target="_blank" rel="noopener noreferrer" class="btn btn-glass">
+          <a href="https://github.com/kevinxft" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
             <span>GitHub @kevinxft ↗</span>
           </a>
+        </div>
+      </div>
+
+      <!-- Hero Right Column: Avatar Illustration Showcase -->
+      <div class="hero-avatar-wrapper">
+        <div class="hero-avatar-frame">
+          <img src="assets/avatar.jpg" alt="Kevin Hand-Drawn Indie Dev Avatar" class="avatar-image-main" />
+
+          <!-- Floating Doodle Badges -->
+          <div class="floating-doodle doodle-speech">
+            <span>&lt;/&gt;</span>
+          </div>
+
+          <div class="floating-doodle doodle-terminal">
+            <span>&gt;_ dev</span>
+          </div>
+
+          <div class="floating-doodle doodle-todo">
+            <strong>TODO:</strong>
+            <ul>
+              <li>☑ CODE</li>
+              <li>☑ TEST</li>
+              <li>☑ DEBUG</li>
+            </ul>
+          </div>
+
+          <div class="floating-doodle doodle-binary">
+            <span>10101 01010</span>
+          </div>
+
+          <div class="floating-doodle doodle-coffee">
+            <span>☕ &lt;/&gt;</span>
+          </div>
         </div>
       </div>
     </section>
@@ -158,7 +191,7 @@
       <!-- Featured Apps Grid -->
       <div class="apps-grid" id="apps-grid">
         <!-- 1. KeyLaunch -->
-        <article class="app-card glass-card" data-category="macos">
+        <article class="app-card" data-category="macos">
           <div class="app-card-header">
             <img src="assets/keylaunch-icon.png" alt="KeyLaunch Icon" class="app-icon" loading="lazy" />
             <div class="app-meta">
@@ -189,7 +222,7 @@
         </article>
 
         <!-- 2. PauseLoop -->
-        <article class="app-card glass-card" data-category="macos">
+        <article class="app-card" data-category="macos">
           <div class="app-card-header">
             <img src="assets/pauseloop-icon.webp" alt="PauseLoop Icon" class="app-icon" loading="lazy" />
             <div class="app-meta">
@@ -220,7 +253,7 @@
         </article>
 
         <!-- 3. English CC -->
-        <article class="app-card glass-card" data-category="extension ai-dev">
+        <article class="app-card" data-category="extension ai-dev">
           <div class="app-card-header">
             <img src="assets/englishcc-icon.png" alt="English CC Icon" class="app-icon" loading="lazy" />
             <div class="app-meta">
@@ -248,7 +281,7 @@
         </article>
 
         <!-- 4. Side Stash -->
-        <article class="app-card glass-card" data-category="extension">
+        <article class="app-card" data-category="extension">
           <div class="app-card-header">
             <img src="assets/side-stash-icon.png" alt="Side Stash Icon" class="app-icon" loading="lazy" />
             <div class="app-meta">
@@ -276,7 +309,7 @@
         </article>
 
         <!-- 5. Highlight Share -->
-        <article class="app-card glass-card" data-category="extension">
+        <article class="app-card" data-category="extension">
           <div class="app-card-header">
             <img src="assets/highlight-share-icon.png" alt="Highlight Share Icon" class="app-icon" loading="lazy" />
             <div class="app-meta">
@@ -304,7 +337,7 @@
         </article>
 
         <!-- 6. WeChat Multi -->
-        <article class="app-card glass-card" data-category="macos ai-dev">
+        <article class="app-card" data-category="macos ai-dev">
           <div class="app-card-header">
             <img src="assets/wechat-multi-icon.png" alt="WeChat Multi Icon" class="app-icon" loading="lazy" />
             <div class="app-meta">
@@ -312,7 +345,7 @@
                 <span class="badge badge-macos">macOS Tool</span>
                 <span class="badge badge-tech">Swift</span>
               </div>
-              <h3 class="app-title">WeChat Multi <span class="app-title-cn">微信多开</span></h3>
+              <h3 class="app-title">WeChat Multi <span>微信多开</span></h3>
               <p class="app-tagline">Lightweight macOS WeChat multi-instance launcher</p>
             </div>
           </div>
@@ -330,7 +363,7 @@
         </article>
 
         <!-- 7. PostBot -->
-        <article class="app-card glass-card" data-category="ai-dev">
+        <article class="app-card" data-category="ai-dev">
           <div class="app-card-header">
             <img src="assets/postbot-icon.png" alt="PostBot Icon" class="app-icon" loading="lazy" />
             <div class="app-meta">
@@ -347,7 +380,7 @@
           </p>
           <ul class="app-features">
             <li>🤖 多 LLM 模型自动生成草稿与润色</li>
-            <li>✍️ Markdown 格式格式化与图片处理</li>
+            <li>✍️ Markdown 格式化与图片自处理</li>
             <li>⚙️ CLI 与自动化节点运行</li>
           </ul>
           <div class="app-actions">
@@ -356,7 +389,7 @@
         </article>
 
         <!-- 8. MP3 Cutter -->
-        <article class="app-card glass-card" data-category="macos ai-dev">
+        <article class="app-card" data-category="macos ai-dev">
           <div class="app-card-header">
             <img src="assets/mp3-editor-icon.png" alt="MP3 Cutter Icon" class="app-icon" loading="lazy" />
             <div class="app-meta">
@@ -364,11 +397,11 @@
                 <span class="badge badge-dev">Audio Tool</span>
                 <span class="badge badge-tech">Swift / AudioKit</span>
               </div>
-              <h3 class="app-title" data-i18n="mp3ios.name">MP3 剪辑器</h3>
+              <h3 class="app-title">MP3 剪辑器</h3>
               <p class="app-tagline">Native audio cutter &amp; voice separator</p>
             </div>
           </div>
-          <p class="app-description" data-i18n="mp3ios.desc">
+          <p class="app-description">
             原生音频剪辑与处理工具。支持音频精确波形剪切、格式转换、降噪与人声伴奏分离。
           </p>
           <ul class="app-features">
@@ -381,9 +414,9 @@
         </article>
 
         <!-- 9. Homebrew Tap -->
-        <article class="app-card glass-card" data-category="ai-dev macos">
+        <article class="app-card" data-category="ai-dev macos">
           <div class="app-card-header">
-            <div class="app-icon-placeholder brew">
+            <div class="app-icon-placeholder">
               🍺
             </div>
             <div class="app-meta">
@@ -414,7 +447,7 @@
     <!-- Quickstart & Troubleshooting Section -->
     <section id="quickstart" class="guide-section">
       <div class="guide-grid">
-        <div class="guide-card glass-card">
+        <div class="guide-card">
           <span class="section-tag" data-i18n="quickstart.eyebrow">Quick Start</span>
           <h3 class="guide-title" data-i18n="quickstart.title">Homebrew 安装指南</h3>
           <p class="guide-desc" data-i18n="quickstart.desc">macOS 用户可通过以下简单的终端命令完成一键安装：</p>
@@ -431,7 +464,7 @@
           </div>
         </div>
 
-        <div class="guide-card glass-card">
+        <div class="guide-card">
           <span class="section-tag" data-i18n="troubleshoot.eyebrow">FAQ &amp; Quarantine</span>
           <h3 class="guide-title" data-i18n="troubleshoot.title">macOS 首次启动提示安全解决</h3>
           <p class="guide-desc" data-i18n="troubleshoot.desc">因 macOS 隔离机制（Quarantine）导致首次打开提示阻拦时，在终端运行以下命令即可：</p>
@@ -448,7 +481,7 @@
 
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
-      <div class="contact-card glass-card">
+      <div class="contact-card">
         <div class="contact-header">
           <span class="section-tag" data-i18n="contact.tag">Contact</span>
           <h2 class="contact-title" data-i18n="contact.title">保持沟通与合作探讨</h2>
@@ -459,7 +492,6 @@
 
         <div class="contact-methods">
           <div class="contact-item">
-            <span class="contact-label">Direct Email</span>
             <div class="contact-value-row">
               <a href="mailto:kevinxft@gmail.com" class="contact-email">kevinxft@gmail.com</a>
               <button id="copy-email-bottom" class="btn btn-sm btn-primary" data-email="kevinxft@gmail.com">
@@ -469,7 +501,6 @@
           </div>
 
           <div class="contact-item">
-            <span class="contact-label">GitHub Profiles</span>
             <div class="contact-links-row">
               <a href="https://github.com/kevinxft" target="_blank" rel="noopener noreferrer" class="contact-chip">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
@@ -489,8 +520,8 @@
   <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-container">
-      <p>© <span id="year">2026</span> Kevin / KevoraLabs • Minimal, local-first software.</p>
-      <p class="footer-sub">Built with Swift, TypeScript &amp; Apple HIG Aesthetics.</p>
+      <p>© <span id="year">2026</span> Kevin / KevoraLabs • Handcrafted &amp; local-first software.</p>
+      <p class="footer-sub">Late-night code, coffee &amp; Apple HIG Aesthetics.</p>
     </div>
   </footer>
 

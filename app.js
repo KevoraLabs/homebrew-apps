@@ -1,17 +1,60 @@
 /**
  * Kevin / KevoraLabs — Portfolio & App Showcase JavaScript (homebrew-apps)
- * Supports i18n localization, category tabs & copy toast.
+ * Handcrafted design theme, i18n localization, category tabs, theme toggle & copy toast.
  */
 
 let currentLang = 'zh-Hans';
+let currentTheme = 'paper';
 
 document.addEventListener('DOMContentLoaded', () => {
+  initThemeToggle();
   initLanguagePicker();
   initFilterTabs();
   initCopyButtons();
   initScrollSpy();
+  initAvatarInteractivity();
   updateCopyrightYear();
 });
+
+// Theme Switcher (Warm Paper vs Dark Coffee)
+function initThemeToggle() {
+  const themeBtn = document.getElementById('themeToggleBtn');
+  if (!themeBtn) return;
+
+  const savedTheme = localStorage.getItem('kevoralabs_theme');
+  if (savedTheme === 'dark' || savedTheme === 'paper') {
+    currentTheme = savedTheme;
+  } else {
+    // Default to paper theme matching Kevin's avatar aesthetic
+    currentTheme = 'paper';
+  }
+
+  applyTheme(currentTheme);
+
+  themeBtn.addEventListener('click', () => {
+    currentTheme = currentTheme === 'paper' ? 'dark' : 'paper';
+    localStorage.setItem('kevoralabs_theme', currentTheme);
+    applyTheme(currentTheme);
+  });
+}
+
+function applyTheme(theme) {
+  const html = document.documentElement;
+  const themeText = document.getElementById('themeToggleText');
+  const themeIcon = document.getElementById('themeToggleIcon');
+
+  if (theme === 'dark') {
+    html.classList.remove('theme-paper');
+    html.classList.add('theme-dark', 'dark');
+    if (themeText) themeText.textContent = window.siteTranslations[currentLang]?.["theme.toggleDark"] || "🌙 深夜咖啡";
+    if (themeIcon) themeIcon.textContent = "🌙";
+  } else {
+    html.classList.remove('theme-dark', 'dark');
+    html.classList.add('theme-paper');
+    if (themeText) themeText.textContent = window.siteTranslations[currentLang]?.["theme.togglePaper"] || "☀️ 纸张手绘";
+    if (themeIcon) themeIcon.textContent = "☀️";
+  }
+}
 
 // Language Picker Initialization & Handling
 function initLanguagePicker() {
@@ -35,6 +78,7 @@ function initLanguagePicker() {
     currentLang = e.target.value;
     localStorage.setItem('kevoralabs_lang', currentLang);
     applyTranslations(currentLang);
+    applyTheme(currentTheme); // Update theme button text for new locale
   });
 }
 
@@ -72,6 +116,7 @@ function initFilterTabs() {
         const cardCategories = card.dataset.category ? card.dataset.category.split(' ') : [];
         if (category === 'all' || cardCategories.includes(category)) {
           card.classList.remove('hidden');
+          card.style.animation = 'fadeInUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards';
         } else {
           card.classList.add('hidden');
         }
@@ -151,6 +196,27 @@ function initScrollSpy() {
         link.classList.add('active');
       }
     });
+  });
+}
+
+// Interactive 3D tilt effect on avatar illustration frame
+function initAvatarInteractivity() {
+  const container = document.querySelector('.hero-avatar-frame');
+  if (!container) return;
+
+  container.addEventListener('mousemove', (e) => {
+    const rect = container.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+
+    const tiltX = (y / (rect.height / 2)) * -6;
+    const tiltY = (x / (rect.width / 2)) * 6;
+
+    container.style.transform = `perspective(800px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+  });
+
+  container.addEventListener('mouseleave', () => {
+    container.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg)';
   });
 }
 
