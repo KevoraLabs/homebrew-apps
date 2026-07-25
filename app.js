@@ -227,72 +227,84 @@ function initScrollSpy() {
   });
 }
 
-// Interactive 3D tilt effect & Random Avatar Swap on Hover
-// Interactive 3D tilt & Universal Auto-Random Avatar Carousel
+// Interactive 3D tilt & Universal Avatar Swap (Hover for Desktop, Click & Auto-Revert for Mobile)
 function initAvatarInteractivity() {
   const container = document.querySelector('.hero-avatar-frame');
   const layerBase = document.getElementById('avatarLayerA');
   const layerTop = document.getElementById('avatarLayerB');
   if (!container || !layerBase || !layerTop) return;
 
-  const allAvatars = [
+  const defaultSrc = 'assets/avatar-random-5.webp';
+  const randomPool = [
     'assets/avatar-random-1.webp',
     'assets/avatar-random-2.webp',
     'assets/avatar-random-3.webp',
-    'assets/avatar-random-4.webp',
-    'assets/avatar-random-5.webp'
+    'assets/avatar-random-4.webp'
   ];
 
   // 预加载所有 WebP 图片，保证全过程 0 延迟
-  allAvatars.forEach(src => {
+  [defaultSrc, ...randomPool].forEach(src => {
     const img = new Image();
     img.src = src;
   });
 
-  // 初始随机选中其中一张
-  let lastRandomIndex = Math.floor(Math.random() * allAvatars.length);
-  let currentSrc = allAvatars[lastRandomIndex];
-  layerBase.src = currentSrc;
-  layerTop.src = currentSrc;
-  let fadeTimeout = null;
+  // 默认初始为 avatar-random-5
+  let currentSrc = defaultSrc;
+  layerBase.src = defaultSrc;
+  layerTop.src = defaultSrc;
 
-  // 核心：无 Dip、无亮暗闪烁的单向覆盖淡入算法 (Non-dip Overlap Fade)
+  let fadeTimeout = null;
+  let revertTimer = null;
+  let lastRandomIndex = -1;
+
+  // 核心：无 Dip、无闪烁的单向覆盖淡入算法 (Non-dip Overlap Fade)
   const fadeToAvatarSrc = (nextSrc) => {
     if (nextSrc === currentSrc) return;
     currentSrc = nextSrc;
 
     if (fadeTimeout) clearTimeout(fadeTimeout);
 
-    // 1. 设置顶层图 src
     layerTop.src = nextSrc;
 
-    // 2. 触发顶层图渐现 (0 -> 1)，底层 100% 不透明稳托背景
     requestAnimationFrame(() => {
       layerTop.classList.add('is-fading');
     });
 
-    // 3. 0.6 秒淡入完成后，将底层图 src 同步为 nextSrc，平滑复位顶层图
     fadeTimeout = setTimeout(() => {
       layerBase.src = nextSrc;
       layerTop.classList.remove('is-fading');
     }, 620);
   };
 
-  // 全平台统一自动随机淡入淡出轮播（间隔 3.3 秒）
-  setInterval(() => {
+  const getNextRandomSrc = () => {
     let randomIndex;
     do {
-      randomIndex = Math.floor(Math.random() * allAvatars.length);
-    } while (allAvatars.length > 1 && randomIndex === lastRandomIndex);
-
+      randomIndex = Math.floor(Math.random() * randomPool.length);
+    } while (randomPool.length > 1 && randomIndex === lastRandomIndex);
     lastRandomIndex = randomIndex;
-    fadeToAvatarSrc(allAvatars[randomIndex]);
-  }, 3300);
+    return randomPool[randomIndex];
+  };
+
+  const isMobile = () => window.innerWidth <= 768 || window.matchMedia('(pointer: coarse)').matches;
+
+  // 1. 桌面端 Hover 悬浮切换
+  container.addEventListener('mouseenter', () => {
+    if (isMobile()) return;
+    fadeToAvatarSrc(getNextRandomSrc());
+  });
+
+  container.addEventListener('mouseleave', () => {
+    if (isMobile()) {
+      container.style.transform = 'none';
+      return;
+    }
+    container.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg)';
+    fadeToAvatarSrc(defaultSrc);
+  });
 
   // 桌面端 3D 视差倾斜手感
   container.addEventListener('mousemove', (e) => {
-    const isMobileDevice = window.innerWidth <= 768 || window.matchMedia('(pointer: coarse)').matches;
-    if (isMobileDevice) return;
+    if (isMobile()) return;
 
     const rect = container.getBoundingClientRect();
     const x = e.clientX - rect.left - rect.width / 2;
@@ -304,8 +316,16 @@ function initAvatarInteractivity() {
     container.style.transform = `perspective(800px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
   });
 
-  container.addEventListener('mouseleave', () => {
-    container.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg)';
+  // 2. 移动端 点击切换，2.8 秒后自动换回默认图
+  container.addEventListener('click', () => {
+    if (!isMobile()) return;
+
+    if (revertTimer) clearTimeout(revertTimer);
+    fadeToAvatarSrc(getNextRandomSrc());
+
+    revertTimer = setTimeout(() => {
+      fadeToAvatarSrc(defaultSrc);
+    }, 2800);
   });
 }
 
