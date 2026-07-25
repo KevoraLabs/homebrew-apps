@@ -162,6 +162,7 @@ html.dark .site-header {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+  white-space: nowrap;
 }
 
 .nav-brand {
@@ -172,6 +173,8 @@ html.dark .site-header {
   color: var(--text-primary);
   font-weight: 700;
   font-size: 1.1rem;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .brand-avatar-img {
@@ -198,6 +201,7 @@ html.dark .site-header {
   display: flex;
   align-items: center;
   gap: 8px;
+  white-space: nowrap;
 }
 
 .brand-badge {
@@ -205,6 +209,7 @@ html.dark .site-header {
   font-size: 1.05rem;
   color: var(--accent-primary);
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .nav-menu {
@@ -212,12 +217,15 @@ html.dark .site-header {
   align-items: center;
   gap: 28px;
   list-style: none;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .nav-link {
   text-decoration: none;
   color: var(--text-secondary);
   font-weight: 600;
+  white-space: nowrap;
   font-size: 0.95rem;
   padding: 6px 10px;
   border-radius: var(--radius-sm);
@@ -1183,10 +1191,15 @@ html.theme-dark .badge-dev { background-color: #3D2612; color: #FFB74D; }
 @media (max-width: 960px) {
   .nav-container {
     padding: 0 16px;
+    gap: 12px;
   }
 
   .nav-menu {
-    gap: 16px;
+    display: none;
+  }
+
+  .brand-badge {
+    display: none;
   }
 
   .hero-section {
@@ -1210,10 +1223,6 @@ html.theme-dark .badge-dev { background-color: #3D2612; color: #FFB74D; }
 
   .nav-brand {
     gap: 8px;
-  }
-
-  .nav-menu {
-    display: none;
   }
 
   .nav-actions {
