@@ -1,432 +1,625 @@
-<!doctype html>
-<html lang="zh-Hans">
+<!DOCTYPE html>
+<html lang="zh-Hans" class="dark">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="KevoraLabs 个人作品展示。涵盖 KeyLaunch、PauseLoop、MP3剪辑器、写歌大师、微信小程序与浏览器插件。">
-  <meta name="theme-color" content="#0b0c10">
-  <meta property="og:title" content="KevoraLabs — 独立开发者作品集 | macOS App、小程序与插件">
-  <meta property="og:description" content="专注于 macOS、iOS、微信小程序与浏览器插件的独立开发与设计。">
-  <title data-i18n="meta.title">KevoraLabs — 独立开发者作品集 | macOS App、小程序与插件</title>
-  <link rel="icon" href="assets/keylaunch-icon.png">
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="meta.title">Kevin / KevoraLabs — 独立开发者作品集 | macOS App、插件与 AI 工具</title>
+  <meta name="description" content="Kevin / KevoraLabs 个人作品展示。专注于 macOS 原生 App、浏览器插件与 AI 效率工具。" />
+  <meta name="theme-color" content="#07090e" />
+  
+  <link rel="icon" type="image/png" href="assets/keylaunch-icon.png" />
+
+  <!-- Google Fonts: Inter & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="header">
-    <div class="shell nav-inner">
-      <a class="brand" href="#top" aria-label="KevoraLabs Hub">
-        <span class="brand-beer">⚡️</span>
-        <span>KevoraLabs</span>
-        <span class="brand-tag">Personal Showcase</span>
+  <!-- Ambient background glowing blobs -->
+  <div class="ambient-bg">
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="glow-orb orb-3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="#hero" class="nav-brand">
+        <span class="brand-avatar">K</span>
+        <span class="brand-name">Kevin <span class="brand-badge">✦ KevoraLabs</span></span>
       </a>
-      <nav class="nav-links" aria-label="主导航">
-        <a href="#casks" data-i18n="nav.casks">macOS 应用</a>
-        <a href="#apps" data-i18n="nav.apps">移动与桌面 App</a>
-        <a href="#miniprograms" data-i18n="nav.miniprograms">微信小程序</a>
-        <a href="#extensions" data-i18n="nav.extensions">浏览器插件</a>
-        <a href="#quickstart" data-i18n="nav.quickstart">安装说明</a>
-        <a href="#troubleshoot" data-i18n="nav.troubleshoot">隔离说明</a>
-      </nav>
+
+      <ul class="nav-menu">
+        <li><a href="#about" class="nav-link" data-i18n="nav.about">关于</a></li>
+        <li><a href="#apps" class="nav-link active" data-i18n="nav.apps">作品应用</a></li>
+        <li><a href="#github-repos" class="nav-link" data-i18n="nav.github">开源仓库</a></li>
+        <li><a href="#quickstart" class="nav-link" data-i18n="nav.quickstart">Homebrew 指南</a></li>
+        <li><a href="#contact" class="nav-link" data-i18n="nav.contact">联系</a></li>
+      </ul>
+
       <div class="nav-actions">
-        <label class="language-picker">
-          <select id="languageSelect" aria-label="Language">
+        <!-- Language Selector -->
+        <div class="lang-selector-wrapper">
+          <select id="languageSelect" class="select-lang" aria-label="Language">
             <option value="zh-Hans">简体中文</option>
             <option value="zh-Hant">繁體中文</option>
             <option value="en">English</option>
             <option value="ja">日本語</option>
             <option value="ko">한국어</option>
           </select>
-        </label>
-        <a class="gh-btn" href="https://github.com/KevoraLabs" target="_blank" rel="noopener">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-          <span data-i18n="nav.github">GitHub</span>
+        </div>
+
+        <button id="copy-email-btn" class="btn btn-nav" data-email="kevinxft@gmail.com">
+          <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          <span data-i18n="common.copyEmail">复制邮箱</span>
+        </button>
+        
+        <a href="https://github.com/KevoraLabs" target="_blank" rel="noopener noreferrer" class="btn btn-primary-outline">
+          <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          <span>GitHub</span>
         </a>
       </div>
-    </div>
+    </nav>
   </header>
 
-  <main id="top">
-    <section class="hero shell">
-      <div class="hero-eyebrow reveal" data-i18n="hero.eyebrow">KevoraLabs / 个人作品集</div>
-      <h1 class="reveal" data-i18n-html="hero.title">把好用的工具<br><span>做成极简的原生应用</span></h1>
-      <p class="hero-subtitle reveal" data-i18n="hero.subtitle">专注于 macOS、iOS、微信小程序与浏览器插件的独立开发与设计。</p>
+  <main class="content-wrapper">
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="status-pulse"></span>
+          <span data-i18n="hero.eyebrow">独立开发者 • 专注轻量极简与本地优先应用</span>
+        </div>
 
-      <div class="hero-terminal reveal">
-        <div class="terminal-bar">
-          <div class="dots"><i></i><i></i><i></i></div>
-          <span class="term-title">Terminal</span>
-          <button class="copy-btn-hero" data-copy="brew tap KevoraLabs/apps">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-            <span data-i18n="hero.copyTap">复制 Tap 命令</span>
+        <h1 class="hero-title" data-i18n-html="hero.title">
+          打造极简、高效的 <span class="text-gradient-apple">macOS</span>、<span class="text-gradient-cyan">浏览器插件</span> 与 <span class="text-gradient-purple">AI 工具</span>
+        </h1>
+
+        <p class="hero-bio" data-i18n="hero.subtitle">
+          我是 Kevin。专注于打造解决真实痛点、不含臃肿组件的高品质本地软件与效率工具。
+        </p>
+
+        <!-- Homebrew Terminal Bar -->
+        <div class="hero-terminal">
+          <div class="terminal-bar">
+            <div class="dots"><i></i><i></i><i></i></div>
+            <span class="term-title">Homebrew Tap Command</span>
+            <button class="btn-copy-cmd copy-btn-hero" data-cmd="brew tap KevoraLabs/apps">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span data-i18n="hero.copyTap">复制 Tap 命令</span>
+            </button>
+          </div>
+          <div class="terminal-body">
+            <code><span class="prompt">$</span> brew tap KevoraLabs/apps</code>
+          </div>
+        </div>
+
+        <!-- Tech Stack Pills -->
+        <div class="tech-pills-row">
+          <span class="tech-pill"><span class="pill-dot swift"></span>Swift</span>
+          <span class="tech-pill"><span class="pill-dot swiftui"></span>SwiftUI</span>
+          <span class="tech-pill"><span class="pill-dot ts"></span>TypeScript</span>
+          <span class="tech-pill"><span class="pill-dot react"></span>React</span>
+          <span class="tech-pill"><span class="pill-dot node"></span>Node.js</span>
+          <span class="tech-pill"><span class="pill-dot electron"></span>Electron</span>
+          <span class="tech-pill"><span class="pill-dot tauri"></span>Tauri</span>
+          <span class="tech-pill"><span class="pill-dot git"></span>Git</span>
+        </div>
+
+        <div class="hero-cta">
+          <a href="#apps" class="btn btn-primary">
+            <span data-i18n="hero.exploreApps">浏览作品集 ↓</span>
+          </a>
+          <a href="https://github.com/kevinxft" target="_blank" rel="noopener noreferrer" class="btn btn-glass">
+            <span>GitHub @kevinxft ↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section (Compact & Focused) -->
+    <section id="about" class="about-section">
+      <div class="section-header">
+        <span class="section-tag" data-i18n="about.tag">About Me</span>
+        <h2 class="section-title" data-i18n="about.title">关于开发者与设计理念</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-card glass-card">
+          <div class="card-icon-header">
+            <div class="icon-box blue">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <h3 data-i18n="about.whatIDoTitle">核心关注领域</h3>
+          </div>
+          <p data-i18n="about.bioDesc">
+            我是 Kevin，一名独立开发者。主要致力于 macOS 原生体验、浏览器扩展、AI 工作流与开发者工具的研发。崇尚“本地优先、轻便无负担”的软件开发理念。
+          </p>
+          <div class="focus-tags">
+            <span class="focus-chip">macOS Applications</span>
+            <span class="focus-chip">Browser Extensions</span>
+            <span class="focus-chip">AI Tools</span>
+            <span class="focus-chip">Developer Tools</span>
+            <span class="focus-chip">Productivity Software</span>
+          </div>
+        </div>
+
+        <div class="about-card glass-card">
+          <div class="card-icon-header">
+            <div class="icon-box purple">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+            <h3 data-i18n="about.techTitle">技术栈与软件原则</h3>
+          </div>
+          <p data-i18n="about.techDesc">
+            遵循 Apple Human Interface Guidelines 与现代 Web 标准，追求秒开体验与极致细腻的动画反馈。
+          </p>
+          <div class="tech-grid">
+            <div class="tech-item">
+              <span class="tech-name">Native &amp; Desktop</span>
+              <span class="tech-detail">Swift, SwiftUI, AppKit, Electron, Tauri</span>
+            </div>
+            <div class="tech-item">
+              <span class="tech-name">Web &amp; Extensions</span>
+              <span class="tech-detail">TypeScript, React, Node.js, WXT</span>
+            </div>
+            <div class="tech-item">
+              <span class="tech-name">Design Philosophy</span>
+              <span class="tech-detail">极简无广告 · 本地数据安全 · 开箱即用</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- App Showcase Section (Primary Focus) -->
+    <section id="apps" class="apps-section">
+      <div class="section-header center">
+        <span class="section-tag" data-i18n="apps.eyebrow">App Showcase</span>
+        <h2 class="section-title" data-i18n="apps.title">独立开发作品集</h2>
+        <p class="section-subtitle" data-i18n="apps.subtitle">
+          涵盖 macOS 原生应用、Chrome 扩展、AI 工具与开发者软件源。
+        </p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="filter-bar">
+        <div class="filter-tabs" role="tablist">
+          <button class="filter-tab active" data-category="all">
+            <span data-i18n="tabs.all">✨ 全部作品</span>
+          </button>
+          <button class="filter-tab" data-category="macos">
+            <span data-i18n="tabs.macos">🍎 macOS 原生应用</span>
+          </button>
+          <button class="filter-tab" data-category="extension">
+            <span data-i18n="tabs.extensions">🌐 浏览器插件</span>
+          </button>
+          <button class="filter-tab" data-category="ai-dev">
+            <span data-i18n="tabs.aidev">⚡ AI &amp; 开发者工具</span>
           </button>
         </div>
-        <div class="term-content">
-          <span class="prompt">$</span>
-          <code>brew tap KevoraLabs/apps</code>
-        </div>
       </div>
 
-      <div class="stats-strip reveal">
-        <div class="shell stats-grid">
-          <div class="stat-item">
-            <span class="stat-num">5</span>
-            <span class="stat-label" data-i18n="stats.apps">原生 App & 桌面端</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-num">2</span>
-            <span class="stat-label" data-i18n="stats.miniprograms">微信小程序</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-num">3</span>
-            <span class="stat-label" data-i18n="stats.extensions">浏览器插件</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- macOS Casks Section -->
-    <section class="section shell" id="casks">
-      <div class="section-head reveal">
-        <div class="eyebrow" data-i18n="casks.eyebrow">macOS Apps</div>
-        <h2 data-i18n="casks.title">macOS 桌面应用</h2>
-        <p data-i18n="casks.subtitle">支持通过 Homebrew Cask 一键安装与自动升级。</p>
-      </div>
-
-      <div class="apps-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
-        <!-- KeyLaunch Card -->
-        <article class="app-card reveal">
-          <div class="app-top">
-            <div class="app-header">
-              <img class="app-icon" src="assets/keylaunch-icon.png" alt="KeyLaunch Icon">
-              <span class="app-badge" data-i18n="keylaunch.badge">键盘启动器</span>
-            </div>
-            <h3 class="app-title" data-i18n="keylaunch.name">KeyLaunch (键启)</h3>
-            <p class="app-desc" data-i18n="keylaunch.desc">原生 macOS 键盘启动器。把常用 App 放到你的键盘上，按键即可启动、切换或隐藏，不打断思考思路。</p>
+      <!-- Featured Apps Grid -->
+      <div class="apps-grid" id="apps-grid">
+        <!-- 1. KeyLaunch -->
+        <article class="app-card glass-card" data-category="macos">
+          <div class="app-card-header">
+            <img src="assets/keylaunch-icon.png" alt="KeyLaunch Icon" class="app-icon" loading="lazy" />
             <div class="app-meta">
-              <span>v1.3.5</span>
-              <span>macOS 13+</span>
+              <div class="app-badge-row">
+                <span class="badge badge-macos">macOS App</span>
+                <span class="badge badge-tech">SwiftUI</span>
+              </div>
+              <h3 class="app-title" data-i18n="keylaunch.name">KeyLaunch (键启)</h3>
+              <p class="app-tagline">Fast, minimal keyboard launcher &amp; app switcher</p>
             </div>
           </div>
-          <div class="app-bottom">
-            <div class="card-cmd-box">
-              <code>brew tap KevoraLabs/apps && brew install --cask key-launch</code>
-              <button class="copy-mini-btn" data-copy="brew tap KevoraLabs/apps && brew install --cask key-launch">
-                <span data-i18n="app.copy">复制</span>
-              </button>
-            </div>
-            <div class="app-links">
-              <a href="https://kevoralabs.github.io/keylaunch-site/" target="_blank" rel="noopener">
-                <span data-i18n="keylaunch.site">访问官网</span> →
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- PauseLoop Card -->
-        <article class="app-card reveal">
-          <div class="app-top">
-            <div class="app-header">
-              <img class="app-icon" src="assets/pauseloop-icon.webp" alt="PauseLoop Icon">
-              <span class="app-badge" data-i18n="pauseloop.badge">专注与休息计时器</span>
-            </div>
-            <h3 class="app-title" data-i18n="pauseloop.name">PauseLoop</h3>
-            <p class="app-desc" data-i18n="pauseloop.desc">原生 macOS 专注与休息计时器。遵循健康的工作节奏，在合适的时刻覆盖全屏平静提示，让眼睛与大脑获得充分放松。</p>
-            <div class="app-meta">
-              <span>v1.0</span>
-              <span>macOS 14+</span>
-            </div>
-          </div>
-          <div class="app-bottom">
-            <div class="card-cmd-box">
-              <code>brew tap KevoraLabs/apps && brew install --cask pause-loop</code>
-              <button class="copy-mini-btn" data-copy="brew tap KevoraLabs/apps && brew install --cask pause-loop">
-                <span data-i18n="app.copy">复制</span>
-              </button>
-            </div>
-            <div class="app-links">
-              <a href="https://kevoralabs.github.io/pauseloop-site/" target="_blank" rel="noopener">
-                <span data-i18n="pauseloop.site">访问官网</span> →
-              </a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Mobile & Desktop Apps Section -->
-    <section class="section shell" id="apps">
-      <div class="section-head reveal">
-        <div class="eyebrow" data-i18n="apps.eyebrow">Mobile & Desktop</div>
-        <h2 data-i18n="apps.title">移动与桌面 App</h2>
-        <p data-i18n="apps.subtitle">涵盖 iOS 原生应用、跨平台 App 与 PC 桌面端工具。</p>
-      </div>
-
-      <div class="apps-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
-        <!-- MP3剪辑器 iOS Card -->
-        <article class="app-card reveal">
-          <div class="app-top">
-            <div class="app-header">
-              <img class="app-icon" src="assets/mp3-editor-icon.png" alt="MP3剪辑器 Icon">
-              <span class="app-badge" data-i18n="mp3ios.badge">iOS 原生 App</span>
-            </div>
-            <h3 class="app-title" data-i18n="mp3ios.name">MP3剪辑器 (iOS版)</h3>
-            <p class="app-desc" data-i18n="mp3ios.desc">原生 iOS 音频剪辑与处理应用。支持音频剪切、拼接、混音、格式转换、降噪与人声分离。</p>
-            <div class="app-meta">
-              <span data-i18n="mp3ios.meta">Swift 5 · iOS 16.0+</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- 写歌大师 APP Card -->
-        <article class="app-card reveal">
-          <div class="app-top">
-            <div class="app-header">
-              <img class="app-icon" src="assets/music-generator-icon.png" alt="写歌大师 Icon">
-              <span class="app-badge" data-i18n="musicapp.badge">iOS / Android App</span>
-            </div>
-            <h3 class="app-title" data-i18n="musicapp.name">写歌大师 (APP)</h3>
-            <p class="app-desc" data-i18n="musicapp.desc">AI 灵感创作与写歌 APP。支持 AI 歌词与音频生成、音视频拆分提音、人声分离及内购订阅。</p>
-            <div class="app-meta">
-              <span data-i18n="musicapp.meta">React Native · Expo 54</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- 音乐剪辑 PC版本 Card -->
-        <article class="app-card reveal">
-          <div class="app-top">
-            <div class="app-header">
-              <img class="app-icon" src="assets/music-master-electron-icon.png" alt="音乐剪辑 PC版本 Icon">
-              <span class="app-badge" data-i18n="musicmaster.badge">PC 桌面版</span>
-            </div>
-            <h3 class="app-title" data-i18n="musicmaster.name">音乐剪辑 PC版本</h3>
-            <p class="app-desc" data-i18n="musicmaster.desc">跨平台 PC/Mac 桌面端音频剪辑与管理工作站，支持多轨道音频编辑、格式转换与高效批处理。</p>
-            <div class="app-meta">
-              <span data-i18n="musicmaster.meta">Electron · Windows & Mac</span>
-            </div>
-          </div>
-          <div class="app-bottom">
-            <div class="app-links">
-              <a href="https://yinyuejianji.com/show/music?type=1" target="_blank" rel="noopener">
-                <span data-i18n="musicmaster.site">访问官网</span> →
-              </a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- WeChat Mini-Programs Section -->
-    <section class="section shell" id="miniprograms">
-      <div class="section-head reveal">
-        <div class="eyebrow" data-i18n="mini.eyebrow">Mini Programs</div>
-        <h2 data-i18n="mini.title">微信小程序</h2>
-        <p data-i18n="mini.subtitle">无需安装、即开即用的音视频与 AI 实用小工具。</p>
-      </div>
-
-      <div class="apps-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
-        <!-- 写歌大师 小程序 Card -->
-        <article class="app-card reveal">
-          <div class="app-top">
-            <div class="app-header">
-              <img class="app-icon" src="assets/music-generator-icon.png" alt="写歌大师小程序 Icon">
-              <span class="app-badge" data-i18n="mgweapp.badge">微信小程序</span>
-            </div>
-            <h3 class="app-title" data-i18n="mgweapp.name">写歌大师 (小程序)</h3>
-            <p class="app-desc" data-i18n="mgweapp.desc">AI 音乐创作与灵感写歌小程序，支持创作灵感获取、AI 歌词生成与作品保存。</p>
-            <div class="app-meta">
-              <span data-i18n="mgweapp.meta">Taro + Vue3</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- MP3剪辑器 小程序 Card -->
-        <article class="app-card reveal">
-          <div class="app-top">
-            <div class="app-header">
-              <img class="app-icon" src="assets/mp3-editor-icon.png" alt="MP3剪辑器小程序 Icon">
-              <span class="app-badge" data-i18n="mp3weapp.badge">微信小程序</span>
-            </div>
-            <h3 class="app-title" data-i18n="mp3weapp.name">MP3剪辑器 (小程序)</h3>
-            <p class="app-desc" data-i18n="mp3weapp.desc">轻量快捷的微信 MP3 音频剪辑工具，支持快速分割、格式转换与淡入淡出调节。</p>
-            <div class="app-meta">
-              <span data-i18n="mp3weapp.meta">Taro + Vue3</span>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Browser Extensions Section -->
-    <section class="section shell" id="extensions">
-      <div class="section-head reveal">
-        <div class="eyebrow" data-i18n="ext.eyebrow">Browser Extensions</div>
-        <h2 data-i18n="ext.title">浏览器插件</h2>
-        <p data-i18n="ext.subtitle">提升浏览体验与信息收集效率的 Chrome 扩展。</p>
-      </div>
-
-      <div class="apps-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
-        <!-- EnglishCC Card -->
-        <article class="app-card reveal">
-          <div class="app-top">
-            <div class="app-header">
-              <img class="app-icon" src="assets/englishcc-icon.png" alt="EnglishCC Icon">
-              <span class="app-badge" data-i18n="englishcc.badge">YouTube 英语字幕增强</span>
-            </div>
-            <h3 class="app-title" data-i18n="englishcc.name">EnglishCC</h3>
-            <p class="app-desc" data-i18n="englishcc.desc">专为 YouTube 打造的英语字幕学习扩展。重新渲染沉浸式双语字幕图层、单字查词与精读高亮。</p>
-            <div class="app-meta">
-              <span>YouTube Subtitles</span>
-              <span>Learning Extension</span>
-            </div>
-          </div>
-          <div class="app-bottom">
-            <div class="app-links">
-              <a href="https://chromewebstore.google.com/detail/englishcc/iimpbffhdjodajgccmlmdblnbjhkfpnc" target="_blank" rel="noopener">
-                <span data-i18n="englishcc.store">Chrome 商店</span> ↗
-              </a>
-              <span style="color: rgba(255,255,255,0.2);">|</span>
-              <a href="https://englishcc.com" target="_blank" rel="noopener">
-                <span data-i18n="englishcc.site">官网</span> →
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Highlight Share Card -->
-        <article class="app-card reveal">
-          <div class="app-top">
-            <div class="app-header">
-              <img class="app-icon" src="assets/highlight-share-icon.png" alt="Highlight Share Icon">
-              <span class="app-badge" data-i18n="highlightshare.badge">Chrome 划词卡片</span>
-            </div>
-            <h3 class="app-title" data-i18n="highlightshare.name">Highlight Share</h3>
-            <p class="app-desc" data-i18n="highlightshare.desc">选中任意网页文本，一键生成精致排版的文字或代码分享卡片，快速导出与社交分享。</p>
-            <div class="app-meta">
-              <span>Chrome / Edge</span>
-              <span>WXT Extension</span>
-            </div>
-          </div>
-          <div class="app-bottom">
-            <div class="app-links">
-              <a href="https://chromewebstore.google.com/detail/nmjdekhjdeebjbckapcpjagkjcabcgla" target="_blank" rel="noopener">
-                <span data-i18n="highlightshare.store">Chrome 商店</span> ↗
-              </a>
-              <span style="color: rgba(255,255,255,0.2);">|</span>
-              <a href="https://kevoralabs.github.io/highlight-share/" target="_blank" rel="noopener">
-                <span data-i18n="highlightshare.site">官网</span> →
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Side Stash Card -->
-        <article class="app-card reveal">
-          <div class="app-top">
-            <div class="app-header">
-              <img class="app-icon" src="assets/side-stash-icon.png" alt="Side Stash Icon">
-              <span class="app-badge" data-i18n="sidestash.badge">侧边栏收藏助手</span>
-            </div>
-            <h3 class="app-title" data-i18n="sidestash.name">Side Stash</h3>
-            <p class="app-desc" data-i18n="sidestash.desc">轻量级浏览器侧边栏收藏工具。右键保存文本、链接与图片，支持 Alt+S 快捷键与 Markdown 导出。</p>
-            <div class="app-meta">
-              <span>Chrome SidePanel</span>
-              <span>Local Privacy</span>
-            </div>
-          </div>
-          <div class="app-bottom">
-            <div class="app-links">
-              <a href="https://kevoralabs.github.io/side-stash/" target="_blank" rel="noopener">
-                <span data-i18n="sidestash.site">访问官网</span> →
-              </a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Quick Start Section -->
-    <section class="section quickstart-section" id="quickstart">
-      <div class="shell">
-        <div class="section-head reveal">
-          <div class="eyebrow" data-i18n="quickstart.eyebrow">Quick Start</div>
-          <h2 data-i18n="quickstart.title">Homebrew 安装说明</h2>
-          <p data-i18n="quickstart.desc">macOS 用户可以通过简单的终端命令安装与管理应用。</p>
-        </div>
-
-        <div class="qs-grid">
-          <div class="qs-card reveal">
-            <h3 data-i18n="quickstart.step1.title">推荐：先添加 Tap 仓库再安装</h3>
-            <p data-i18n="quickstart.step1.desc">添加 KevoraLabs 官方仓库后，可随时安装与保持应用更新：</p>
-            <div class="qs-code-box">
-              <div style="color:#7b8096; font-size:11px; margin-bottom:4px;"># 1. 添加软件仓库 (Tap)</div>
-              <code style="color:var(--amber);">brew tap KevoraLabs/apps</code>
-              <div style="color:#7b8096; font-size:11px; margin-top:10px; margin-bottom:4px;"># 2. 安装指定应用 (Cask)</div>
-              <code>brew install --cask key-launch</code>
-              <code>brew install --cask pause-loop</code>
-            </div>
-          </div>
-
-          <div class="qs-card reveal">
-            <h3 data-i18n="quickstart.step2.title">或者直接单行命令安装</h3>
-            <p data-i18n="quickstart.step2.desc">无需手动添加 Tap，Homebrew 会自动抓取对应应用：</p>
-            <div class="qs-code-box">
-              <code>brew tap KevoraLabs/apps</code>
-              <code>brew install --cask key-launch</code>
-              <code>brew install --cask pause-loop</code>
-            </div>
-          </div>
-
-          <div class="qs-card reveal">
-            <h3 data-i18n="quickstart.upgrade.title">如何保持更新？</h3>
-            <p data-i18n="quickstart.upgrade.desc">当有新版本发布时，在终端运行 upgrade 命令即可一键更新：</p>
-            <div class="qs-code-box">
-              <code>brew upgrade --cask key-launch</code>
-              <code>brew upgrade --cask pause-loop</code>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Troubleshoot Section -->
-    <section class="section shell" id="troubleshoot">
-      <div class="troubleshoot-card reveal">
-        <div class="eyebrow" style="color: var(--amber);" data-i18n="troubleshoot.eyebrow">FAQ & Quarantine</div>
-        <h3 data-i18n="troubleshoot.title">首次启动安全提示解决办法</h3>
-        <p data-i18n="troubleshoot.desc">若因 macOS 隔离机制（Quarantine）导致首次打开提示安全阻拦，在终端运行以下命令即可消除标记：</p>
-
-        <div class="quarantine-list">
-          <div class="quarantine-item">
-            <code>xattr -dr com.apple.quarantine /Applications/KeyLaunch.app</code>
-            <button class="copy-mini-btn" data-copy="xattr -dr com.apple.quarantine /Applications/KeyLaunch.app">
-              <span data-i18n="troubleshoot.copy">复制命令</span>
+          <p class="app-description" data-i18n="keylaunch.desc">
+            原生 macOS 键盘启动器。把常用 App 放到你的键盘上，按键即可启动、切换或隐藏，不打断思考思路。
+          </p>
+          <ul class="app-features">
+            <li>⚡ 全局极速按键响应</li>
+            <li>🎯 极简悬浮 HUD UI 视觉设计</li>
+            <li>🍏 纯 Swift &amp; SwiftUI 原生低功耗</li>
+          </ul>
+          <div class="app-actions">
+            <a href="https://kevoralabs.github.io/keylaunch-site/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
+              <span data-i18n="common.visitSite">访问官网 ↗</span>
+            </a>
+            <a href="https://github.com/KevoraLabs/KeyLaunch" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-glass">
+              <span>GitHub</span>
+            </a>
+            <button class="btn btn-sm btn-copy-cmd" data-cmd="brew install --cask KevoraLabs/apps/key-launch">
+              <span>🍺 Brew Install</span>
             </button>
           </div>
-          <div class="quarantine-item">
-            <code>xattr -dr com.apple.quarantine /Applications/PauseLoop.app</code>
-            <button class="copy-mini-btn" data-copy="xattr -dr com.apple.quarantine /Applications/PauseLoop.app">
-              <span data-i18n="troubleshoot.copy">复制命令</span>
+        </article>
+
+        <!-- 2. PauseLoop -->
+        <article class="app-card glass-card" data-category="macos">
+          <div class="app-card-header">
+            <img src="assets/pauseloop-icon.webp" alt="PauseLoop Icon" class="app-icon" loading="lazy" />
+            <div class="app-meta">
+              <div class="app-badge-row">
+                <span class="badge badge-macos">macOS App</span>
+                <span class="badge badge-tech">SwiftUI</span>
+              </div>
+              <h3 class="app-title" data-i18n="pauseloop.name">PauseLoop</h3>
+              <p class="app-tagline">Focus &amp; break timer to prevent eye strain</p>
+            </div>
+          </div>
+          <p class="app-description" data-i18n="pauseloop.desc">
+            原生 macOS 专注与休息计时器。遵循健康的工作节奏，在合适的时刻覆盖全屏平静提示，让眼睛与大脑获得充分放松。
+          </p>
+          <ul class="app-features">
+            <li>👁️ 20-20-20 护眼法则与自定义休息</li>
+            <li>🔔 菜单栏无感倒计时与平稳提示</li>
+            <li>🛡️ 遵循 Apple HIG 视觉设计语言</li>
+          </ul>
+          <div class="app-actions">
+            <a href="https://kevoralabs.github.io/pauseloop-site/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
+              <span data-i18n="common.visitSite">访问官网 ↗</span>
+            </a>
+            <a href="https://github.com/KevoraLabs/PauseLoop" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-glass">
+              <span>GitHub</span>
+            </a>
+            <button class="btn btn-sm btn-copy-cmd" data-cmd="brew install --cask KevoraLabs/apps/pause-loop">
+              <span>🍺 Brew Install</span>
             </button>
+          </div>
+        </article>
+
+        <!-- 3. English CC -->
+        <article class="app-card glass-card" data-category="extension ai-dev">
+          <div class="app-card-header">
+            <img src="assets/englishcc-icon.png" alt="English CC Icon" class="app-icon" loading="lazy" />
+            <div class="app-meta">
+              <div class="app-badge-row">
+                <span class="badge badge-extension">Browser Extension</span>
+                <span class="badge badge-tech">TypeScript / React</span>
+              </div>
+              <h3 class="app-title" data-i18n="englishcc.name">EnglishCC</h3>
+              <p class="app-tagline">YouTube dual subtitles &amp; hover dictionary</p>
+            </div>
+          </div>
+          <p class="app-description" data-i18n="englishcc.desc">
+            专为 YouTube 打造的英语字幕学习扩展。重新渲染沉浸式双语字幕图层、单字悬浮查词与精读高亮。
+          </p>
+          <ul class="app-features">
+            <li>🎬 YouTube 原生双语字幕同步</li>
+            <li>🔍 悬浮实时划词与发音播放</li>
+            <li>📚 单词本无缝收藏与高频词复习</li>
+          </ul>
+          <div class="app-actions">
+            <a href="https://englishcc.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
+              <span>englishcc.com ↗</span>
+            </a>
+            <a href="https://github.com/KevoraLabs/EnglishCC" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-glass">
+              <span>GitHub</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 4. Side Stash -->
+        <article class="app-card glass-card" data-category="extension">
+          <div class="app-card-header">
+            <img src="assets/side-stash-icon.png" alt="Side Stash Icon" class="app-icon" loading="lazy" />
+            <div class="app-meta">
+              <div class="app-badge-row">
+                <span class="badge badge-extension">Browser Extension</span>
+                <span class="badge badge-tech">React / WXT</span>
+              </div>
+              <h3 class="app-title" data-i18n="sidestash.name">Side Stash</h3>
+              <p class="app-tagline">Side panel snippet &amp; bookmark manager</p>
+            </div>
+          </div>
+          <p class="app-description" data-i18n="sidestash.desc">
+            轻量级 Chrome 侧边栏收藏助手。快捷暂存文本片段、链接与图片，支持标签分类与 Markdown 一键导出。
+          </p>
+          <ul class="app-features">
+            <li>📌 深度整合 Chrome Side Panel 原生侧栏</li>
+            <li>⚡ 拖拽或右键快捷暂存文本与链接</li>
+            <li>🔍 全文模糊搜索与自定义 Tag 标签</li>
+          </ul>
+          <div class="app-actions">
+            <a href="https://kevoralabs.github.io/side-stash/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
+              <span data-i18n="common.visitSite">访问官网 ↗</span>
+            </a>
+            <a href="https://github.com/KevoraLabs/side-stash" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-glass">
+              <span>GitHub</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 5. Highlight Share -->
+        <article class="app-card glass-card" data-category="extension">
+          <div class="app-card-header">
+            <img src="assets/highlight-share-icon.png" alt="Highlight Share Icon" class="app-icon" loading="lazy" />
+            <div class="app-meta">
+              <div class="app-badge-row">
+                <span class="badge badge-extension">Browser Extension</span>
+                <span class="badge badge-tech">TypeScript</span>
+              </div>
+              <h3 class="app-title" data-i18n="highlightshare.name">Highlight Share (划词分享)</h3>
+              <p class="app-tagline">Web text highlighter &amp; quote card exporter</p>
+            </div>
+          </div>
+          <p class="app-description" data-i18n="highlightshare.desc">
+            选中任意网页文本，一键生成精致排版的金句或代码分享卡片，快速导出 PNG 图片并分享至社交平台。
+          </p>
+          <ul class="app-features">
+            <li>✨ 网页多色高亮划词标记</li>
+            <li>🎨 多款精美金句排版与背景渐变</li>
+            <li>📸 一键导出高清 PNG 卡片或复制到剪贴板</li>
+          </ul>
+          <div class="app-actions">
+            <a href="https://kevoralabs.github.io/highlight-share-site/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
+              <span data-i18n="common.visitSite">访问官网 ↗</span>
+            </a>
+            <a href="https://github.com/KevoraLabs/highlight-share-site" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-glass">
+              <span>GitHub</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 6. WeChat Multi -->
+        <article class="app-card glass-card" data-category="macos ai-dev">
+          <div class="app-card-header">
+            <img src="assets/wechat-multi-icon.png" alt="WeChat Multi Icon" class="app-icon" loading="lazy" />
+            <div class="app-meta">
+              <div class="app-badge-row">
+                <span class="badge badge-macos">macOS Tool</span>
+                <span class="badge badge-tech">Swift</span>
+              </div>
+              <h3 class="app-title">WeChat Multi <span class="app-title-cn">微信多开</span></h3>
+              <p class="app-tagline">Lightweight macOS WeChat multi-instance launcher</p>
+            </div>
+          </div>
+          <p class="app-description">
+            轻量级 macOS 微信多开分身管理工具。支持独立多账号沙盒启动与菜单栏极速切换。
+          </p>
+          <ul class="app-features">
+            <li>👥 运行多个独立微信会话隔离环境</li>
+            <li>🚀 菜单栏一键快捷启动</li>
+            <li>🔒 独立沙盒配置，零额外内存占用</li>
+          </ul>
+          <div class="app-actions">
+            <a href="https://github.com/KevoraLabs/wechat-multi" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-glass">
+              <span>GitHub 仓库 ↗</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 7. PostBot -->
+        <article class="app-card glass-card" data-category="ai-dev">
+          <div class="app-card-header">
+            <img src="assets/postbot-icon.png" alt="PostBot Icon" class="app-icon" loading="lazy" />
+            <div class="app-meta">
+              <div class="app-badge-row">
+                <span class="badge badge-ai">AI Tool</span>
+                <span class="badge badge-tech">TypeScript / Node</span>
+              </div>
+              <h3 class="app-title">PostBot (内容自动发布)</h3>
+              <p class="app-tagline">Automated social content scheduler &amp; LLM publisher</p>
+            </div>
+          </div>
+          <p class="app-description">
+            基于大语言模型的内容生成与多平台自动分发工具。支持多模型 Pipeline 草稿生成与定时发布。
+          </p>
+          <ul class="app-features">
+            <li>🤖 多 LLM 模型自动生成草稿与润色</li>
+            <li>✍️ Markdown 格式格式化与图片处理</li>
+            <li>⚙️ CLI 与自动化节点运行</li>
+          </ul>
+          <div class="app-actions">
+            <a href="https://github.com/kevinxft/postbot" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-glass">
+              <span>GitHub 仓库 ↗</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 8. MP3 Cutter -->
+        <article class="app-card glass-card" data-category="macos ai-dev">
+          <div class="app-card-header">
+            <img src="assets/mp3-editor-icon.png" alt="MP3 Cutter Icon" class="app-icon" loading="lazy" />
+            <div class="app-meta">
+              <div class="app-badge-row">
+                <span class="badge badge-dev">Audio Tool</span>
+                <span class="badge badge-tech">Swift / AudioKit</span>
+              </div>
+              <h3 class="app-title" data-i18n="mp3ios.name">MP3 剪辑器</h3>
+              <p class="app-tagline">Native audio cutter &amp; voice separator</p>
+            </div>
+          </div>
+          <p class="app-description" data-i18n="mp3ios.desc">
+            原生音频剪辑与处理工具。支持音频精确波形剪切、格式转换、降噪与人声伴奏分离。
+          </p>
+          <ul class="app-features">
+            <li>🎵 高精度毫秒级音频波形剪切</li>
+            <li>🎛️ 音频淡入淡出与格式快速导出</li>
+          </ul>
+          <div class="app-actions">
+            <a href="https://github.com/KevoraLabs" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-glass">
+              <span>GitHub ↗</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 9. Homebrew Tap -->
+        <article class="app-card glass-card" data-category="ai-dev macos">
+          <div class="app-card-header">
+            <div class="app-icon-placeholder brew">
+              🍺
+            </div>
+            <div class="app-meta">
+              <div class="app-badge-row">
+                <span class="badge badge-dev">Dev Tool</span>
+                <span class="badge badge-tech">Homebrew</span>
+              </div>
+              <h3 class="app-title">Homebrew Apps Casks</h3>
+              <p class="app-tagline">Official Homebrew Cask repository for KevoraLabs</p>
+            </div>
+          </div>
+          <p class="app-description">
+            KevoraLabs 官方 Homebrew Cask 软件源，支持通过终端命令行一键安装与更新所有 macOS 应用程序。
+          </p>
+          <ul class="app-features">
+            <li><code>brew tap KevoraLabs/apps</code></li>
+            <li>🔄 自动版本检测与 Developer ID 签名更新</li>
+          </ul>
+          <div class="app-actions">
+            <a href="https://github.com/KevoraLabs/homebrew-apps" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-glass">
+              <span>GitHub Tap ↗</span>
+            </a>
+            <button class="btn btn-sm btn-copy-cmd" data-cmd="brew tap KevoraLabs/apps">
+              <span>📋 复制 Tap 命令</span>
+            </button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- GitHub Repositories Section (Automatically Sync) -->
+    <section id="github-repos" class="repos-section">
+      <div class="section-header">
+        <div>
+          <span class="section-tag" data-i18n="repos.tag">Automated GitHub Sync</span>
+          <h2 class="section-title" data-i18n="repos.title">开源仓库自动同步</h2>
+          <p class="section-subtitle" data-i18n="repos.subtitle">
+            实时拉取并展示 <strong>@kevinxft</strong> 与 <strong>@KevoraLabs</strong> 的最新开源仓库。
+          </p>
+        </div>
+
+        <div class="repo-controls">
+          <div class="search-box">
+            <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="repo-search-input" placeholder="搜索仓库..." />
+          </div>
+          <select id="repo-sort-select" class="select-box">
+            <option value="stars">按 Stars ⭐ 排序</option>
+            <option value="updated">按最近更新排序</option>
+            <option value="name">按仓库名称排序</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Live Repo Grid container -->
+      <div class="repos-grid" id="github-repos-grid">
+        <div class="loading-state">
+          <div class="spinner"></div>
+          <p>正在通过 GitHub API 加载最新仓库...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quickstart & Troubleshooting Section -->
+    <section id="quickstart" class="guide-section">
+      <div class="guide-grid">
+        <div class="guide-card glass-card">
+          <span class="section-tag" data-i18n="quickstart.eyebrow">Quick Start</span>
+          <h3 class="guide-title" data-i18n="quickstart.title">Homebrew 安装指南</h3>
+          <p class="guide-desc" data-i18n="quickstart.desc">macOS 用户可通过以下简单的终端命令完成一键安装：</p>
+          <div class="code-block">
+            <pre><code># 1. 添加 KevoraLabs 软件源
+<span class="cmd">brew tap KevoraLabs/apps</span>
+
+# 2. 安装对应 macOS App
+<span class="cmd">brew install --cask KevoraLabs/apps/key-launch</span>
+<span class="cmd">brew install --cask KevoraLabs/apps/pause-loop</span></code></pre>
+            <button class="btn btn-sm btn-copy-cmd" data-cmd="brew tap KevoraLabs/apps && brew install --cask KevoraLabs/apps/key-launch">
+              <span data-i18n="quickstart.copy">复制一键安装命令</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="guide-card glass-card">
+          <span class="section-tag" data-i18n="troubleshoot.eyebrow">FAQ &amp; Quarantine</span>
+          <h3 class="guide-title" data-i18n="troubleshoot.title">macOS 首次启动提示安全解决</h3>
+          <p class="guide-desc" data-i18n="troubleshoot.desc">因 macOS 隔离机制（Quarantine）导致首次打开提示阻拦时，在终端运行以下命令即可：</p>
+          <div class="code-block">
+            <pre><code><span class="cmd">xattr -dr com.apple.quarantine /Applications/KeyLaunch.app</span>
+<span class="cmd">xattr -dr com.apple.quarantine /Applications/PauseLoop.app</span></code></pre>
+            <button class="btn btn-sm btn-copy-cmd" data-cmd="xattr -dr com.apple.quarantine /Applications/KeyLaunch.app /Applications/PauseLoop.app">
+              <span data-i18n="troubleshoot.copy">复制清除隔离命令</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="contact-card glass-card">
+        <div class="contact-header">
+          <span class="section-tag" data-i18n="contact.tag">Contact</span>
+          <h2 class="contact-title" data-i18n="contact.title">保持沟通与合作探讨</h2>
+          <p class="contact-desc" data-i18n="contact.desc">
+            对于作品有任何反馈、建议或合作意向，随时欢迎与我联系。
+          </p>
+        </div>
+
+        <div class="contact-methods">
+          <div class="contact-item">
+            <span class="contact-label">Direct Email</span>
+            <div class="contact-value-row">
+              <a href="mailto:kevinxft@gmail.com" class="contact-email">kevinxft@gmail.com</a>
+              <button id="copy-email-bottom" class="btn btn-sm btn-primary" data-email="kevinxft@gmail.com">
+                <span data-i18n="common.copyEmail">复制邮箱</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <span class="contact-label">GitHub Profiles</span>
+            <div class="contact-links-row">
+              <a href="https://github.com/kevinxft" target="_blank" rel="noopener noreferrer" class="contact-chip">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                <span>@kevinxft</span>
+              </a>
+              <a href="https://github.com/KevoraLabs" target="_blank" rel="noopener noreferrer" class="contact-chip">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                <span>@KevoraLabs</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="shell footer-inner">
-      <span data-i18n="footer.rights">© 2026 KevoraLabs. 保留所有权利。</span>
-      <div class="footer-links">
-        <a href="https://github.com/KevoraLabs/homebrew-apps" target="_blank" rel="noopener">Homebrew Tap</a>
-        <a href="https://kevoralabs.github.io/keylaunch-site/" target="_blank" rel="noopener">KeyLaunch</a>
-        <a href="https://kevoralabs.github.io/pauseloop-site/" target="_blank" rel="noopener">PauseLoop</a>
-        <a href="https://englishcc.com" target="_blank" rel="noopener">EnglishCC</a>
-        <a href="https://kevoralabs.github.io/highlight-share/" target="_blank" rel="noopener">Highlight Share</a>
-        <a href="https://kevoralabs.github.io/side-stash/" target="_blank" rel="noopener">Side Stash</a>
-      </div>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <p>© <span id="year">2026</span> Kevin / KevoraLabs • Minimal, local-first software.</p>
+      <p class="footer-sub">Built with Swift, TypeScript &amp; Apple HIG Aesthetics.</p>
     </div>
   </footer>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast">
+    <span id="toast-message">Copied to clipboard!</span>
+  </div>
 
   <script src="translations.js"></script>
   <script src="app.js"></script>
