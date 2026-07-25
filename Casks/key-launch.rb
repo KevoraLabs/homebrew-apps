@@ -1,6 +1,6 @@
 cask "key-launch" do
-  version "1.1"
-  sha256 "50675a624bbe11419700351da54020733eed73c8ad03c3a8c2a7c2e938d05887"
+  version "1.3.5"
+  sha256 "c27cdc4f4f8607843d9a7c1485c86b5d0e632c2907b9c60a3324cd177b1390a7"
 
   url "https://github.com/KevoraLabs/homebrew-tap/releases/download/key-launch-v#{version}/key-launch-#{version}.dmg"
   name "KeyLaunch"
