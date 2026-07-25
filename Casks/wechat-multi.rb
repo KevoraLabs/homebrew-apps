@@ -4,8 +4,10 @@ cask "wechat-multi" do
 
   url "https://github.com/KevoraLabs/wechat-multi/releases/download/v#{version}/wechat-multi-#{version}.zip"
   name "WeChatMulti"
-  desc "Launch multiple WeChat instances on macOS"
+  desc "Launch multiple WeChat instances"
   homepage "https://github.com/KevoraLabs/wechat-multi"
+
+  depends_on :macos
 
   app "WeChatMulti.app"
 end
