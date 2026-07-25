@@ -7,6 +7,7 @@ let currentLang = 'zh-Hans';
 let currentTheme = 'paper';
 
 document.addEventListener('DOMContentLoaded', () => {
+  initAvatarLoading();
   initThemeToggle();
   initLanguagePicker();
   initFilterTabs();
@@ -15,6 +16,20 @@ document.addEventListener('DOMContentLoaded', () => {
   initAvatarInteractivity();
   updateCopyrightYear();
 });
+
+// Smooth Fade-In Avatar Reveal
+function initAvatarLoading() {
+  const avatarImgs = document.querySelectorAll('.avatar-image-main, .brand-avatar-img');
+  avatarImgs.forEach(img => {
+    const markLoaded = () => img.classList.add('is-loaded');
+    if (img.complete && img.naturalWidth !== 0) {
+      markLoaded();
+    } else {
+      img.addEventListener('load', markLoaded);
+      img.addEventListener('error', markLoaded);
+    }
+  });
+}
 
 // Theme Switcher (Warm Paper vs Dark Coffee)
 function initThemeToggle() {

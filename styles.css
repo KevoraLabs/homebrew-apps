@@ -181,7 +181,12 @@ html.dark .site-header {
   object-fit: cover;
   border: 2px solid var(--border-ink);
   box-shadow: var(--shadow-craft-sm);
-  transition: transform var(--transition-fast);
+  transition: transform var(--transition-fast), opacity 0.3s ease-out;
+  opacity: 0;
+}
+
+.brand-avatar-img.is-loaded {
+  opacity: 1;
 }
 
 .nav-brand:hover .brand-avatar-img {
@@ -577,6 +582,12 @@ html.dark .site-header {
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.4s ease-out;
+}
+
+.avatar-image-main.is-loaded {
+  opacity: 1;
 }
 
 /* Floating Doodle Badges (Matching Avatar Elements!) */
