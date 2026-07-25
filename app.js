@@ -234,12 +234,11 @@ function initAvatarInteractivity() {
   const layerTop = document.getElementById('avatarLayerB');
   if (!container || !layerBase || !layerTop) return;
 
-  const defaultSrc = 'assets/avatar-random-5.webp';
+  const defaultSrc = 'assets/avatar-default.webp';
   const randomPool = [
     'assets/avatar-random-1.webp',
     'assets/avatar-random-2.webp',
-    'assets/avatar-random-3.webp',
-    'assets/avatar-random-4.webp'
+    'assets/avatar-random-3.webp'
   ];
 
   // 预加载所有 WebP 图片，保证全过程 0 延迟
