@@ -1,6 +1,6 @@
 # Kevin / KevoraLabs — 个人作品与 App 归档清单
 
-本文档归档记录由 Kevin 独立设计与开发的个人软件、应用及扩展作品（仅记录 Kevin 亲自开发的作品，非个人开发的项目不列入列表与展示网站中）。
+本文档归档记录由 Kevin 独立设计与开发的个人软件、应用、小程序及扩展作品。
 
 ---
 
@@ -24,11 +24,24 @@
 
 ---
 
-## 🔴 鸿蒙应用 (HarmonyOS Apps - 来自 harmony-project)
+## 📱 kevin-monorepo 独立开发应用矩阵 (Electron / RN / iOS / 小程序)
+
+| 应用名称 | 平台 / 工程目录 | 描述 |
+| :--- | :--- | :--- |
+| **Music Master 桌面版** | Electron (`apps/electron/Music-Master-Electron`) | 跨平台音乐管理、音效处理与音频播放桌面端应用 |
+| **写歌大师 / 音乐生成器** | React Native App & 微信小程序 (`apps/rn/music-generator-app` & `apps/weapp/music-generator-weapp`) | 基于 AI 的音乐与歌词生成、音轨创作助手 |
+| **记药大师** | React Native App (`apps/rn/jiyao-dashi-app`) | 智能用药提醒、家庭药箱与服药日程管理 App |
+| **MP3 剪辑器** | iOS 原生 App & 微信小程序 (`apps/ios/mp3-editor-ios` & `apps/weapp/mp3-editor-weapp`) | 高精度波形剪辑、格式转换与人声提取工具 |
+| **剪韵音乐剪辑** | 微信小程序 (`apps/weapp/jian-yun-editor-weapp`) | 轻量级微信小程序版音频波形剪切与淡入淡出工具 |
+| **萌图巫师** | 微信小程序 (`apps/weapp/moe-pic-wizard`) | 表情包制作、趣味图片处理与图片合成小程序 |
+
+---
+
+## 🔴 鸿蒙应用 (HarmonyOS Apps - 来自 harmony-project 精选个人原创)
 
 | 应用名称 | 工程目录 | Bundle Name | 核心功能 |
 | :--- | :--- | :--- | :--- |
-| **剪韵音乐剪辑** | `JianYun` | `com.quyingkeji.jymusic` | 高精度音频波形剪切、淡入淡出、音轨合成与格式导出 |
+| **剪韵音乐剪辑** | `JianYun` | `com.quyingkeji.jymusic` | 鸿蒙原生高精度音频波形剪切、淡入淡出、音轨合成与格式导出 |
 | **小夏图片处理** | `ImageCraft` | `com.yinyuejianji.xeimg` | 本地轻量图片滤镜、拼接、压缩与图片处理 |
 | **小夏二维码** | `QrCode` | `com.yinyuejianji.qrcode` | 极简离线二维码/条形码生成与扫码识别 |
 | **光影提词器** | `LightScript` | `com.yinyuejianji.luxscript` | 悬浮提词、台词滚动与视频拍摄辅助工具 |
@@ -37,4 +50,4 @@
 ---
 
 > **更新时间**: 2026-07-25  
-> **原则**: 仅收录 Kevin 独立开发的真实作品。展示网站 (homebrew-apps) 严格按此清单展示。
+> **原则**: `kevin-monorepo` 全为 Kevin 独立开发；`harmony-project` 仅精选 5 款 Kevin 亲自开发的作品。展示网站 (homebrew-apps) 严格按此归档清单展示。
