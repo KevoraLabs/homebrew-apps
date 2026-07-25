@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="KevoraLabs 官方应用与插件仓库。一键安装 KeyLaunch、PauseLoop macOS 应用及 Highlight Share、Side Stash 等浏览器插件。">
+  <meta name="description" content="KevoraLabs 官方应用与插件仓库。一键安装 KeyLaunch、PauseLoop macOS 应用及 EnglishCC、Highlight Share、Side Stash 等浏览器插件。">
   <meta name="theme-color" content="#0b0c10">
   <meta property="og:title" content="KevoraLabs — 原生 macOS 应用与浏览器插件精选集">
   <meta property="og:description" content="专为 Mac 与浏览器打造的高效利器集。通过 Homebrew Cask 与 Chrome 商店轻松安装与升级。">
@@ -72,7 +72,7 @@
             <span class="stat-label" data-i18n="stats.apps">macOS 原生应用</span>
           </div>
           <div class="stat-item">
-            <span class="stat-num">2</span>
+            <span class="stat-num">3</span>
             <span class="stat-label" data-i18n="stats.extensions">浏览器高效插件</span>
           </div>
           <div class="stat-item">
@@ -161,6 +161,33 @@
       </div>
 
       <div class="apps-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+        <!-- EnglishCC Card -->
+        <article class="app-card reveal">
+          <div class="app-top">
+            <div class="app-header">
+              <img class="app-icon" src="assets/englishcc-icon.png" alt="EnglishCC Icon">
+              <span class="app-badge" data-i18n="englishcc.badge">YouTube 英语字幕增强</span>
+            </div>
+            <h3 class="app-title" data-i18n="englishcc.name">EnglishCC</h3>
+            <p class="app-desc" data-i18n="englishcc.desc">专为 YouTube 打造的英语字幕学习扩展。重新渲染沉浸式双语字幕图层、单字查词与精读高亮，提升看视频学英语体验。</p>
+            <div class="app-meta">
+              <span>YouTube Subtitles</span>
+              <span>Learning Extension</span>
+            </div>
+          </div>
+          <div class="app-bottom">
+            <div class="app-links">
+              <a href="https://chromewebstore.google.com/detail/englishcc/iimpbffhdjodajgccmlmdblnbjhkfpnc" target="_blank" rel="noopener">
+                <span data-i18n="englishcc.store">Chrome 商店</span> ↗
+              </a>
+              <span style="color: rgba(255,255,255,0.2);">|</span>
+              <a href="https://englishcc.com" target="_blank" rel="noopener">
+                <span data-i18n="englishcc.site">官网</span> →
+              </a>
+            </div>
+          </div>
+        </article>
+
         <!-- Highlight Share Card -->
         <article class="app-card reveal">
           <div class="app-top">
@@ -241,6 +268,7 @@
             <div class="qs-code-box">
               <code>brew tap KevoraLabs/apps</code>
               <code>brew install --cask key-launch</code>
+              <code>brew install --cask pause-loop</code>
             </div>
           </div>
 
@@ -288,6 +316,7 @@
         <a href="https://github.com/KevoraLabs/homebrew-apps" target="_blank" rel="noopener">Homebrew Tap</a>
         <a href="https://kevoralabs.github.io/keylaunch-site/" target="_blank" rel="noopener">KeyLaunch</a>
         <a href="https://kevoralabs.github.io/pauseloop-site/" target="_blank" rel="noopener">PauseLoop</a>
+        <a href="https://englishcc.com" target="_blank" rel="noopener">EnglishCC</a>
         <a href="https://kevoralabs.github.io/highlight-share/" target="_blank" rel="noopener">Highlight Share</a>
         <a href="https://github.com/KevoraLabs/side-stash" target="_blank" rel="noopener">Side Stash</a>
       </div>
