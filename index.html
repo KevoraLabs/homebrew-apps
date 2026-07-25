@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title data-i18n="meta.title">Kevin / KevoraLabs — 我的作品 | macOS App、插件、小程序与鸿蒙应用</title>
-  <meta name="description" content="Kevin / KevoraLabs 个人作品展示，包含 macOS 原生 App、浏览器插件、小程序与鸿蒙应用。" />
+  <title data-i18n="meta.title">Kevin / KevoraLabs — 我的作品 | macOS & iOS App、浏览器插件、小程序、鸿蒙与 Electron</title>
+  <meta name="description" content="Kevin / KevoraLabs 个人作品展示，包含 macOS & iOS 原生应用、浏览器插件、微信小程序、鸿蒙应用与 Electron 桌面端。" />
   <meta name="theme-color" content="#FAF5EC" />
   
   <link rel="icon" type="image/png" href="assets/avatar.png" />
@@ -83,7 +83,7 @@
         </h1>
 
         <p class="hero-bio" data-i18n="hero.subtitle">
-          macOS App、浏览器插件、小程序与鸿蒙应用。
+          什么都会写一点：从 macOS/iOS 原生、浏览器扩展、小程序，一直折腾到鸿蒙和 Electron。
         </p>
 
         <!-- Homebrew Terminal Bar -->
@@ -168,7 +168,7 @@
         <span class="section-tag" data-i18n="apps.eyebrow">App Showcase</span>
         <h2 class="section-title" data-i18n="apps.title">我的作品</h2>
         <p class="section-subtitle" data-i18n="apps.subtitle">
-          涵盖 macOS 原生应用、Chrome 扩展、小程序与 HarmonyOS 鸿蒙应用。
+          涵盖 macOS &amp; iOS 原生应用、浏览器插件、微信小程序、鸿蒙应用与 Electron 桌面端。
         </p>
       </div>
 
@@ -179,16 +179,22 @@
             <span data-i18n="tabs.all">✨ 全部作品</span>
           </button>
           <button class="filter-tab" data-category="macos">
-            <span data-i18n="tabs.macos">🍎 macOS 原生应用</span>
+            <span data-i18n="tabs.macos">🍎 macOS 原生</span>
+          </button>
+          <button class="filter-tab" data-category="ios">
+            <span data-i18n="tabs.ios">📱 iOS 应用</span>
           </button>
           <button class="filter-tab" data-category="extension">
-            <span data-i18n="tabs.extensions">🌐 浏览器插件</span>
+            <span data-i18n="tabs.extension">🌐 浏览器插件</span>
           </button>
-          <button class="filter-tab" data-category="monorepo">
-            <span data-i18n="tabs.monorepo">⚡ 小程序</span>
+          <button class="filter-tab" data-category="mini">
+            <span data-i18n="tabs.mini">⚡ 微信小程序</span>
           </button>
           <button class="filter-tab" data-category="harmony">
-            <span data-i18n="tabs.harmony">🔴 鸿蒙 HarmonyOS 应用</span>
+            <span data-i18n="tabs.harmony">🔴 鸿蒙</span>
+          </button>
+          <button class="filter-tab" data-category="electron">
+            <span data-i18n="tabs.electron">💻 Electron 桌面端</span>
           </button>
         </div>
       </div>
@@ -342,82 +348,34 @@
         </article>
 
         <!-- 6. 音乐剪辑桌面版 (kevin-monorepo) -->
-        <article class="app-card" data-category="monorepo">
+        <article class="app-card" data-category="electron">
           <div class="app-card-header">
             <img src="assets/music-master-electron-icon.png" alt="Music Master Icon" class="app-icon" loading="lazy" />
             <div class="app-meta">
               <div class="app-badge-row">
-                <span class="badge badge-dev">Electron</span>
-                <span class="badge badge-tech">TypeScript</span>
+                <span class="badge badge-dev">Cross-Platform</span>
+                <span class="badge badge-tech">Electron / TS</span>
               </div>
               <h3 class="app-title" data-i18n="musicmaster.name">音乐剪辑桌面版</h3>
-              <p class="app-tagline">Desktop audio editing &amp; multi-track processing tool</p>
+              <p class="app-tagline">Cross-platform desktop audio editing &amp; multi-track processing tool</p>
             </div>
           </div>
           <p class="app-description" data-i18n="musicmaster.desc">
-            桌面级音乐剪辑、音频多轨处理与格式导出工具 (Electron)。
+            跨平台桌面级音乐剪辑、音频多轨处理与格式导出工具 (Electron)。
           </p>
           <ul class="app-features">
             <li>🎵 桌面端波形精确切割与音效处理</li>
             <li>🎛️ 多音轨合成与高音质音频导出</li>
           </ul>
           <div class="app-actions">
-            <span class="focus-chip">Desktop App</span>
+            <a href="https://yinyuejianji.com/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
+              <span data-i18n="common.visitSite">访问官网 ↗</span>
+            </a>
           </div>
         </article>
 
-        <!-- 7. 纪要大师 (kevin-monorepo) -->
-        <article class="app-card" data-category="monorepo">
-          <div class="app-card-header">
-            <img src="assets/jiyao-dashi-icon.png" alt="纪要大师图标" class="app-icon" loading="lazy" />
-            <div class="app-meta">
-              <div class="app-badge-row">
-                <span class="badge badge-dev">React Native</span>
-                <span class="badge badge-tech">TypeScript</span>
-              </div>
-              <h3 class="app-title" data-i18n="jiyaodashi.name">纪要大师</h3>
-              <p class="app-tagline">Voice notes, meeting transcript &amp; AI summary</p>
-            </div>
-          </div>
-          <p class="app-description" data-i18n="jiyaodashi.desc">
-            语音纪要、会议记录与 AI 内容整理 App (React Native)。
-          </p>
-          <ul class="app-features">
-            <li>🎙️ 实时语音听写与高准确度转文字</li>
-            <li>🤖 AI 智能提炼会议纪要与待办事项</li>
-          </ul>
-          <div class="app-actions">
-            <span class="focus-chip">Mobile App</span>
-          </div>
-        </article>
-
-        <!-- 8. 写歌大师 / 音乐生成器 (kevin-monorepo) -->
-        <article class="app-card" data-category="monorepo">
-          <div class="app-card-header">
-            <img src="assets/music-generator-icon.png" alt="Music Generator Icon" class="app-icon" loading="lazy" />
-            <div class="app-meta">
-              <div class="app-badge-row">
-                <span class="badge badge-ai">AI App</span>
-                <span class="badge badge-tech">RN &amp; WeApp</span>
-              </div>
-              <h3 class="app-title" data-i18n="musicgen.name">写歌大师 / 音乐生成器</h3>
-              <p class="app-tagline">AI music &amp; lyric generation suite</p>
-            </div>
-          </div>
-          <p class="app-description" data-i18n="musicgen.desc">
-            基于 AI 的音乐与歌词生成、音轨创作助手 (RN App &amp; 小程序)。
-          </p>
-          <ul class="app-features">
-            <li>🎼 一键生成作词、编曲与灵感片段</li>
-            <li>📱 支持移动 App 与微信小程序多端同构</li>
-          </ul>
-          <div class="app-actions">
-            <span class="focus-chip">Cross-Platform App</span>
-          </div>
-        </article>
-
-        <!-- 10. MP3 剪辑器 (kevin-monorepo) -->
-        <article class="app-card" data-category="monorepo">
+        <!-- 7. MP3 剪辑器 (kevin-monorepo) -->
+        <article class="app-card" data-category="ios mini">
           <div class="app-card-header">
             <img src="assets/mp3-editor-icon.png" alt="MP3 Cutter Icon" class="app-icon" loading="lazy" />
             <div class="app-meta">
@@ -438,6 +396,56 @@
           </ul>
           <div class="app-actions">
             <span class="focus-chip">iOS &amp; WeApp</span>
+          </div>
+        </article>
+
+        <!-- 8. 写歌大师 (kevin-monorepo) -->
+        <article class="app-card" data-category="ios">
+          <div class="app-card-header">
+            <img src="assets/music-generator-icon.png" alt="Music Generator Icon" class="app-icon" loading="lazy" />
+            <div class="app-meta">
+              <div class="app-badge-row">
+                <span class="badge badge-dev">React Native</span>
+                <span class="badge badge-tech">TypeScript</span>
+              </div>
+              <h3 class="app-title" data-i18n="musicgen.name">写歌大师</h3>
+              <p class="app-tagline">AI music &amp; lyric generation suite</p>
+            </div>
+          </div>
+          <p class="app-description" data-i18n="musicgen.desc">
+            基于 AI 的音乐与歌词生成、音轨创作助手 (React Native)。
+          </p>
+          <ul class="app-features">
+            <li>🎼 一键生成作词、编曲与灵感片段</li>
+            <li>🤖 AI 智能语音与词曲合拍处理</li>
+          </ul>
+          <div class="app-actions">
+            <span class="focus-chip">Mobile App</span>
+          </div>
+        </article>
+
+        <!-- 9. 纪要大师 (kevin-monorepo) -->
+        <article class="app-card" data-category="ios">
+          <div class="app-card-header">
+            <img src="assets/jiyao-dashi-icon.png" alt="纪要大师图标" class="app-icon" loading="lazy" />
+            <div class="app-meta">
+              <div class="app-badge-row">
+                <span class="badge badge-dev">React Native</span>
+                <span class="badge badge-tech">TypeScript</span>
+              </div>
+              <h3 class="app-title" data-i18n="jiyaodashi.name">纪要大师</h3>
+              <p class="app-tagline">Voice notes, meeting transcript &amp; AI summary</p>
+            </div>
+          </div>
+          <p class="app-description" data-i18n="jiyaodashi.desc">
+            语音纪要、会议记录与 AI 内容整理 App (React Native)。
+          </p>
+          <ul class="app-features">
+            <li>🎙️ 实时语音听写与高准确度转文字</li>
+            <li>🤖 AI 智能提炼会议纪要与待办事项</li>
+          </ul>
+          <div class="app-actions">
+            <span class="focus-chip">Mobile App</span>
           </div>
         </article>
 

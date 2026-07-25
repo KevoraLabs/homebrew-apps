@@ -775,40 +775,42 @@ html.dark .site-header {
   display: flex;
   justify-content: center;
   margin-bottom: 36px;
+  padding: 0 16px;
 }
 
 .filter-tabs {
   display: flex;
   gap: 10px;
-  background-color: var(--bg-card);
-  border: 2px solid var(--border-ink);
-  padding: 6px;
-  border-radius: var(--radius-full);
-  box-shadow: var(--shadow-craft-sm);
   flex-wrap: wrap;
   justify-content: center;
+  max-width: 100%;
 }
 
 .filter-tab {
-  background: none;
-  border: none;
-  padding: 8px 20px;
+  background-color: var(--bg-card);
+  border: 2px solid var(--border-ink);
+  padding: 8px 18px;
   font-family: var(--font-sans);
   font-weight: 700;
   font-size: 0.9rem;
   color: var(--text-secondary);
   border-radius: var(--radius-full);
+  box-shadow: var(--shadow-craft-sm);
   cursor: pointer;
   transition: all var(--transition-fast);
+  white-space: nowrap;
 }
 
 .filter-tab:hover {
   color: var(--text-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-craft);
 }
 
 .filter-tab.active {
   background-color: var(--accent-primary);
   color: #FFFFFF;
+  border-color: var(--border-ink);
   box-shadow: var(--shadow-craft-sm);
 }
 
@@ -1250,28 +1252,22 @@ html.theme-dark .badge-dev { background-color: #3D2612; color: #FFB74D; }
   }
 
   .filter-bar {
-    justify-content: flex-start;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 8px;
+    justify-content: center;
+    overflow-x: visible;
+    padding: 0 10px;
     width: 100%;
-    scrollbar-width: none;
-  }
-
-  .filter-bar::-webkit-scrollbar {
-    display: none;
   }
 
   .filter-tabs {
-    flex-wrap: nowrap;
-    min-width: max-content;
-    padding: 4px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 6px;
+    width: 100%;
   }
 
   .filter-tab {
-    padding: 7px 16px;
-    font-size: 0.85rem;
-    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 0.82rem;
   }
 
   .apps-grid {

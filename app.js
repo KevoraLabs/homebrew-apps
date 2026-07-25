@@ -128,8 +128,10 @@ function initFilterTabs() {
       const category = tab.dataset.category;
 
       cards.forEach(card => {
+        const selectedCategories = category.split(' ');
         const cardCategories = card.dataset.category ? card.dataset.category.split(' ') : [];
-        if (category === 'all' || cardCategories.includes(category)) {
+        const isMatch = category === 'all' || selectedCategories.some(cat => cardCategories.includes(cat));
+        if (isMatch) {
           card.classList.remove('hidden');
           card.style.animation = 'fadeInUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards';
         } else {
@@ -247,7 +249,7 @@ function initEmojiCycler() {
   const emojiEl = document.getElementById('coffeeEmoji');
   if (!emojiEl) return;
 
-  const emojis = ['☕', '💻', '⚡️', '🚀', '💡', '🎨', '🍵', '🔥'];
+  const emojis = ['☕', '💻', '🤡', '🐛', '🚀', '⚡️', '🤯', '🔥', '🍵'];
   let index = 0;
 
   setInterval(() => {
