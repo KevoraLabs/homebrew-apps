@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="styles.css?v=8" />
+  <link rel="stylesheet" href="styles.css?v=9" />
 </head>
 <body>
 
@@ -364,7 +364,7 @@
           </div>
         </article>
 
-        <!-- 7. Music Master 桌面版 (kevin-monorepo) -->
+        <!-- 7. Music Master (音乐剪辑桌面版) (kevin-monorepo) -->
         <article class="app-card" data-category="monorepo">
           <div class="app-card-header">
             <img src="assets/music-master-electron-icon.png" alt="Music Master Icon" class="app-icon" loading="lazy" />
@@ -373,23 +373,48 @@
                 <span class="badge badge-dev">Electron</span>
                 <span class="badge badge-tech">TypeScript</span>
               </div>
-              <h3 class="app-title" data-i18n="musicmaster.name">Music Master 桌面版</h3>
-              <p class="app-tagline">Cross-platform desktop audio player &amp; manager</p>
+              <h3 class="app-title" data-i18n="musicmaster.name">Music Master (音乐剪辑桌面版)</h3>
+              <p class="app-tagline">Desktop audio editing &amp; multi-track processing tool</p>
             </div>
           </div>
           <p class="app-description" data-i18n="musicmaster.desc">
-            跨平台 Electron 桌面级音频管理、音效处理与音乐播放器。
+            桌面级音乐剪辑、音频多轨处理与格式导出工具 (Electron)。
           </p>
           <ul class="app-features">
-            <li>🎵 本地音频库智能检索与专辑管理</li>
-            <li>🎛️ 实时均衡器与高质音频播放引擎</li>
+            <li>🎵 桌面端波形精确切割与音效处理</li>
+            <li>🎛️ 多音轨合成与高音质音频导出</li>
           </ul>
           <div class="app-actions">
             <span class="focus-chip">Desktop App</span>
           </div>
         </article>
 
-        <!-- 8. 写歌大师 / 音乐生成器 (kevin-monorepo) -->
+        <!-- 8. 纪要大师 (kevin-monorepo) -->
+        <article class="app-card" data-category="monorepo">
+          <div class="app-card-header">
+            <div class="app-icon-placeholder">📝</div>
+            <div class="app-meta">
+              <div class="app-badge-row">
+                <span class="badge badge-dev">React Native</span>
+                <span class="badge badge-tech">TypeScript</span>
+              </div>
+              <h3 class="app-title" data-i18n="jiyaodashi.name">纪要大师</h3>
+              <p class="app-tagline">Voice notes, meeting transcript &amp; AI summary</p>
+            </div>
+          </div>
+          <p class="app-description" data-i18n="jiyaodashi.desc">
+            语音纪要、会议记录与 AI 内容整理 App (React Native)。
+          </p>
+          <ul class="app-features">
+            <li>🎙️ 实时语音听写与高准确度转文字</li>
+            <li>🤖 AI 智能提炼会议纪要与待办事项</li>
+          </ul>
+          <div class="app-actions">
+            <span class="focus-chip">Mobile App</span>
+          </div>
+        </article>
+
+        <!-- 9. 写歌大师 / 音乐生成器 (kevin-monorepo) -->
         <article class="app-card" data-category="monorepo">
           <div class="app-card-header">
             <img src="assets/music-generator-icon.png" alt="Music Generator Icon" class="app-icon" loading="lazy" />
@@ -411,31 +436,6 @@
           </ul>
           <div class="app-actions">
             <span class="focus-chip">Cross-Platform App</span>
-          </div>
-        </article>
-
-        <!-- 9. 记药大师 (kevin-monorepo) -->
-        <article class="app-card" data-category="monorepo">
-          <div class="app-card-header">
-            <div class="app-icon-placeholder">💊</div>
-            <div class="app-meta">
-              <div class="app-badge-row">
-                <span class="badge badge-dev">React Native</span>
-                <span class="badge badge-tech">TypeScript</span>
-              </div>
-              <h3 class="app-title" data-i18n="jiyaodashi.name">记药大师</h3>
-              <p class="app-tagline">Medication reminder &amp; family health manager</p>
-            </div>
-          </div>
-          <p class="app-description" data-i18n="jiyaodashi.desc">
-            智能用药提醒、家庭药箱与服药日程管理 App (React Native)。
-          </p>
-          <ul class="app-features">
-            <li>⏰ 准时服药提醒与用药记录打卡</li>
-            <li>📦 家庭药箱库存与过期预警管理</li>
-          </ul>
-          <div class="app-actions">
-            <span class="focus-chip">Mobile App</span>
           </div>
         </article>
 
@@ -464,32 +464,7 @@
           </div>
         </article>
 
-        <!-- 11. 萌图巫师 (kevin-monorepo) -->
-        <article class="app-card" data-category="monorepo">
-          <div class="app-card-header">
-            <img src="assets/jian-yun-editor-icon.png" alt="MoePic Wizard Icon" class="app-icon" loading="lazy" />
-            <div class="app-meta">
-              <div class="app-badge-row">
-                <span class="badge badge-dev">WeApp</span>
-                <span class="badge badge-tech">Taro / Vue</span>
-              </div>
-              <h3 class="app-title" data-i18n="moepic.name">萌图巫师</h3>
-              <p class="app-tagline">Meme sticker maker &amp; photo wizard</p>
-            </div>
-          </div>
-          <p class="app-description" data-i18n="moepic.desc">
-            表情包制作、趣味图片处理与图片合成小程序。
-          </p>
-          <ul class="app-features">
-            <li>🎨 表情包快速加字与趣味抠图</li>
-            <li>⚡ 快速导出与微信聊天无缝发送</li>
-          </ul>
-          <div class="app-actions">
-            <span class="focus-chip">WeChat Mini-App</span>
-          </div>
-        </article>
-
-        <!-- 12. 剪韵音乐剪辑 (JianYun) -->
+        <!-- 11. 剪韵音乐剪辑 (JianYun) -->
         <article class="app-card" data-category="harmony">
           <div class="app-card-header">
             <div class="app-icon-placeholder">🎵</div>
@@ -514,7 +489,7 @@
           </div>
         </article>
 
-        <!-- 13. 小夏图片处理 (ImageCraft) -->
+        <!-- 12. 小夏图片处理 (ImageCraft) -->
         <article class="app-card" data-category="harmony">
           <div class="app-card-header">
             <div class="app-icon-placeholder">🖼️</div>
@@ -539,7 +514,7 @@
           </div>
         </article>
 
-        <!-- 14. 小夏二维码 (QrCode) -->
+        <!-- 13. 小夏二维码 (QrCode) -->
         <article class="app-card" data-category="harmony">
           <div class="app-card-header">
             <div class="app-icon-placeholder">🏁</div>
@@ -564,7 +539,7 @@
           </div>
         </article>
 
-        <!-- 15. 光影提词器 (LightScript) -->
+        <!-- 14. 光影提词器 (LightScript) -->
         <article class="app-card" data-category="harmony">
           <div class="app-card-header">
             <div class="app-icon-placeholder">🎬</div>
@@ -589,7 +564,7 @@
           </div>
         </article>
 
-        <!-- 16. 家庭库存 (home-inventory) -->
+        <!-- 15. 家庭库存 (home-inventory) -->
         <article class="app-card" data-category="harmony">
           <div class="app-card-header">
             <div class="app-icon-placeholder">📦</div>

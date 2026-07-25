@@ -28,12 +28,11 @@
 
 | 应用名称 | 平台 / 工程目录 | 描述 |
 | :--- | :--- | :--- |
-| **Music Master 桌面版** | Electron (`apps/electron/Music-Master-Electron`) | 跨平台音乐管理、音效处理与音频播放桌面端应用 |
+| **Music Master 桌面版 (音乐剪辑)** | Electron (`apps/electron/Music-Master-Electron`) | 桌面级音乐剪辑、音频多轨处理与格式导出工具 |
+| **纪要大师** | React Native App (`apps/rn/jiyao-dashi-app`) | 语音纪要、会议记录与 AI 内容整理 App |
 | **写歌大师 / 音乐生成器** | React Native App & 微信小程序 (`apps/rn/music-generator-app` & `apps/weapp/music-generator-weapp`) | 基于 AI 的音乐与歌词生成、音轨创作助手 |
-| **记药大师** | React Native App (`apps/rn/jiyao-dashi-app`) | 智能用药提醒、家庭药箱与服药日程管理 App |
 | **MP3 剪辑器** | iOS 原生 App & 微信小程序 (`apps/ios/mp3-editor-ios` & `apps/weapp/mp3-editor-weapp`) | 高精度波形剪辑、格式转换与人声提取工具 |
 | **剪韵音乐剪辑** | 微信小程序 (`apps/weapp/jian-yun-editor-weapp`) | 轻量级微信小程序版音频波形剪切与淡入淡出工具 |
-| **萌图巫师** | 微信小程序 (`apps/weapp/moe-pic-wizard`) | 表情包制作、趣味图片处理与图片合成小程序 |
 
 ---
 
@@ -50,4 +49,4 @@
 ---
 
 > **更新时间**: 2026-07-25  
-> **原则**: `kevin-monorepo` 全为 Kevin 独立开发；`harmony-project` 仅精选 5 款 Kevin 亲自开发的作品。展示网站 (homebrew-apps) 严格按此归档清单展示。
+> **原则**: 修正 `jiyao-dashi-app` 为纪要大师；修正 `Music Master` 为桌面音乐剪辑；移除已停止维护的萌图神器。
