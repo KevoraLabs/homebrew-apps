@@ -849,6 +849,11 @@ html.dark .site-header {
   flex-shrink: 0;
 }
 
+.app-icon-image {
+  object-fit: cover;
+  padding: 0;
+}
+
 .app-meta {
   flex-grow: 1;
 }
