@@ -62,12 +62,12 @@ function applyTheme(theme) {
   if (theme === 'dark') {
     html.classList.remove('theme-paper');
     html.classList.add('theme-dark', 'dark');
-    if (themeText) themeText.textContent = window.siteTranslations[currentLang]?.["theme.toggleDark"] || "🌙 深夜咖啡";
+    if (themeText) themeText.textContent = window.siteTranslations[currentLang]?.["theme.toggleDark"] || "深夜咖啡";
     if (themeIcon) themeIcon.textContent = "🌙";
   } else {
     html.classList.remove('theme-dark', 'dark');
     html.classList.add('theme-paper');
-    if (themeText) themeText.textContent = window.siteTranslations[currentLang]?.["theme.togglePaper"] || "☀️ 浅色模式";
+    if (themeText) themeText.textContent = window.siteTranslations[currentLang]?.["theme.togglePaper"] || "浅色模式";
     if (themeIcon) themeIcon.textContent = "☀️";
   }
 }
