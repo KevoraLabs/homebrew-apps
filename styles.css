@@ -646,6 +646,10 @@ button, select { font: inherit; }
   color: var(--ink);
 }
 
+.visually-hidden {
+  display: none !important;
+}
+
 /* Scroll reveal */
 .reveal {
   opacity: 0;
