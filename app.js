@@ -51,7 +51,7 @@ function applyTheme(theme) {
   } else {
     html.classList.remove('theme-dark', 'dark');
     html.classList.add('theme-paper');
-    if (themeText) themeText.textContent = window.siteTranslations[currentLang]?.["theme.togglePaper"] || "☀️ 纸张手绘";
+    if (themeText) themeText.textContent = window.siteTranslations[currentLang]?.["theme.togglePaper"] || "☀️ 浅色模式";
     if (themeIcon) themeIcon.textContent = "☀️";
   }
 }
