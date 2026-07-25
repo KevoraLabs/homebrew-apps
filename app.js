@@ -216,12 +216,73 @@ function initScrollSpy() {
   });
 }
 
-// Interactive 3D tilt effect on avatar illustration frame
+// Interactive 3D tilt effect & Random Avatar Swap on Hover
+// Interactive 3D tilt & Universal Auto-Random Avatar Carousel
 function initAvatarInteractivity() {
   const container = document.querySelector('.hero-avatar-frame');
-  if (!container) return;
+  const layerBase = document.getElementById('avatarLayerA');
+  const layerTop = document.getElementById('avatarLayerB');
+  if (!container || !layerBase || !layerTop) return;
 
+  const defaultSrc = 'assets/avatar.webp';
+  const hoverAvatars = [
+    'assets/avatar-random-1.webp',
+    'assets/avatar-random-2.webp',
+    'assets/avatar-random-3.webp',
+    'assets/avatar-random-4.webp'
+  ];
+
+  // 全套 5 张图片集合
+  const allAvatars = [defaultSrc, ...hoverAvatars];
+
+  // 预加载所有 WebP 图片，保证全过程 0 延迟
+  allAvatars.forEach(src => {
+    const img = new Image();
+    img.src = src;
+  });
+
+  let currentSrc = defaultSrc;
+  let lastRandomIndex = 0;
+  let fadeTimeout = null;
+
+  // 核心：无 Dip、无亮暗闪烁的单向覆盖淡入算法 (Non-dip Overlap Fade)
+  const fadeToAvatarSrc = (nextSrc) => {
+    if (nextSrc === currentSrc) return;
+    currentSrc = nextSrc;
+
+    if (fadeTimeout) clearTimeout(fadeTimeout);
+
+    // 1. 设置顶层图 src
+    layerTop.src = nextSrc;
+
+    // 2. 触发顶层图渐现 (0 -> 1)，底层 100% 不透明稳托背景
+    requestAnimationFrame(() => {
+      layerTop.classList.add('is-fading');
+    });
+
+    // 3. 0.6 秒淡入完成后，将底层图 src 同步为 nextSrc，平滑复位顶层图
+    fadeTimeout = setTimeout(() => {
+      layerBase.src = nextSrc;
+      layerTop.classList.remove('is-fading');
+    }, 620);
+  };
+
+  // 全平台统一自动随机淡入淡出轮播（间隔 3.3 秒）
+  setInterval(() => {
+    let randomIndex;
+    do {
+      randomIndex = Math.floor(Math.random() * allAvatars.length);
+    } while (allAvatars.length > 1 && randomIndex === lastRandomIndex);
+
+    lastRandomIndex = randomIndex;
+    fadeToAvatarSrc(allAvatars[randomIndex]);
+  }, 3300);
+
+  // 桌面端 3D 视差倾斜手感
   container.addEventListener('mousemove', (e) => {
+    const isMobileDevice = window.innerWidth <= 768 || window.matchMedia('(pointer: coarse)').matches;
+    if (isMobileDevice) return;
+
     const rect = container.getBoundingClientRect();
     const x = e.clientX - rect.left - rect.width / 2;
     const y = e.clientY - rect.top - rect.height / 2;
@@ -244,20 +305,48 @@ function updateCopyrightYear() {
   }
 }
 
-// Interactive Emoji Cycler Animation for Hero Coffee Badge
+// Interactive Vector Icon & Dynamic Color Cycler Animation
 function initEmojiCycler() {
   const emojiEl = document.getElementById('coffeeEmoji');
-  if (!emojiEl) return;
+  const badgeContainer = document.querySelector('.doodle-coffee');
+  if (!emojiEl || !badgeContainer) return;
 
-  const emojis = ['☕', '💻', '🤡', '🐛', '🚀', '⚡️', '🤯', '🔥', '🍵'];
+  const items = [
+    {
+      bg: '#FF6B4A', // 落日暖橙 (Coffee)
+      icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 4 0 1 1 0 8h-1"></path><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="2" x2="6" y2="4"></line><line x1="10" y1="2" x2="10" y2="4"></line><line x1="14" y1="2" x2="14" y2="4"></line></svg>`
+    },
+    {
+      bg: '#2563EB', // 极客深蓝 (Mac Laptop)
+      icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="2" y1="20" x2="22" y2="20"></line></svg>`
+    },
+    {
+      bg: '#D97706', // 活力琥珀金 (Rocket)
+      icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.71 1.26-1.55 1.5-2.5A13.48 13.48 0 0 1 3 11.25c.95.24 1.79.79 2.5 1.5z"></path><path d="M12 15l-3-3 8.5-8.5a2.12 2.12 0 0 1 3 3L12 15z"></path></svg>`
+    },
+    {
+      bg: '#10B981', // 薄荷翡翠绿 (Lightning)
+      icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>`
+    },
+    {
+      bg: '#E11D48', // 樱桃玫红 (Sparkles)
+      icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>`
+    },
+    {
+      bg: '#7C3AED', // 沉静电光紫 (Headphones)
+      icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2z"></path><path d="M18 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-3a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2z"></path><path d="M2 14v-3a10 10 0 0 1 20 0v3"></path></svg>`
+    }
+  ];
+
   let index = 0;
 
   setInterval(() => {
     emojiEl.classList.add('switching');
     setTimeout(() => {
-      index = (index + 1) % emojis.length;
-      emojiEl.textContent = emojis[index];
+      index = (index + 1) % items.length;
+      badgeContainer.style.backgroundColor = items[index].bg;
+      emojiEl.innerHTML = items[index].icon;
       emojiEl.classList.remove('switching');
     }, 220);
-  }, 2400);
+  }, 2600);
 }

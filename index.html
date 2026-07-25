@@ -128,10 +128,9 @@
       <!-- Hero Right Column: Avatar Illustration Showcase -->
       <div class="hero-avatar-wrapper">
         <div class="hero-avatar-frame">
-          <picture style="width:100%; height:100%; display:block; border-radius:50%;">
-            <source srcset="assets/avatar.webp" type="image/webp">
-            <img src="assets/avatar.png" alt="Kevin Hand-Drawn Indie Dev Avatar" class="avatar-image-main" width="320" height="320" decoding="async" onload="this.classList.add('is-loaded')" />
-          </picture>
+          <!-- Non-dip Top Layer Overlap Fade Stack -->
+          <img id="avatarLayerA" src="assets/avatar.webp" alt="Kevin Hand-Drawn Indie Dev Avatar Base" class="avatar-image-main avatar-layer-base" width="320" height="320" decoding="async" />
+          <img id="avatarLayerB" src="assets/avatar.webp" alt="Kevin Hand-Drawn Indie Dev Avatar Top" class="avatar-image-main avatar-layer-top" width="320" height="320" decoding="async" />
 
           <!-- Floating Doodle Badges -->
           <div class="floating-doodle doodle-speech">
@@ -139,7 +138,7 @@
           </div>
 
           <div class="floating-doodle doodle-terminal">
-            <span>&gt;_ dev</span>
+            <span>&gt;_ kevin</span>
           </div>
 
           <div class="floating-doodle doodle-todo">
@@ -155,8 +154,10 @@
             <span>10101 01010</span>
           </div>
 
-          <div class="floating-doodle doodle-coffee" title="Building software with coffee & passion">
-            <span class="emoji-cycle" id="coffeeEmoji">☕</span>
+          <div class="floating-doodle doodle-coffee" title="Building software with passion & craft">
+            <span class="emoji-cycle" id="coffeeEmoji">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 4 0 1 1 0 8h-1"></path><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="2" x2="6" y2="4"></line><line x1="10" y1="2" x2="10" y2="4"></line><line x1="14" y1="2" x2="14" y2="4"></line></svg>
+            </span>
           </div>
         </div>
       </div>
