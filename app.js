@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCopyButtons();
   initScrollSpy();
   initAvatarInteractivity();
+  initEmojiCycler();
   updateCopyrightYear();
 });
 
@@ -239,4 +240,22 @@ function updateCopyrightYear() {
   if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
   }
+}
+
+// Interactive Emoji Cycler Animation for Hero Coffee Badge
+function initEmojiCycler() {
+  const emojiEl = document.getElementById('coffeeEmoji');
+  if (!emojiEl) return;
+
+  const emojis = ['☕', '💻', '⚡️', '🚀', '💡', '🎨', '🍵', '🔥'];
+  let index = 0;
+
+  setInterval(() => {
+    emojiEl.classList.add('switching');
+    setTimeout(() => {
+      index = (index + 1) % emojis.length;
+      emojiEl.textContent = emojis[index];
+      emojiEl.classList.remove('switching');
+    }, 220);
+  }, 2400);
 }
