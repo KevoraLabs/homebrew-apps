@@ -263,7 +263,9 @@ function initAvatarInteractivity() {
   layerB.style.opacity = '0';
   layerB.style.zIndex = '1';
 
-  // 终极双缓冲区交叉淡入算法 (Double Buffer Cross-Fade)
+  // 双缓冲交叉淡入。关键点：再次 hover 时必须先关掉 transition 再把 opacity 置 0，
+  // 否则浏览器会把「置 0 → 置 1」合并成一次无动画的样式更新（首次有效、后续失效）。
+  const FADE_MS = 500;
   const fadeToAvatarSrc = (nextSrc) => {
     if (nextSrc === currentSrc) return;
     currentSrc = nextSrc;
@@ -274,25 +276,35 @@ function initAvatarInteractivity() {
     const nextIndex = 1 - activeIndex;
     const nextLayer = layers[nextIndex];
 
-    // 载入新图并置顶
+    // 1. 关闭 transition，瞬间落到 opacity:0（可重复触发）
+    nextLayer.style.transition = 'none';
     nextLayer.src = nextSrc;
+    nextLayer.style.opacity = '0';
     nextLayer.style.zIndex = '3';
     currentLayer.style.zIndex = '2';
 
-    // 强制触发 reflow 确保过渡动画百分百触发
-    void nextLayer.offsetHeight;
+    // 2. 强制提交「透明」中间态
+    void nextLayer.offsetWidth;
 
-    // 渐现新图层
-    nextLayer.style.opacity = '1';
+    // 3. 恢复 CSS transition，双 rAF 后再淡入，避免同帧合并样式
+    nextLayer.style.transition = '';
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        nextLayer.style.opacity = '1';
+      });
+    });
 
-    // 切换活跃索引
+    // 4. 切换活跃句柄
     activeIndex = nextIndex;
 
-    // 过渡完成后复位旧图层
+    // 5. 淡入结束后把旧层藏到下面（无动画即可，已被新层盖住）
     fadeTimeout = setTimeout(() => {
+      currentLayer.style.transition = 'none';
       currentLayer.style.opacity = '0';
       currentLayer.style.zIndex = '1';
-    }, 520);
+      void currentLayer.offsetWidth;
+      currentLayer.style.transition = '';
+    }, FADE_MS + 30);
   };
 
   const getNextRandomSrc = () => {
