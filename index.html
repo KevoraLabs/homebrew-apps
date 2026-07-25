@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="KevoraLabs 官方应用与插件仓库。一键安装 KeyLaunch macOS 应用及 Highlight Share、Side Stash 等浏览器插件。">
+  <meta name="description" content="KevoraLabs 官方应用与插件仓库。一键安装 KeyLaunch、PauseLoop macOS 应用及 Highlight Share、Side Stash 等浏览器插件。">
   <meta name="theme-color" content="#0b0c10">
   <meta property="og:title" content="KevoraLabs — 原生 macOS 应用与浏览器插件精选集">
   <meta property="og:description" content="专为 Mac 与浏览器打造的高效利器集。通过 Homebrew Cask 与 Chrome 商店轻松安装与升级。">
@@ -68,7 +68,7 @@
       <div class="stats-strip reveal">
         <div class="shell stats-grid">
           <div class="stat-item">
-            <span class="stat-num">1</span>
+            <span class="stat-num">2</span>
             <span class="stat-label" data-i18n="stats.apps">macOS 原生应用</span>
           </div>
           <div class="stat-item">
@@ -91,7 +91,7 @@
         <p data-i18n="casks.subtitle">通过 Homebrew Cask 轻松一键安装与升级。</p>
       </div>
 
-      <div class="apps-grid" style="grid-template-columns: minmax(0, 500px); justify-content: center;">
+      <div class="apps-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
         <!-- KeyLaunch Card -->
         <article class="app-card reveal">
           <div class="app-top">
@@ -116,6 +116,35 @@
             <div class="app-links">
               <a href="https://kevoralabs.github.io/keylaunch-site/" target="_blank" rel="noopener">
                 <span data-i18n="keylaunch.site">访问官网</span> →
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- PauseLoop Card -->
+        <article class="app-card reveal">
+          <div class="app-top">
+            <div class="app-header">
+              <img class="app-icon" src="assets/pauseloop-icon.webp" alt="PauseLoop Icon">
+              <span class="app-badge" data-i18n="pauseloop.badge">专注与休息计时器</span>
+            </div>
+            <h3 class="app-title" data-i18n="pauseloop.name">PauseLoop</h3>
+            <p class="app-desc" data-i18n="pauseloop.desc">原生 macOS 专注与休息计时器。遵循健康的工作节奏，在合适的时刻覆盖全屏平静提示，让眼睛与大脑获得充分放松。</p>
+            <div class="app-meta">
+              <span>v1.0</span>
+              <span>macOS 14+</span>
+            </div>
+          </div>
+          <div class="app-bottom">
+            <div class="card-cmd-box">
+              <code>brew install --cask KevoraLabs/apps/pause-loop</code>
+              <button class="copy-mini-btn" data-copy="brew install --cask KevoraLabs/apps/pause-loop">
+                <span data-i18n="app.copy">复制</span>
+              </button>
+            </div>
+            <div class="app-links">
+              <a href="https://kevoralabs.github.io/pauseloop-site/" target="_blank" rel="noopener">
+                <span data-i18n="pauseloop.site">访问官网</span> →
               </a>
             </div>
           </div>
@@ -199,6 +228,7 @@
             <p data-i18n="quickstart.step1.desc">无需手动添加 Tap，Homebrew 会自动抓取并安装对应的软件：</p>
             <div class="qs-code-box">
               <code>brew install --cask KevoraLabs/apps/key-launch</code>
+              <code>brew install --cask KevoraLabs/apps/pause-loop</code>
             </div>
           </div>
 
@@ -216,6 +246,7 @@
             <p data-i18n="quickstart.upgrade.desc">新版本发布后，在终端运行相应的 upgrade 命令即可升至最新版：</p>
             <div class="qs-code-box">
               <code>brew upgrade --cask key-launch</code>
+              <code>brew upgrade --cask pause-loop</code>
             </div>
           </div>
         </div>
@@ -236,6 +267,12 @@
               <span data-i18n="troubleshoot.copy">复制命令</span>
             </button>
           </div>
+          <div class="quarantine-item">
+            <code>xattr -dr com.apple.quarantine /Applications/PauseLoop.app</code>
+            <button class="copy-mini-btn" data-copy="xattr -dr com.apple.quarantine /Applications/PauseLoop.app">
+              <span data-i18n="troubleshoot.copy">复制命令</span>
+            </button>
+          </div>
         </div>
       </div>
     </section>
@@ -247,6 +284,7 @@
       <div class="footer-links">
         <a href="https://github.com/KevoraLabs/homebrew-apps" target="_blank" rel="noopener">Homebrew Tap</a>
         <a href="https://kevoralabs.github.io/keylaunch-site/" target="_blank" rel="noopener">KeyLaunch</a>
+        <a href="https://kevoralabs.github.io/pauseloop-site/" target="_blank" rel="noopener">PauseLoop</a>
         <a href="https://kevoralabs.github.io/highlight-share/" target="_blank" rel="noopener">Highlight Share</a>
         <a href="https://github.com/KevoraLabs/side-stash" target="_blank" rel="noopener">Side Stash</a>
       </div>

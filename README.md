@@ -13,7 +13,6 @@ brew tap KevoraLabs/apps
 # Install macOS Casks
 brew install --cask KevoraLabs/apps/key-launch
 brew install --cask KevoraLabs/apps/pause-loop
-brew install --cask KevoraLabs/apps/wechat-multi
 ```
 
 If macOS blocks an app on first launch, remove its quarantine attribute:
@@ -21,12 +20,9 @@ If macOS blocks an app on first launch, remove its quarantine attribute:
 ```bash
 xattr -dr com.apple.quarantine /Applications/KeyLaunch.app
 xattr -dr com.apple.quarantine /Applications/PauseLoop.app
-xattr -dr com.apple.quarantine /Applications/WeChatMulti.app
 ```
 
 ## Included casks
 
 - `key-launch`
 - `pause-loop`
-- `wechat-multi`
-
