@@ -108,8 +108,8 @@
           </div>
           <div class="app-bottom">
             <div class="card-cmd-box">
-              <code>brew install --cask KevoraLabs/apps/key-launch</code>
-              <button class="copy-mini-btn" data-copy="brew install --cask KevoraLabs/apps/key-launch">
+              <code>brew tap KevoraLabs/apps && brew install --cask key-launch</code>
+              <button class="copy-mini-btn" data-copy="brew tap KevoraLabs/apps && brew install --cask key-launch">
                 <span data-i18n="app.copy">复制</span>
               </button>
             </div>
@@ -137,8 +137,8 @@
           </div>
           <div class="app-bottom">
             <div class="card-cmd-box">
-              <code>brew install --cask KevoraLabs/apps/pause-loop</code>
-              <button class="copy-mini-btn" data-copy="brew install --cask KevoraLabs/apps/pause-loop">
+              <code>brew tap KevoraLabs/apps && brew install --cask pause-loop</code>
+              <button class="copy-mini-btn" data-copy="brew tap KevoraLabs/apps && brew install --cask pause-loop">
                 <span data-i18n="app.copy">复制</span>
               </button>
             </div>
@@ -224,11 +224,14 @@
 
         <div class="qs-grid">
           <div class="qs-card reveal">
-            <h3 data-i18n="quickstart.step1.title">方法一：直接单行命令安装（推荐）</h3>
-            <p data-i18n="quickstart.step1.desc">无需手动添加 Tap，Homebrew 会自动抓取并安装对应的软件：</p>
+            <h3 data-i18n="quickstart.step1.title">完整安装步骤（推荐）</h3>
+            <p data-i18n="quickstart.step1.desc">首次使用先添加 KevoraLabs Tap 仓库，再安装目标软件：</p>
             <div class="qs-code-box">
-              <code>brew install --cask KevoraLabs/apps/key-launch</code>
-              <code>brew install --cask KevoraLabs/apps/pause-loop</code>
+              <div style="color:#7b8096; font-size:11px; margin-bottom:4px;"># 1. 添加软件仓库 (Tap)</div>
+              <code style="color:var(--amber);">brew tap KevoraLabs/apps</code>
+              <div style="color:#7b8096; font-size:11px; margin-top:10px; margin-bottom:4px;"># 2. 安装指定应用 (Cask)</div>
+              <code>brew install --cask key-launch</code>
+              <code>brew install --cask pause-loop</code>
             </div>
           </div>
 
