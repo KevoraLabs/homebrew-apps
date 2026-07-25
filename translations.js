@@ -37,7 +37,7 @@ window.siteTranslations = {
     "sidestash.desc": "轻量级 Chrome 侧边栏收藏助手。快捷暂存文本片段、链接与图片，支持标签分类与 Markdown 一键导出。",
     "highlightshare.name": "Highlight Share (划词分享)",
     "highlightshare.desc": "选中任意网页文本，一键生成精致排版的金句或代码分享卡片，快速导出 PNG 图片并分享至社交平台。",
-    "musicmaster.name": "Music Master (音乐剪辑桌面版)",
+    "musicmaster.name": "音乐剪辑桌面版",
     "musicmaster.desc": "桌面级音乐剪辑、音频多轨处理与格式导出工具 (Electron)。",
     "jiyaodashi.name": "纪要大师",
     "jiyaodashi.desc": "语音纪要、会议记录与 AI 内容整理 App (React Native)。",
