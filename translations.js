@@ -140,8 +140,3 @@ window.siteTranslations = {
     "common.visitSite": "Visit Website ↗"
   }
 };
-
-// Fallback to zh-Hans for other locales if keys missing
-window.siteTranslations['zh-Hant'] = window.siteTranslations['zh-Hans'];
-window.siteTranslations['ja'] = window.siteTranslations['en'];
-window.siteTranslations['ko'] = window.siteTranslations['en'];

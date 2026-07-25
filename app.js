@@ -62,12 +62,11 @@ function initLanguagePicker() {
   if (!langSelect) return;
 
   const savedLang = localStorage.getItem('kevoralabs_lang');
-  if (savedLang && window.siteTranslations[savedLang]) {
+  if (savedLang && (savedLang === 'en' || savedLang === 'zh-Hans')) {
     currentLang = savedLang;
   } else {
     const navLang = navigator.language || navigator.userLanguage || '';
     if (navLang.startsWith('en')) currentLang = 'en';
-    else if (navLang.startsWith('zh-TW') || navLang.startsWith('zh-HK')) currentLang = 'zh-Hant';
     else currentLang = 'zh-Hans';
   }
 
