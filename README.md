@@ -1,19 +1,22 @@
-# homebrew-tap
+# homebrew-apps
 
-Homebrew tap for KevoraLabs macOS apps.
+Homebrew tap & product showcase for KevoraLabs macOS apps and browser extensions.
 
-🌐 **Official Site**: [https://kevoralabs.github.io/homebrew-tap/](https://kevoralabs.github.io/homebrew-tap/)
+🌐 **Official Site**: [https://kevoralabs.github.io/homebrew-apps/](https://kevoralabs.github.io/homebrew-apps/)
 
-## Install
+## Install via Homebrew
 
 ```bash
-brew install --cask KevoraLabs/tap/key-launch
-brew install --cask KevoraLabs/tap/pause-loop
-brew install --cask KevoraLabs/tap/wechat-multi
+# Add KevoraLabs apps tap
+brew tap KevoraLabs/apps
+
+# Install macOS Casks
+brew install --cask KevoraLabs/apps/key-launch
+brew install --cask KevoraLabs/apps/pause-loop
+brew install --cask KevoraLabs/apps/wechat-multi
 ```
 
-KeyLaunch and PauseLoop are currently ad-hoc signed. If macOS blocks either app
-on first launch, remove its quarantine attribute:
+If macOS blocks an app on first launch, remove its quarantine attribute:
 
 ```bash
 xattr -dr com.apple.quarantine /Applications/KeyLaunch.app
@@ -23,6 +26,7 @@ xattr -dr com.apple.quarantine /Applications/WeChatMulti.app
 
 ## Included casks
 
-- `wechat-multi`
 - `key-launch`
 - `pause-loop`
+- `wechat-multi`
+
