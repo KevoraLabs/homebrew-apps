@@ -62,6 +62,16 @@ homebrew-apps/
   - Preserve multilingual keys in `translations.js`.
   - Maintain zero build step for maximum portability and fast GitHub Pages serving.
 
+### 2. Multi-AI Handoff Protocol
+
+Before changing anything, every AI must read this file and `AI_WORKFLOW.md`, then run `git status --short` and `git log -5 --oneline`. Existing uncommitted changes are user-owned: preserve them and avoid overlapping files unless the task requires it.
+
+After changing code, run the smallest relevant check, run `git diff --check`, and make one focused commit. Report the commit hash, checks run, and whether the change was pushed or only committed locally.
+
+Git history is the source of truth for completed work. Use `AI_HANDOFF.md` only for unfinished work that another AI must continue; clear it when the task is complete.
+
+AI tools may keep private state outside Git. In particular, `.antigravitycli/` may be a symlink into a local Gemini/Antigravity directory and may be missing or stale on another machine. Never rely on that state for project decisions; record decisions, pending work, and handoff notes in the repository.
+
 ---
 
 ## 🍺 Quick Homebrew Commands
