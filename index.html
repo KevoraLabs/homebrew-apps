@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="styles.css?v=10" />
+  <link rel="stylesheet" href="styles.css?v=12" />
 </head>
 <body>
 
@@ -24,7 +24,7 @@
       <a href="#hero" class="nav-brand">
         <picture>
           <source srcset="assets/avatar2.webp" type="image/webp">
-          <img src="assets/avatar2.jpg" alt="Kevin Avatar" class="brand-avatar-img" width="36" height="36" decoding="async" onload="this.classList.add('is-loaded')" />
+          <img src="assets/avatar2.webp" alt="Kevin Avatar" class="brand-avatar-img" width="36" height="36" decoding="async" fetchpriority="high" onload="this.classList.add('is-loaded')" />
         </picture>
         <span class="brand-name">Kevin <span class="brand-badge">✦ Lanrenwen Studio</span></span>
       </a>
@@ -133,7 +133,7 @@
       <div class="hero-avatar-wrapper">
         <div class="hero-avatar-frame">
           <!-- Non-dip Top Layer Overlap Fade Stack -->
-          <img id="avatarLayerA" src="assets/avatar-default.webp" alt="Kevin Hand-Drawn Indie Dev Avatar Base" class="avatar-image-main avatar-layer-base" width="320" height="320" decoding="async" />
+          <img id="avatarLayerA" src="assets/avatar-default.webp" alt="Kevin Hand-Drawn Indie Dev Avatar Base" class="avatar-image-main avatar-layer-base" width="320" height="320" decoding="async" fetchpriority="high" />
           <img id="avatarLayerB" src="assets/avatar-default.webp" alt="Kevin Hand-Drawn Indie Dev Avatar Top" class="avatar-image-main avatar-layer-top" width="320" height="320" decoding="async" />
 
           <!-- Floating Doodle Badges -->
@@ -209,7 +209,7 @@
         <!-- 1. KeyLaunch -->
         <article class="app-card" data-category="macos">
           <div class="app-card-header">
-            <img src="assets/keylaunch-icon.png" alt="KeyLaunch Icon" class="app-icon" loading="lazy" />
+            <img src="assets/keylaunch-icon.webp" alt="KeyLaunch Icon" class="app-icon" width="64" height="64" loading="lazy" decoding="async" />
             <div class="app-meta">
               <div class="app-badge-row">
                 <span class="badge badge-macos">macOS App</span>
@@ -240,7 +240,7 @@
         <!-- 2. PauseLoop -->
         <article class="app-card" data-category="macos">
           <div class="app-card-header">
-            <img src="assets/pauseloop-icon.webp" alt="PauseLoop Icon" class="app-icon" loading="lazy" />
+            <img src="assets/pauseloop-icon.webp" alt="PauseLoop Icon" class="app-icon" width="64" height="64" loading="lazy" decoding="async" />
             <div class="app-meta">
               <div class="app-badge-row">
                 <span class="badge badge-macos">macOS App</span>
@@ -271,7 +271,7 @@
         <!-- 3. EnglishCC -->
         <article class="app-card" data-category="extension">
           <div class="app-card-header">
-            <img src="assets/englishcc-icon.png" alt="English CC Icon" class="app-icon" loading="lazy" />
+            <img src="assets/englishcc-icon.webp" alt="English CC Icon" class="app-icon" width="64" height="64" loading="lazy" decoding="async" />
             <div class="app-meta">
               <div class="app-badge-row">
                 <span class="badge badge-extension">Browser Extension</span>
@@ -299,7 +299,7 @@
         <!-- 4. Side Stash -->
         <article class="app-card" data-category="extension">
           <div class="app-card-header">
-            <img src="assets/side-stash-icon.png" alt="Side Stash Icon" class="app-icon" loading="lazy" />
+            <img src="assets/side-stash-icon.webp" alt="Side Stash Icon" class="app-icon" width="64" height="64" loading="lazy" decoding="async" />
             <div class="app-meta">
               <div class="app-badge-row">
                 <span class="badge badge-extension">Browser Extension</span>
@@ -327,7 +327,7 @@
         <!-- 5. Highlight Share -->
         <article class="app-card" data-category="extension">
           <div class="app-card-header">
-            <img src="assets/highlight-share-icon.png" alt="Highlight Share Icon" class="app-icon" loading="lazy" />
+            <img src="assets/highlight-share-icon.webp" alt="Highlight Share Icon" class="app-icon" width="64" height="64" loading="lazy" decoding="async" />
             <div class="app-meta">
               <div class="app-badge-row">
                 <span class="badge badge-extension">Browser Extension</span>
@@ -355,7 +355,7 @@
         <!-- 6. 音乐剪辑桌面版 (kevin-monorepo) -->
         <article class="app-card" data-category="electron">
           <div class="app-card-header">
-            <img src="assets/music-master-electron-icon.png" alt="Music Master Icon" class="app-icon" loading="lazy" />
+            <img src="assets/music-master-electron-icon.webp" alt="Music Master Icon" class="app-icon" width="64" height="64" loading="lazy" decoding="async" />
             <div class="app-meta">
               <div class="app-badge-row">
                 <span class="badge badge-dev">Cross-Platform</span>
@@ -382,7 +382,7 @@
         <!-- 7. MP3 剪辑器 (kevin-monorepo) -->
         <article class="app-card" data-category="ios mini">
           <div class="app-card-header">
-            <img src="assets/mp3-editor-icon.png" alt="MP3 Cutter Icon" class="app-icon" loading="lazy" />
+            <img src="assets/mp3-editor-icon.webp" alt="MP3 Cutter Icon" class="app-icon" width="64" height="64" loading="lazy" decoding="async" />
             <div class="app-meta">
               <div class="app-badge-row">
                 <span class="badge badge-dev">iOS &amp; WeApp</span>
@@ -407,7 +407,7 @@
         <!-- 8. 写歌大师 (kevin-monorepo) -->
         <article class="app-card" data-category="ios">
           <div class="app-card-header">
-            <img src="assets/music-generator-icon.png" alt="Music Generator Icon" class="app-icon" loading="lazy" />
+            <img src="assets/music-generator-icon.webp" alt="Music Generator Icon" class="app-icon" width="64" height="64" loading="lazy" decoding="async" />
             <div class="app-meta">
               <div class="app-badge-row">
                 <span class="badge badge-dev">React Native</span>
@@ -432,7 +432,7 @@
         <!-- 9. 纪要大师 (kevin-monorepo) -->
         <article class="app-card" data-category="ios">
           <div class="app-card-header">
-            <img src="assets/jiyao-dashi-icon.png" alt="纪要大师图标" class="app-icon" loading="lazy" />
+            <img src="assets/jiyao-dashi-icon.webp" alt="纪要大师图标" class="app-icon" width="64" height="64" loading="lazy" decoding="async" />
             <div class="app-meta">
               <div class="app-badge-row">
                 <span class="badge badge-dev">React Native</span>
@@ -668,7 +668,7 @@
     <span id="toast-message">Copied to clipboard!</span>
   </div>
 
-  <script src="translations.js?v=11"></script>
-  <script src="app.js?v=11"></script>
+  <script src="translations.js?v=12"></script>
+  <script src="app.js?v=12"></script>
 </body>
 </html>

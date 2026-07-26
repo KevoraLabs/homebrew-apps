@@ -207,30 +207,30 @@ function showToast(message) {
   }, 2500);
 }
 
-// Scrollspy for nav active highlight
+// Scrollspy for nav active highlight using high-performance IntersectionObserver
 function initScrollSpy() {
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-link');
+  if (!sections.length || !navLinks.length) return;
 
-  window.addEventListener('scroll', () => {
-    let current = '';
-    const scrollPos = window.scrollY + 200;
+  const observerOptions = {
+    root: null,
+    rootMargin: '-20% 0px -60% 0px',
+    threshold: 0
+  };
 
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-      if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-        current = section.getAttribute('id');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+        });
       }
     });
+  }, observerOptions);
 
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${current}`) {
-        link.classList.add('active');
-      }
-    });
-  });
+  sections.forEach(section => observer.observe(section));
 }
 
 // Interactive 3D tilt & Universal Avatar Swap (Double Buffer Cross-Fade)
