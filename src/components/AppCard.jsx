@@ -99,6 +99,16 @@ export default function AppCard({ app, t, onOpenQr, onCopyCmd }) {
             <span>{t('common.miniProgram')}</span>
           </button>
         )}
+
+        {app.harmonyQr && (
+          <button 
+            type="button" 
+            className={`btn btn-sm ${app.website || storeHref ? 'btn-secondary' : 'btn-primary'} btn-mini-qr`}
+            onClick={() => onOpenQr(t(app.nameKey), app.harmonyQr)}
+          >
+            <span>{t('common.harmonyApp')}</span>
+          </button>
+        )}
       </div>
     </article>
   );

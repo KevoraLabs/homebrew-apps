@@ -159,6 +159,6 @@ export const APPS = [
       { text: 'ArkTS', type: 'tech' }
     ],
     features: ['imagecraft.f1', 'imagecraft.f2'],
-    miniQr: 'assets/harmony/qrcode.png'
+    harmonyQr: 'assets/harmony/qrcode.png'
   }
 ];
