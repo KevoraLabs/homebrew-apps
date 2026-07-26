@@ -5,7 +5,7 @@ export default function Header({ currentTheme, currentLang, onToggleTheme, onCha
     <header className="site-header">
       <nav className="nav-container">
         <a href="#hero" className="nav-brand">
-          <img src="assets/avatar.png" alt="Kevin Avatar" className="brand-avatar-img is-loaded" />
+          <img src="assets/avatar-default.webp" alt="Kevin Avatar" className="brand-avatar-img is-loaded" />
           <span className="brand-name">
             Kevin <span className="brand-badge">/ Lanrenwen Studio</span>
           </span>
