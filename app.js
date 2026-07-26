@@ -111,6 +111,12 @@ function initLanguagePicker() {
 function applyTranslations(lang) {
   const translations = window.siteTranslations[lang] || window.siteTranslations['zh-Hans'];
 
+  const langIcon = document.getElementById('langIcon');
+  if (langIcon) {
+    const isEn = lang && String(lang).toLowerCase().startsWith('en');
+    langIcon.textContent = isEn ? 'E' : '中';
+  }
+
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.dataset.i18n;
     if (translations[key]) {
