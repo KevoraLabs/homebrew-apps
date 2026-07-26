@@ -1,6 +1,32 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
+const DEFAULT_AVATAR = 'assets/avatar-default.webp';
+const RANDOM_AVATARS = [
+  'assets/avatar-random-1.webp',
+  'assets/avatar-random-2.webp',
+  'assets/avatar-random-3.webp'
+];
 
 export default function Hero({ t }) {
+  const [avatarSrc, setAvatarSrc] = useState(DEFAULT_AVATAR);
+
+  // Preload random avatars for instant flicker-free hover
+  useEffect(() => {
+    RANDOM_AVATARS.forEach(src => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
+
+  const handleMouseEnter = () => {
+    const randomIndex = Math.floor(Math.random() * RANDOM_AVATARS.length);
+    setAvatarSrc(RANDOM_AVATARS[randomIndex]);
+  };
+
+  const handleMouseLeave = () => {
+    setAvatarSrc(DEFAULT_AVATAR);
+  };
+
   return (
     <section id="hero" className="hero-section">
       <div className="hero-content">
@@ -43,8 +69,13 @@ export default function Hero({ t }) {
       </div>
 
       <div className="hero-avatar-wrapper">
-        <div className="hero-avatar-frame">
-          <img src="assets/avatar-default.webp" alt="Kevin Main Avatar" className="avatar-image-main is-loaded" />
+        <div 
+          className="hero-avatar-frame"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          style={{ cursor: 'pointer' }}
+        >
+          <img src={avatarSrc} alt="Kevin Main Avatar" className="avatar-image-main is-loaded" />
 
           {/* Animated Doodles */}
           <div className="floating-doodle doodle-speech">Handcrafted Software ✨</div>
