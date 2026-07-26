@@ -1,6 +1,6 @@
 cask "pause-loop" do
-  version "1.0"
-  sha256 "0e1f0908200d8976fc1518a184c32fe1aed7911c64ffe7a99c74229dbc0c7398"
+  version "1.0.1"
+  sha256 "6ef30f09e575b820524b75ab3438622501dc33cfea649be69fc4ce2d6ee3e03c"
 
   url "https://github.com/KevoraLabs/homebrew-apps/releases/download/pause-loop-v#{version}/pause-loop-#{version}.dmg"
   name "PauseLoop"
