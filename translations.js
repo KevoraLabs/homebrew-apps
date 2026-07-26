@@ -120,7 +120,8 @@ window.siteTranslations = {
     "contact.desc": "对于作品有任何反馈、建议或合作意向，随时欢迎与我联系。",
     "common.copyEmail": "复制邮箱",
     "common.visitSite": "访问官网 ↗",
-    "common.chromeStore": "Chrome 商店 ↗"
+    "common.chromeStore": "Chrome 商店 ↗",
+    "common.appStore": "App Store ↗"
   },
   "en": {
     "meta.title": "Kevin / Lanrenwen Studio — My Work | macOS, iOS, Extensions, Mini Programs, HarmonyOS & Electron",
@@ -243,6 +244,7 @@ window.siteTranslations = {
     "contact.desc": "Have questions about my apps, feedback, or interest in collaboration? Feel free to drop me a message.",
     "common.copyEmail": "Copy Email",
     "common.visitSite": "Visit Website ↗",
-    "common.chromeStore": "Chrome Web Store ↗"
+    "common.chromeStore": "Chrome Web Store ↗",
+    "common.appStore": "App Store ↗"
   }
 };
