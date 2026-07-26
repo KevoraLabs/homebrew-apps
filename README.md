@@ -1,18 +1,18 @@
 # homebrew-apps
 
-Homebrew tap & product showcase for KevoraLabs macOS apps and browser extensions.
+Homebrew tap & product showcase for Lanrenwen Studio macOS apps and browser extensions.
 
-🌐 **Official Site**: [https://kevoralabs.github.io/homebrew-apps/](https://kevoralabs.github.io/homebrew-apps/)
+🌐 **Official Site**: [https://lanrenwenstudio.github.io/homebrew-apps/](https://lanrenwenstudio.github.io/homebrew-apps/)
 
 ## Install via Homebrew
 
 ```bash
-# Add KevoraLabs apps tap
-brew tap KevoraLabs/apps
+# Add Lanrenwen Studio apps tap
+brew tap LanrenwenStudio/apps
 
 # Install macOS Casks
-brew install --cask KevoraLabs/apps/key-launch
-brew install --cask KevoraLabs/apps/pause-loop
+brew install --cask LanrenwenStudio/apps/key-launch
+brew install --cask LanrenwenStudio/apps/pause-loop
 ```
 
 If macOS blocks an app on first launch, remove its quarantine attribute:

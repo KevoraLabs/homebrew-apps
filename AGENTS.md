@@ -1,10 +1,10 @@
 # AGENTS.md
 
-> 💡 **系统设定**：当用户在对话中提到“启动官网”时，默认指运行本仓库的 KevoraLabs 主官网 (`python3 -m http.server 8088`)。
+> 💡 **系统设定**：当用户在对话中提到“启动官网”时，默认指运行本仓库的 烂人文工作室主官网 (`python3 -m http.server 8088`)。
 
-Welcome to **KevoraLabs / homebrew-apps**. This repository serves a dual purpose:
-1. **Official Website**: Hosted on GitHub Pages at [https://kevoralabs.github.io/homebrew-apps/](https://kevoralabs.github.io/homebrew-apps/).
-2. **Homebrew Tap Repository**: Contains Homebrew Cask definitions (`Casks/key-launch.rb`, `Casks/pause-loop.rb`) for installing KevoraLabs macOS apps via `brew install --cask KevoraLabs/apps/<app>`.
+Welcome to **Lanrenwen Studio / homebrew-apps**. This repository serves a dual purpose:
+1. **Official Website**: Hosted on GitHub Pages at [https://lanrenwenstudio.github.io/homebrew-apps/](https://lanrenwenstudio.github.io/homebrew-apps/).
+2. **Homebrew Tap Repository**: Contains Homebrew Cask definitions (`Casks/key-launch.rb`, `Casks/pause-loop.rb`) for installing Lanrenwen Studio macOS apps via `brew install --cask LanrenwenStudio/apps/<app>`.
 
 ---
 
@@ -18,7 +18,7 @@ Always prefer using the official GitHub CLI (`gh`) for repository operations, st
 gh auth status
 
 # View repository details
-gh repo view KevoraLabs/homebrew-apps
+gh repo view LanrenwenStudio/homebrew-apps
 
 # View open issues and pull requests
 gh issue list
@@ -64,11 +64,11 @@ homebrew-apps/
 
 ```bash
 # Tap repository
-brew tap KevoraLabs/apps
+brew tap LanrenwenStudio/apps
 
 # Install applications
-brew install --cask KevoraLabs/apps/key-launch
-brew install --cask KevoraLabs/apps/pause-loop
+brew install --cask LanrenwenStudio/apps/key-launch
+brew install --cask LanrenwenStudio/apps/pause-loop
 
 # Clear Gatekeeper Quarantine if prompted on first launch
 xattr -dr com.apple.quarantine /Applications/KeyLaunch.app

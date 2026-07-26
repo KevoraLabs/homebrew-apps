@@ -1,4 +1,4 @@
-# Kevin / KevoraLabs — 个人作品与 App 归档及目录规范
+# Kevin / Lanrenwen Studio — 个人作品与 App 归档及目录规范
 
 本文档归档记录由 Kevin 独立设计与开发的个人软件、应用、小程序及扩展作品，并明确所有 App 项目所在的**三大核心源代码目录**。后续新增 App 或更新展示网站时，固定从这三个目录中查找。
 
@@ -10,29 +10,29 @@
 
 | 序号 | 目录绝对路径 | 项目类型与方向 | 代表应用 / 模块 |
 | :---: | :--- | :--- | :--- |
-| **1** | `/Users/kevin/Developer/Code/KevoraLabs` | macOS 原生 App、浏览器插件及官方展示站点 | KeyLaunch、PauseLoop、WeChat Multi、EnglishCC、Side Stash、Highlight Share |
+| **1** | `/Users/kevin/Developer/Code/LanrenwenStudio` | macOS 原生 App、浏览器插件及官方展示站点 | KeyLaunch、PauseLoop、WeChat Multi、EnglishCC、Side Stash、Highlight Share |
 | **2** | `/Users/kevin/Developer/Code/kevin-monorepo` | 跨平台 Electron 桌面应用、React Native 移动 App、iOS 原生与微信小程序 Monorepo 库 | Music Master 桌面版 (音乐剪辑)、纪要大师 (RN)、写歌大师 / 音乐生成器、MP3 剪辑器 |
 | **3** | `/Users/kevin/Developer/Code/harmony-project` | 鸿蒙 HarmonyOS (ArkTS / ArkUI) 原生应用工程矩阵 | 剪韵音乐剪辑、小夏图片处理、小夏二维码、光影提词器、家庭库存 |
 
 ---
 
-## 🍎 1. macOS 原生应用 & 极简工具 (目录：KevoraLabs)
+## 🍎 1. macOS 原生应用 & 极简工具 (目录：烂人文工作室)
 
 | 应用名称 | 平台 / 架构 | 描述 | 状态 / 链接 |
 | :--- | :--- | :--- | :--- |
-| **KeyLaunch (键启)** | macOS (SwiftUI) | 原生 macOS 键盘快捷启动与应用切换器 | [官网](https://kevoralabs.github.io/keylaunch-site/) / Homebrew Cask |
-| **PauseLoop** | macOS (SwiftUI) | 原生专注与 20-20-20 护眼休息计时器 | [官网](https://kevoralabs.github.io/pauseloop-site/) / Homebrew Cask |
+| **KeyLaunch (键启)** | macOS (SwiftUI) | 原生 macOS 键盘快捷启动与应用切换器 | [官网](https://lanrenwenstudio.github.io/keylaunch-site/) / Homebrew Cask |
+| **PauseLoop** | macOS (SwiftUI) | 原生专注与 20-20-20 护眼休息计时器 | [官网](https://lanrenwenstudio.github.io/pauseloop-site/) / Homebrew Cask |
 | **WeChat Multi (微信多开)** | macOS (Swift) | 轻量级 macOS 独立沙盒微信多开分身管理工具 | macOS Utility |
 
 ---
 
-## 🌐 2. 浏览器插件 (目录：KevoraLabs & 独立仓库)
+## 🌐 2. 浏览器插件 (目录：Lanrenwen Studio & 独立仓库)
 
 | 插件名称 | 技术栈 | 描述 | 状态 / 链接 |
 | :--- | :--- | :--- | :--- |
 | **EnglishCC** | TypeScript / React | YouTube 沉浸式双语字幕、悬浮划词查词与词汇本扩展 | [englishcc.com](https://englishcc.com) |
-| **Side Stash** | React / WXT | Chrome Side Panel 侧边栏文本、链接与碎片收藏助手 | [官网](https://kevoralabs.github.io/side-stash/) |
-| **Highlight Share (划词分享)** | TypeScript | 网页文本高亮划词标记与高清社交金句卡片生成工具 | [官网](https://kevoralabs.github.io/highlight-share-site/) |
+| **Side Stash** | React / WXT | Chrome Side Panel 侧边栏文本、链接与碎片收藏助手 | [官网](https://lanrenwenstudio.github.io/side-stash/) |
+| **Highlight Share (划词分享)** | TypeScript | 网页文本高亮划词标记与高清社交金句卡片生成工具 | [官网](https://lanrenwenstudio.github.io/highlight-share-site/) |
 
 ---
 

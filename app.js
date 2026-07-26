@@ -1,5 +1,5 @@
 /**
- * Kevin / KevoraLabs — Portfolio & App Showcase JavaScript (homebrew-apps)
+ * Kevin / Lanrenwen Studio — Portfolio & App Showcase JavaScript (homebrew-apps)
  * Handcrafted design theme, i18n localization, category tabs, theme toggle & copy toast.
  */
 

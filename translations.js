@@ -1,6 +1,6 @@
 window.siteTranslations = {
   "zh-Hans": {
-    "meta.title": "Kevin / KevoraLabs — 我的作品 | macOS & iOS App、浏览器插件、小程序、鸿蒙与 Electron",
+    "meta.title": "Kevin / Lanrenwen Studio — 我的作品 | macOS & iOS App、浏览器插件、小程序、鸿蒙与 Electron",
     "nav.about": "关于",
     "nav.apps": "作品应用",
     "nav.github": "开源仓库",
@@ -72,7 +72,7 @@ window.siteTranslations = {
     "common.visitSite": "访问官网 ↗"
   },
   "en": {
-    "meta.title": "Kevin / KevoraLabs — My Work | macOS, iOS, Extensions, Mini Programs, HarmonyOS & Electron",
+    "meta.title": "Kevin / Lanrenwen Studio — My Work | macOS, iOS, Extensions, Mini Programs, HarmonyOS & Electron",
     "nav.about": "About",
     "nav.apps": "Apps & Software",
     "nav.github": "GitHub Repos",
