@@ -27,12 +27,12 @@ export default function AppCard({ app, t, onOpenQr, onCopyCmd }) {
           decoding="async" 
         />
         <div className="app-meta">
+          <h3 className="app-title">{t(app.nameKey)}</h3>
           <div className="app-badge-row">
             {app.badges.map((badge, idx) => (
               <span key={idx} className={`badge badge-${badge.type}`}>{badge.text}</span>
             ))}
           </div>
-          <h3 className="app-title">{t(app.nameKey)}</h3>
           <p className="app-tagline">{app.tagline}</p>
         </div>
       </div>
