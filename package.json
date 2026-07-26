@@ -1,0 +1,12 @@
+{
+  "name": "lanrenwen-homebrew-site",
+  "private": true,
+  "scripts": {
+    "dev": "vite --host localhost --port 8088",
+    "build": "vite build",
+    "preview": "vite preview --host localhost --port 8088"
+  },
+  "devDependencies": {
+    "vite": "^7.1.7"
+  }
+}
