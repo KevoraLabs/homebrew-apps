@@ -718,8 +718,8 @@ html.dark .site-header {
 }
 
 .doodle-speech {
-  top: -15px;
-  left: 15px;
+  top: -48px;
+  left: -42px;
   background-color: #FFFFFF;
   color: #1F1C19;
   border-radius: 18px 18px 18px 2px;
@@ -743,15 +743,16 @@ html.dark .site-header {
 .doodle-terminal span {
   display: inline-block;
   width: 0;
+  padding-right: 0.35em;
   overflow: hidden;
   white-space: nowrap;
   border-right: 2px solid currentColor;
-  animation: terminal-typing 1.25s steps(8, end) 0.35s forwards,
+  animation: terminal-typing 1.25s steps(7, end) 0.35s forwards,
     terminal-caret 0.75s step-end infinite;
 }
 
 @keyframes terminal-typing {
-  to { width: 9ch; }
+  to { width: 7ch; }
 }
 
 @keyframes terminal-caret {
@@ -760,14 +761,14 @@ html.dark .site-header {
 
 @media (prefers-reduced-motion: reduce) {
   .doodle-terminal span {
-    width: 9ch;
+    width: 7ch;
     animation: none;
   }
 }
 
 .doodle-todo {
-  top: -22px;
-  right: -30px;
+  top: -48px;
+  right: -58px;
   background-color: var(--accent-yellow);
   color: #1F1C19;
   font-family: var(--font-mono);
@@ -856,8 +857,8 @@ html.dark .site-header {
   }
 
   .doodle-speech {
-    top: -12px;
-    left: 8px;
+    top: -34px;
+    left: -20px;
     padding: 4px 8px;
     font-size: 0.85rem;
   }
@@ -870,8 +871,8 @@ html.dark .site-header {
   }
 
   .doodle-todo {
-    top: -12px;
-    right: -10px;
+    top: -30px;
+    right: -20px;
     font-size: 0.65rem;
     padding: 5px 8px;
   }
@@ -1028,6 +1029,20 @@ html.dark .site-header {
   transform: translate(-4px, -4px);
   box-shadow: var(--shadow-craft-hover);
   background-color: var(--bg-card-hover);
+}
+
+@media (max-width: 768px) and (hover: none) {
+  button,
+  a,
+  .app-card {
+    touch-action: manipulation;
+  }
+
+  .app-card:hover {
+    transform: none;
+    box-shadow: var(--shadow-craft);
+    background-color: var(--bg-card);
+  }
 }
 
 .app-card.hidden {

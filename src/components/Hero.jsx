@@ -96,15 +96,16 @@ export default function Hero({ t }) {
           <img src={avatarSrc} alt="Kevin Main Avatar" className="avatar-image-main is-loaded" width="320" height="320" />
 
           {/* Animated Doodles */}
-          <div className="floating-doodle doodle-speech">Handcrafted Software ✨</div>
+          <div className="floating-doodle doodle-speech">&lt;/&gt;</div>
           <div className="floating-doodle doodle-terminal">
-            <span>$ agy dev</span>
+            <span>$ kevin</span>
           </div>
           <div className="floating-doodle doodle-todo">
-            <div>⚡ TODOS</div>
+            <div>⚡ DEV LOOP</div>
             <ul>
-              <li>☑ Apple HIG</li>
-              <li>☑ Fast &amp; Clean</li>
+              <li>☑ Code</li>
+              <li>☑ Test</li>
+              <li>☑ Debug</li>
             </ul>
           </div>
           <div className="floating-doodle doodle-binary">01001011</div>
