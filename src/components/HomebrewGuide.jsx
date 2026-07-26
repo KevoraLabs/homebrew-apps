@@ -20,7 +20,7 @@ export default function HomebrewGuide({ t, onCopyCmd }) {
               className="btn btn-sm btn-copy-cmd" 
               onClick={() => onCopyCmd('brew install --cask LanrenwenStudio/apps/key-launch')}
             >
-              <span>{t('common.copyEmail')}</span>
+              <span>{t('common.copyCmd')}</span>
             </button>
           </div>
         </div>
@@ -35,7 +35,7 @@ export default function HomebrewGuide({ t, onCopyCmd }) {
               className="btn btn-sm btn-copy-cmd" 
               onClick={() => onCopyCmd('brew install --cask LanrenwenStudio/apps/pause-loop')}
             >
-              <span>{t('common.copyEmail')}</span>
+              <span>{t('common.copyCmd')}</span>
             </button>
           </div>
         </div>
