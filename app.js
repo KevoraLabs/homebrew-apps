@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollSpy();
   initAvatarInteractivity();
   initEmojiCycler();
+  initMobileAppLinks();
   updateCopyrightYear();
 });
 
@@ -370,6 +371,26 @@ function updateCopyrightYear() {
   const yearEl = document.getElementById('year');
   if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
+  }
+}
+
+// Smart Mobile iOS App Store Direct Launcher
+function initMobileAppLinks() {
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+  if (isMobile) {
+    const appStoreLinks = document.querySelectorAll('a[href*="apps.apple.com"], a[href*="itunes.apple.com"], a[data-app-store-link]');
+    appStoreLinks.forEach(link => {
+      let href = link.getAttribute('href') || '';
+      if (isIOS) {
+        // Convert https:// or macappstore:// to itms-apps:// protocol for iOS App Store native pull-up
+        const idMatch = href.match(/id(\d+)/);
+        if (idMatch) {
+          link.setAttribute('href', `itms-apps://apps.apple.com/app/id${idMatch[1]}`);
+        }
+      }
+    });
   }
 }
 

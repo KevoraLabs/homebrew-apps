@@ -121,7 +121,7 @@ window.siteTranslations = {
     "common.copyEmail": "复制邮箱",
     "common.visitSite": "访问官网 ↗",
     "common.chromeStore": "Chrome 商店 ↗",
-    "common.appStore": "App Store ↗"
+    "common.appStore": "App Store 直拉 ↗"
   },
   "en": {
     "meta.title": "Kevin / Lanrenwen Studio — My Work | macOS, iOS, Extensions, Mini Programs, HarmonyOS & Electron",
