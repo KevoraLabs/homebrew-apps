@@ -119,7 +119,7 @@ window.siteTranslations = {
     "contact.title": "保持沟通与合作探讨",
     "contact.desc": "对于作品有任何反馈、建议或合作意向，随时欢迎与我联系。",
     "common.copyEmail": "复制邮箱",
-    "common.visitSite": "访问官网 ↗",
+    "common.visitSite": "官网 ↗",
     "common.chromeStore": "Chrome 商店 ↗",
     "common.appStore": "App Store ↗"
   },
@@ -243,7 +243,7 @@ window.siteTranslations = {
     "contact.title": "Let's build something great together",
     "contact.desc": "Have questions about my apps, feedback, or interest in collaboration? Feel free to drop me a message.",
     "common.copyEmail": "Copy Email",
-    "common.visitSite": "Visit Website ↗",
+    "common.visitSite": "Website ↗",
     "common.chromeStore": "Chrome Web Store ↗",
     "common.appStore": "App Store ↗"
   }
