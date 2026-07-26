@@ -66,7 +66,7 @@ export const TRANSLATIONS = {
     'highlightshare.desc': '将网页任意选中文本一键导出为优雅的高精美卡片图，支持多款主题与直接分享。',
     'highlightshare.f1': '🎨 丰富的主题卡片模板与极简排版',
     'highlightshare.f2': '📸 毫秒级高清晰度图片导出与复制',
-    'yinyuejianji.name': '音悦剪辑 (Music Master)',
+    'yinyuejianji.name': '音悦剪辑',
     'yinyuejianji.desc': '基于 Electron 的跨平台音频剪辑、拼接与格式转换桌面工作站。',
     'yinyuejianji.f1': '🎛️ 多音轨拼接、混音与格式一键转换',
     'yinyuejianji.f2': '⚡ 离线高效处理与高性能音轨渲染',
