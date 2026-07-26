@@ -1255,6 +1255,21 @@ html.theme-dark .badge-dev { background-color: #3D2612; color: #FFB74D; }
   font-weight: 700;
 }
 
+.footer-version {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  opacity: 0.55;
+  margin-left: 8px;
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-ink);
+  vertical-align: middle;
+  letter-spacing: 0.03em;
+}
+
 /* Toast Notifications */
 .toast {
   position: fixed;
