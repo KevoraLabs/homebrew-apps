@@ -374,21 +374,17 @@ function updateCopyrightYear() {
   }
 }
 
-// Smart Mobile iOS App Store Direct Launcher
+// Smart Mobile iOS App Store Direct Launcher (Strictly scoped to mobile iOS apps)
 function initMobileAppLinks() {
-  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-
-  if (isMobile) {
-    const appStoreLinks = document.querySelectorAll('a[href*="apps.apple.com"], a[href*="itunes.apple.com"], a[data-app-store-link]');
-    appStoreLinks.forEach(link => {
+  if (isIOS) {
+    // Only target iOS Mobile App cards, ignore macOS Desktop apps (KeyLaunch & PauseLoop)
+    const mobileLinks = document.querySelectorAll('.app-card[data-category*="ios"] a[href*="apps.apple.com"], .app-card[data-category*="ios"] a[data-app-store-link]');
+    mobileLinks.forEach(link => {
       let href = link.getAttribute('href') || '';
-      if (isIOS) {
-        // Convert https:// or macappstore:// to itms-apps:// protocol for iOS App Store native pull-up
-        const idMatch = href.match(/id(\d+)/);
-        if (idMatch) {
-          link.setAttribute('href', `itms-apps://apps.apple.com/app/id${idMatch[1]}`);
-        }
+      const idMatch = href.match(/id(\d+)/);
+      if (idMatch) {
+        link.setAttribute('href', `itms-apps://apps.apple.com/app/id${idMatch[1]}`);
       }
     });
   }
