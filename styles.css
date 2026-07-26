@@ -941,6 +941,18 @@ html.dark .site-header {
   .apps-grid {
     grid-template-columns: 1fr;
   }
+
+  .app-card {
+    order: 3;
+  }
+
+  .app-card[data-category~="mini"] {
+    order: 2;
+  }
+
+  .app-card[data-category~="ios"] {
+    order: 1;
+  }
 }
 
 .app-card {
