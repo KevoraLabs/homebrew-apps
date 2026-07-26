@@ -5,7 +5,7 @@ export default function Header({ currentTheme, currentLang, onToggleTheme, onCha
     <header className="site-header">
       <nav className="nav-container">
         <a href="#hero" className="nav-brand">
-          <img src="assets/avatar-default.webp" alt="Kevin Avatar" className="brand-avatar-img is-loaded" width="42" height="42" />
+          <img src="assets/avatar.webp" alt="Kevin Avatar" className="brand-avatar-img is-loaded" width="42" height="42" />
           <span className="brand-name">
             Kevin <span className="brand-badge">· Lanrenwen</span>
           </span>
@@ -37,7 +37,8 @@ export default function Header({ currentTheme, currentLang, onToggleTheme, onCha
               onClick={() => onChangeLang(currentLang === 'zh-Hans' ? 'en' : 'zh-Hans')}
               aria-label="Language Selector"
             >
-              {currentLang === 'zh-Hans' ? '简体中文' : 'English'}
+              <span className="lang-text-full">{currentLang === 'zh-Hans' ? '简体中文' : 'English'}</span>
+              <span className="lang-text-short">{currentLang === 'zh-Hans' ? '中' : 'E'}</span>
             </button>
           </div>
 

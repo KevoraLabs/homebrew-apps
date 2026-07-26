@@ -98,7 +98,8 @@ export default function Hero({ t }) {
           {/* Animated Doodles */}
           <div className="floating-doodle doodle-speech">&lt;/&gt;</div>
           <div className="floating-doodle doodle-terminal">
-            <span>$ kevin</span>
+            <span className="terminal-text">$ kevin</span>
+            <span className="terminal-cursor"></span>
           </div>
           <div className="floating-doodle doodle-todo">
             <div>⚡ DEV LOOP</div>
@@ -108,7 +109,7 @@ export default function Hero({ t }) {
               <li>☑ Debug</li>
             </ul>
           </div>
-          <div className="floating-doodle doodle-binary">01001011</div>
+          <div className="floating-doodle doodle-binary">9527</div>
           <div
             className="floating-doodle doodle-coffee"
             style={{ backgroundColor: FLOATING_ICONS[floatingIconIndex].color }}
