@@ -8,6 +8,7 @@ function copyStaticAssets() {
     name: 'copy-static-assets',
     closeBundle() {
       cpSync(resolve('assets'), resolve('dist/assets'), { recursive: true });
+      cpSync(resolve('_headers'), resolve('dist/_headers'));
     },
   };
 }
