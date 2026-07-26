@@ -13,6 +13,9 @@ export default function AppCard({ app, t, onOpenQr, onCopyCmd }) {
   };
 
   const storeHref = getStoreHref();
+  const hasAction = Boolean(
+    app.website || app.chromeStoreUrl || storeHref || app.brewCmd || app.miniQr || app.harmonyQr
+  );
 
   return (
     <article className="app-card" data-category={app.categories.join(' ')}>
@@ -46,6 +49,10 @@ export default function AppCard({ app, t, onOpenQr, onCopyCmd }) {
       </ul>
 
       <div className="app-actions">
+        {app.categories.includes('harmony') && !hasAction && (
+          <span className="focus-chip">HarmonyOS App</span>
+        )}
+
         {app.website && (
           <a 
             href={app.website} 

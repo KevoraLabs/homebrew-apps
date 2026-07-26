@@ -140,25 +140,65 @@ export const APPS = [
     tagline: 'Waveform audio editor & track merger',
     descKey: 'jianyun.desc',
     icon: 'assets/harmony/jianyun.png',
-    categories: ['mini'],
+    categories: ['harmony', 'mini'],
     badges: [
+      { text: 'HarmonyOS', type: 'dev' },
+      { text: 'ArkTS', type: 'tech' },
       { text: 'WeChat Mini Program', type: 'dev' }
     ],
     features: ['jianyun.f1', 'jianyun.f2'],
     miniQr: 'assets/qr-jianyun.webp'
   },
   {
-    id: 'imagecraft',
-    nameKey: 'imagecraft.name',
-    tagline: 'Image compressor, converter & watermark tool',
-    descKey: 'imagecraft.desc',
-    icon: 'assets/harmony/imagecraft.png',
+    id: 'qrcode',
+    nameKey: 'qrcode.name',
+    tagline: 'Offline QR & barcode generator & scanner',
+    descKey: 'qrcode.desc',
+    icon: 'assets/harmony/qrcode.webp',
     categories: ['harmony'],
     badges: [
       { text: 'HarmonyOS', type: 'dev' },
       { text: 'ArkTS', type: 'tech' }
     ],
-    features: ['imagecraft.f1', 'imagecraft.f2'],
-    harmonyQr: 'assets/harmony/qrcode.png'
+    features: ['qrcode.f1', 'qrcode.f2']
+  },
+  {
+    id: 'lightscript',
+    nameKey: 'lightscript.name',
+    tagline: 'Floating teleprompter & camera script assistant',
+    descKey: 'lightscript.desc',
+    icon: 'assets/harmony/lightscript.png',
+    categories: ['harmony'],
+    badges: [
+      { text: 'HarmonyOS', type: 'dev' },
+      { text: 'ArkTS', type: 'tech' }
+    ],
+    features: ['lightscript.f1', 'lightscript.f2']
+  },
+  {
+    id: 'homeinventory',
+    nameKey: 'homeinventory.name',
+    tagline: 'Home item categorization & expiration tracker',
+    descKey: 'homeinventory.desc',
+    icon: 'assets/harmony/home-inventory.webp',
+    categories: ['harmony'],
+    badges: [
+      { text: 'HarmonyOS', type: 'dev' },
+      { text: 'ArkTS', type: 'tech' }
+    ],
+    features: ['homeinventory.f1', 'homeinventory.f2']
+  },
+  {
+    id: 'imagecraft',
+    nameKey: 'imagecraft.name',
+    tagline: 'Image compressor, converter & watermark tool',
+    descKey: 'imagecraft.desc',
+    icon: 'assets/harmony/imagecraft.webp',
+    categories: ['harmony'],
+    badges: [
+      { text: 'HarmonyOS', type: 'dev' },
+      { text: 'ArkTS', type: 'tech' }
+    ],
+    features: ['imagecraft.f1', 'imagecraft.f2']
   }
 ];

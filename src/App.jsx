@@ -6,6 +6,7 @@ import HomebrewGuide from './components/HomebrewGuide';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import MiniProgramModal from './components/MiniProgramModal';
+import { ArrowUp } from 'lucide-react';
 
 import { APPS } from './data/apps';
 import { TRANSLATIONS } from './data/translations';
@@ -40,6 +41,14 @@ export default function App() {
   // Toast State
   const [toastMsg, setToastMsg] = useState('');
   const [showToast, setShowToast] = useState(false);
+  const [showBackToTop, setShowBackToTop] = useState(false);
+
+  useEffect(() => {
+    const updateBackToTop = () => setShowBackToTop(window.scrollY > 480);
+    updateBackToTop();
+    window.addEventListener('scroll', updateBackToTop, { passive: true });
+    return () => window.removeEventListener('scroll', updateBackToTop);
+  }, []);
 
   // Sync Theme to HTML class
   useEffect(() => {
@@ -119,6 +128,7 @@ export default function App() {
         currentLang={lang} 
         onToggleTheme={handleToggleTheme} 
         onChangeLang={handleChangeLang}
+        onCopyCmd={handleCopyCmd}
         t={t}
       />
 
@@ -177,6 +187,16 @@ export default function App() {
       <div className={`toast ${showToast ? 'show' : ''}`}>
         <span>{toastMsg}</span>
       </div>
+
+      <button
+        type="button"
+        className={`back-to-top ${showBackToTop ? 'show' : ''}`}
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        aria-label="Back to top"
+        tabIndex={showBackToTop ? 0 : -1}
+      >
+        <ArrowUp size={20} strokeWidth={2.5} />
+      </button>
     </div>
   );
 }

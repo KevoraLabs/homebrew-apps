@@ -306,7 +306,7 @@ html.dark .site-header {
   font-family: var(--font-sans);
   font-weight: 600;
   font-size: 0.85rem;
-  padding: 0 30px 0 14px;
+  padding: 0 14px;
   border-radius: var(--radius-full);
   cursor: pointer;
   box-shadow: var(--shadow-craft-sm);
@@ -376,6 +376,48 @@ html.dark .site-header {
   padding: 6px 14px;
   font-size: 0.85rem;
   border-radius: var(--radius-sm);
+}
+
+.back-to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--border-ink);
+  border-radius: var(--radius-full);
+  background: var(--accent-primary);
+  color: #FFFFFF;
+  box-shadow: var(--shadow-craft-sm);
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px);
+  transition: opacity var(--transition-normal), transform var(--transition-normal), box-shadow var(--transition-fast), background-color var(--transition-fast);
+  z-index: 998;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: var(--accent-primary-hover);
+  box-shadow: var(--shadow-craft);
+  transform: translate(-2px, -2px);
+}
+
+@media (max-width: 640px) {
+  .back-to-top {
+    right: 16px;
+    bottom: 16px;
+    width: 42px;
+    height: 42px;
+  }
 }
 
 .btn-copy-cmd {
@@ -480,6 +522,21 @@ html.dark .site-header {
 .sketch-highlight.extension::before {
   background-color: var(--accent-secondary);
   opacity: 0.5;
+}
+
+.sketch-highlight.mini::before {
+  background-color: #72B89A;
+  opacity: 0.55;
+}
+
+.sketch-highlight.browser::before {
+  background-color: #6EA8D8;
+  opacity: 0.55;
+}
+
+.sketch-highlight.harmony::before {
+  background-color: #B58AD3;
+  opacity: 0.55;
 }
 
 .sketch-highlight.ai::before {
@@ -1051,6 +1108,7 @@ html.theme-dark .badge-dev { background-color: #3D2612; color: #FFB74D; }
   font-weight: 800;
   color: var(--text-primary);
   line-height: 1.3;
+  margin-bottom: 8px;
 }
 
 .app-tagline {
@@ -1442,10 +1500,6 @@ html.theme-dark .badge-dev { background-color: #3D2612; color: #FFB74D; }
    ========================================================================== */
 
 @media (max-width: 1280px) {
-  .brand-badge {
-    display: none;
-  }
-
   .nav-menu {
     gap: 16px;
   }
@@ -1467,10 +1521,6 @@ html.theme-dark .badge-dev { background-color: #3D2612; color: #FFB74D; }
   }
 
   .nav-menu {
-    display: none;
-  }
-
-  .brand-badge {
     display: none;
   }
 
@@ -1598,10 +1648,6 @@ html.theme-dark .badge-dev { background-color: #3D2612; color: #FFB74D; }
 }
 
 @media (max-width: 640px) {
-  .brand-badge {
-    display: none;
-  }
-
   #themeToggleText {
     display: none;
   }
@@ -1636,61 +1682,18 @@ html.theme-dark .badge-dev { background-color: #3D2612; color: #FFB74D; }
     justify-content: center;
   }
 
-  /* Language Selector: Icon-only (Globe) on small screens */
+  /* Language toggle on small screens */
   .lang-selector-wrapper {
-    position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 34px;
-    height: 34px;
     padding: 0;
-    background: var(--bg-card);
-    border: 2px solid var(--border-ink);
-    border-radius: var(--radius-full);
-    box-shadow: var(--shadow-craft-sm);
-    transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast);
-  }
-
-  .lang-selector-wrapper:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: var(--shadow-craft);
-  }
-
-  .lang-selector-wrapper .lang-badge-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    font-size: 0.85rem;
-    font-weight: 800;
-    font-family: var(--font-sans);
-    color: var(--text-primary);
-    line-height: 1;
-    user-select: none;
-  }
-
-  .lang-selector-wrapper .lang-arrow-icon {
-    display: none;
   }
 
   .select-lang {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    padding: 0;
-    margin: 0;
-    cursor: pointer;
-    z-index: 2;
-    background: transparent;
-    border: none;
-    box-shadow: none;
+    width: auto;
+    height: 34px;
+    padding: 0 10px;
   }
 }
 

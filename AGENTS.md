@@ -33,6 +33,10 @@ gh workflow list
 
 ## 📁 Repository Structure
 
+### 官网展示清单锁定
+
+`src/data/apps.js` 是官网作品展示的唯一运行时来源，当前清单见 `SHOWCASE_LOCK.md`。UI 优化不得删除、重命名或改动 App 的平台、图标、描述和操作入口，除非用户明确要求更新作品目录。
+
 ```
 homebrew-apps/
 ├── AGENTS.md               # Agent guidelines and repository documentation

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Coffee, Headphones, Laptop, Music2 } from 'lucide-react';
 
 const DEFAULT_AVATAR = 'assets/avatar-default.webp';
 const RANDOM_AVATARS = [
@@ -7,8 +8,16 @@ const RANDOM_AVATARS = [
   'assets/avatar-random-3.webp'
 ];
 
+const FLOATING_ICONS = [
+  { color: '#FF6B4A', Icon: Coffee },
+  { color: '#2563EB', Icon: Laptop },
+  { color: '#16A34A', Icon: Music2 },
+  { color: '#7C3AED', Icon: Headphones }
+];
+
 export default function Hero({ t }) {
   const [avatarSrc, setAvatarSrc] = useState(DEFAULT_AVATAR);
+  const [floatingIconIndex, setFloatingIconIndex] = useState(0);
 
   // Preload random avatars for instant flicker-free hover
   useEffect(() => {
@@ -16,6 +25,13 @@ export default function Hero({ t }) {
       const img = new Image();
       img.src = src;
     });
+  }, []);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setFloatingIconIndex(index => (index + 1) % FLOATING_ICONS.length);
+    }, 2600);
+    return () => clearInterval(timer);
   }, []);
 
   const handleMouseEnter = () => {
@@ -26,6 +42,8 @@ export default function Hero({ t }) {
   const handleMouseLeave = () => {
     setAvatarSrc(DEFAULT_AVATAR);
   };
+
+  const FloatingIcon = FLOATING_ICONS[floatingIconIndex].Icon;
 
   return (
     <section id="hero" className="hero-section">
@@ -44,7 +62,7 @@ export default function Hero({ t }) {
             <div className="terminal-dots">
               <i></i><i></i><i></i>
             </div>
-            <span className="term-title">zsh — lanrenwen-studio</span>
+            <span className="term-title">zsh — kevin</span>
           </div>
           <div className="terminal-body">
             <span className="prompt">➜  ~</span>
@@ -75,7 +93,7 @@ export default function Hero({ t }) {
           onMouseLeave={handleMouseLeave}
           style={{ cursor: 'pointer' }}
         >
-          <img src={avatarSrc} alt="Kevin Main Avatar" className="avatar-image-main is-loaded" />
+          <img src={avatarSrc} alt="Kevin Main Avatar" className="avatar-image-main is-loaded" width="320" height="320" />
 
           {/* Animated Doodles */}
           <div className="floating-doodle doodle-speech">Handcrafted Software ✨</div>
@@ -90,6 +108,13 @@ export default function Hero({ t }) {
             </ul>
           </div>
           <div className="floating-doodle doodle-binary">01001011</div>
+          <div
+            className="floating-doodle doodle-coffee"
+            style={{ backgroundColor: FLOATING_ICONS[floatingIconIndex].color }}
+            aria-label="Rotating icon"
+          >
+            <FloatingIcon size={20} strokeWidth={2.2} />
+          </div>
         </div>
       </div>
     </section>
