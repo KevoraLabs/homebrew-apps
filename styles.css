@@ -1085,17 +1085,127 @@ html.theme-dark .badge-dev { background-color: #3D2612; color: #FFB74D; }
 .app-actions {
   display: flex;
   gap: 10px;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-items: center;
   margin-top: auto;
 }
 
-.app-actions > .btn {
-  flex: 1 1 0;
-  min-width: 0;
-  padding: 8px 10px;
+/* WeChat Mini Program Craft Modal */
+.qr-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(31, 28, 25, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.qr-modal-backdrop.is-active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.qr-modal-card {
+  position: relative;
+  width: min(320px, 90vw);
+  background: var(--bg-card);
+  border: 3px solid var(--border-ink);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-craft-lg);
+  padding: 28px 20px 20px;
+  text-align: center;
+  transform: scale(0.9) translateY(12px);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.qr-modal-backdrop.is-active .qr-modal-card {
+  transform: scale(1) translateY(0);
+}
+
+.qr-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--border-ink);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  box-shadow: var(--shadow-craft-sm);
+  transition: transform var(--transition-fast), background-color var(--transition-fast);
+}
+
+.qr-modal-close:hover {
+  background: var(--accent-primary);
+  color: #fff;
+  transform: translate(-1px, -1px);
+}
+
+.qr-modal-header {
+  margin-bottom: 16px;
+}
+
+.qr-modal-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-ink);
+  padding: 2px 12px;
+  border-radius: var(--radius-full);
+  margin-bottom: 6px;
+}
+
+.qr-modal-title {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.qr-code-frame {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 14px;
+  background: #ffffff;
+  border: 2px solid var(--border-ink);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-craft-sm);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qr-code-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.qr-modal-tip {
   font-size: 0.85rem;
-  white-space: nowrap;
+  font-weight: 600;
+  color: var(--text-secondary);
 }
 
 .focus-chip {
