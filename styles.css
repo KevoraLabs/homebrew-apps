@@ -92,6 +92,7 @@ html.dark {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -690,6 +691,10 @@ html.dark .site-header {
   justify-content: center;
   align-items: center;
   padding: 20px;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .hero-avatar-frame {
@@ -705,6 +710,10 @@ html.dark .site-header {
   align-items: center;
   overflow: visible;
   transition: transform 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .avatar-image-main {
@@ -712,6 +721,11 @@ html.dark .site-header {
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  pointer-events: auto;
 }
 
 .avatar-layer-base,
