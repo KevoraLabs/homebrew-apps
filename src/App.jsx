@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import AppCard from './components/AppCard';
@@ -41,12 +41,16 @@ export default function App() {
   const [toastMsg, setToastMsg] = useState('');
   const [showToast, setShowToast] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const toastTimerRef = useRef(null);
 
   useEffect(() => {
     const updateBackToTop = () => setShowBackToTop(window.scrollY > 480);
     updateBackToTop();
     window.addEventListener('scroll', updateBackToTop, { passive: true });
-    return () => window.removeEventListener('scroll', updateBackToTop);
+    return () => {
+      window.removeEventListener('scroll', updateBackToTop);
+      if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
+    };
   }, []);
 
   // Sync Theme to HTML class
@@ -82,16 +86,24 @@ export default function App() {
   };
 
   const handleCopyCmd = (text) => {
+    if (toastTimerRef.current) {
+      clearTimeout(toastTimerRef.current);
+    }
+
     navigator.clipboard.writeText(text).then(() => {
       const prefix = lang === 'zh-Hans' ? '已复制：' : 'Copied: ';
       setToastMsg(`${prefix}${text}`);
       setShowToast(true);
-      setTimeout(() => setShowToast(false), 3200);
+      toastTimerRef.current = setTimeout(() => {
+        setShowToast(false);
+      }, 3200);
     }).catch(() => {
       const failMsg = lang === 'zh-Hans' ? '复制失败' : 'Failed to copy';
       setToastMsg(failMsg);
       setShowToast(true);
-      setTimeout(() => setShowToast(false), 3200);
+      toastTimerRef.current = setTimeout(() => {
+        setShowToast(false);
+      }, 3200);
     });
   };
 
