@@ -66,7 +66,7 @@ export default function Hero({ t }) {
           </div>
           <div className="terminal-body">
             <span className="prompt">➜  ~</span>
-            <span>brew install --cask key-launch pause-loop</span>
+            <span>brew install --cask LanrenwenStudio/apps/key-launch LanrenwenStudio/apps/pause-loop</span>
           </div>
         </div>
 
