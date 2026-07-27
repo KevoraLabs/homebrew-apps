@@ -69,10 +69,10 @@ export default function Hero({ t, onCopyCmd }) {
                 type="button"
                 className="btn-term-copy"
                 onClick={() => onCopyCmd(commandText)}
-                title="复制命令"
+                title={t('common.copyCmd')}
               >
                 <Copy size={13} />
-                <span>复制命令</span>
+                <span>{t('common.copyCmd')}</span>
               </button>
             )}
           </div>
@@ -80,7 +80,7 @@ export default function Hero({ t, onCopyCmd }) {
             className="terminal-body"
             onClick={() => onCopyCmd && onCopyCmd(commandText)}
             style={{ cursor: 'pointer' }}
-            title="点击复制一键安装命令"
+            title={t('common.copyCmd')}
           >
             <span className="prompt">➜  ~</span>
             <span>{commandText}</span>
