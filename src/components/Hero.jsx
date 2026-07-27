@@ -44,7 +44,7 @@ export default function Hero({ t, onCopyCmd }) {
   };
 
   const FloatingIcon = FLOATING_ICONS[floatingIconIndex].Icon;
-  const commandText = 'brew install --cask LanrenwenStudio/apps/key-launch LanrenwenStudio/apps/pause-loop';
+  const commandText = 'brew tap LanrenwenStudio/apps';
 
   return (
     <section id="hero" className="hero-section">
