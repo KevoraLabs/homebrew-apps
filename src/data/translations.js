@@ -50,7 +50,7 @@ export const TRANSLATIONS = {
     'keylaunch.f1': '🚀 毫秒级极速唤起 App 与系统设置',
     'keylaunch.f2': '📋 智能剪贴板历史与自定义快捷动作',
     'keylaunch.f3': '🎨 遵循 Apple HIG 设计规范的原生界面',
-    'pauseloop.name': 'PauseLoop (停顿环)',
+    'pauseloop.name': 'PauseLoop',
     'pauseloop.desc': '原生 macOS 专注与休息计时器。遵循健康的工作节奏，在合适的时刻覆盖全屏平静提示，让眼睛与大脑获得充分放松。',
     'pauseloop.f1': '👁️ 20-20-20 护眼法则与自定义休息',
     'pauseloop.f2': '🔔 菜单栏无感倒计时与平稳提示',

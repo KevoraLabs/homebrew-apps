@@ -13,7 +13,6 @@ export default function Header({ currentTheme, currentLang, onToggleTheme, onCha
 
         <ul className="nav-menu">
           <li><a href="#apps" className="nav-link active">{t('nav.all')}</a></li>
-          <li><a href="#guide" className="nav-link">{t('nav.guide')}</a></li>
           <li><a href="#contact" className="nav-link">{t('nav.contact')}</a></li>
         </ul>
 

@@ -3,7 +3,7 @@
 > 💡 **系统设定**：当用户在对话中提到“启动官网”时，默认指运行本仓库的 烂人文工作室主官网 (`python3 -m http.server 8088`)。
 
 Welcome to **Lanrenwen Studio / homebrew-apps**. This repository serves a dual purpose:
-1. **Official Website**: Hosted on GitHub Pages at [https://lanrenwenstudio.github.io/homebrew-apps/](https://lanrenwenstudio.github.io/homebrew-apps/).
+1. **Official Website**: Deployed to Cloudflare Pages at [https://lanrenwen.com](https://lanrenwen.com).
 2. **Homebrew Tap Repository**: Contains Homebrew Cask definitions (`Casks/key-launch.rb`, `Casks/pause-loop.rb`) for installing Lanrenwen Studio macOS apps via `brew install --cask LanrenwenStudio/apps/<app>`.
 
 ---

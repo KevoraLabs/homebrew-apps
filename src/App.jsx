@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import AppCard from './components/AppCard';
-import HomebrewGuide from './components/HomebrewGuide';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import MiniProgramModal from './components/MiniProgramModal';
@@ -170,7 +169,6 @@ export default function App() {
           </div>
         </section>
 
-        <HomebrewGuide t={t} onCopyCmd={handleCopyCmd} />
         <Contact t={t} onCopyCmd={handleCopyCmd} />
       </main>
 

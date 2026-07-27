@@ -2,7 +2,7 @@
 
 Homebrew tap & product showcase for Lanrenwen Studio macOS apps and browser extensions.
 
-🌐 **Official Site**: [https://lanrenwenstudio.github.io/homebrew-apps/](https://lanrenwenstudio.github.io/homebrew-apps/)
+🌐 **Official Site**: [https://lanrenwen.com](https://lanrenwen.com)
 
 ## Install via Homebrew
 
