@@ -10,7 +10,7 @@ export const TRANSLATIONS = {
     'theme.toggleDark': '深夜咖啡',
     'theme.togglePaper': '浅色模式',
     'hero.badge': 'Kevin • 不独立开发者',
-    'hero.title': '我做了一些<span class="sketch-highlight macos">macOS</span>、<span class="sketch-highlight extension">iOS</span>、<span class="sketch-highlight mini">小程序</span>、<span class="sketch-highlight browser">浏览器插件</span>、<span class="sketch-highlight harmony">鸿蒙</span>等 APP。',
+    'hero.title': '我写了一些<span class="sketch-highlight macos">macOS</span>、<span class="sketch-highlight extension">iOS</span>、<span class="sketch-highlight mini">小程序</span>、<span class="sketch-highlight browser">浏览器插件</span>、<span class="sketch-highlight harmony">鸿蒙</span>等 APP。',
     'hero.bio': '我是 Kevin · 烂人文 👋。技术栈比较杂：macOS、iOS、浏览器插件、微信小程序和鸿蒙应用，什么顺手就用什么。',
     'hero.ctaApps': '浏览全部作品 ⚡',
     'hero.ctaGitHub': 'GitHub 主页 ↗',
