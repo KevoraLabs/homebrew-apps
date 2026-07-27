@@ -55,7 +55,10 @@ homebrew-apps/
 
 ## ⚡ Deployment & Git Workflow
 
-- **Branching**: The primary branch is `main`. Push changes to `main` to trigger GitHub Pages deployment.
+- **Commit & Deploy Control**: 代码修改完成后，**禁止自动 git commit / git push**，只有当用户明确要求提交或上线时才进行提交与推送部署。
+- **Auto Local Preview & LAN Access**: 任何网站修改（文案、UI、组件、样式）完成后，**优先检查已有服务**，已在运行时切勿重复启动 `npm run dev`；服务使用 `--host 0.0.0.0` 允许局域网访问，并同时输出 `http://localhost:8088` 与局域网 IP（如 `http://192.168.1.158:8088`）供手机等设备测试。
+- **Commit Version Bump**: 每次用户确认提交部署时，提交前必须同步递增更新 `src/components/Footer.jsx` 中的网页底部版本号（`<span className="footer-version">vX.Y.Z</span>`）。
+- **Branching**: The primary branch is `main`. Push changes to `main` to trigger Cloudflare Pages deployment.
 - **Homebrew Tap Updates**: Cask formulas inside `Casks/` are automatically updated by GitHub Actions during app releases.
 - **Coding Standards**:
   - Keep styling modular in `styles.css` using predefined CSS Custom Properties.
