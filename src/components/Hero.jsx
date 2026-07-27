@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Coffee, Headphones, Laptop, Music2 } from 'lucide-react';
+import { Coffee, Headphones, Laptop, Music2, Copy } from 'lucide-react';
 
 const DEFAULT_AVATAR = 'assets/avatar-default.webp';
 const RANDOM_AVATARS = [
@@ -15,7 +15,7 @@ const FLOATING_ICONS = [
   { color: '#7C3AED', Icon: Headphones }
 ];
 
-export default function Hero({ t }) {
+export default function Hero({ t, onCopyCmd }) {
   const [avatarSrc, setAvatarSrc] = useState(DEFAULT_AVATAR);
   const [floatingIconIndex, setFloatingIconIndex] = useState(0);
 
@@ -44,6 +44,7 @@ export default function Hero({ t }) {
   };
 
   const FloatingIcon = FLOATING_ICONS[floatingIconIndex].Icon;
+  const commandText = 'brew install --cask LanrenwenStudio/apps/key-launch LanrenwenStudio/apps/pause-loop';
 
   return (
     <section id="hero" className="hero-section">
@@ -63,10 +64,26 @@ export default function Hero({ t }) {
               <i></i><i></i><i></i>
             </div>
             <span className="term-title">zsh — kevin</span>
+            {onCopyCmd && (
+              <button 
+                type="button"
+                className="btn-term-copy"
+                onClick={() => onCopyCmd(commandText)}
+                title="复制命令"
+              >
+                <Copy size={13} />
+                <span>复制命令</span>
+              </button>
+            )}
           </div>
-          <div className="terminal-body">
+          <div 
+            className="terminal-body"
+            onClick={() => onCopyCmd && onCopyCmd(commandText)}
+            style={{ cursor: 'pointer' }}
+            title="点击复制一键安装命令"
+          >
             <span className="prompt">➜  ~</span>
-            <span>brew install --cask LanrenwenStudio/apps/key-launch LanrenwenStudio/apps/pause-loop</span>
+            <span>{commandText}</span>
           </div>
         </div>
 

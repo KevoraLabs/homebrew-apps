@@ -134,7 +134,7 @@ export default function App() {
       />
 
       <main className="content-wrapper">
-        <Hero t={t} />
+        <Hero t={t} onCopyCmd={handleCopyCmd} />
 
         <section id="apps" className="apps-section">
           <div className="section-header center">
