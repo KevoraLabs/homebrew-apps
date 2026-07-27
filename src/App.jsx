@@ -83,13 +83,15 @@ export default function App() {
 
   const handleCopyCmd = (text) => {
     navigator.clipboard.writeText(text).then(() => {
-      setToastMsg('Copied to clipboard!');
+      const prefix = lang === 'zh-Hans' ? '已复制：' : 'Copied: ';
+      setToastMsg(`${prefix}${text}`);
       setShowToast(true);
-      setTimeout(() => setShowToast(false), 2400);
+      setTimeout(() => setShowToast(false), 3200);
     }).catch(() => {
-      setToastMsg('Failed to copy');
+      const failMsg = lang === 'zh-Hans' ? '复制失败' : 'Failed to copy';
+      setToastMsg(failMsg);
       setShowToast(true);
-      setTimeout(() => setShowToast(false), 2400);
+      setTimeout(() => setShowToast(false), 3200);
     });
   };
 

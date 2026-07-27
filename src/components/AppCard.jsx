@@ -93,7 +93,7 @@ export default function AppCard({ app, t, onOpenQr, onCopyCmd }) {
             className="btn btn-sm btn-copy-cmd" 
             onClick={() => onCopyCmd(app.brewCmd)}
           >
-            <span>🍺 Brew Install</span>
+            <span>🍺 Homebrew</span>
           </button>
         )}
 
