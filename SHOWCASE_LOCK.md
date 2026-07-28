@@ -19,4 +19,6 @@
 | `lightscript` | 光影提词器 | HarmonyOS |
 | `homeinventory` | 家用库存 | HarmonyOS |
 
+EnglishCC 官方域名固定为 `https://englishcc.com/`，不得恢复为旧地址 `englishcc.lanrenwen.com`。
+
 后续官网 UI 调整不得删除、重命名、换平台、替换图标、描述或操作入口；只有你明确要求更新作品目录时才修改 `src/data/apps.js` 和本清单。

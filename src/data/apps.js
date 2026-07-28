@@ -43,7 +43,7 @@ export const APPS = [
       { text: 'TypeScript', type: 'tech' }
     ],
     features: ['englishcc.f1', 'englishcc.f2'],
-    website: 'https://englishcc.lanrenwen.com/',
+    website: 'https://englishcc.com/',
     chromeStoreUrl: 'https://chromewebstore.google.com/detail/englishcc/iimpbffhdjodajgccmlmdblnbjhkfpnc'
   },
   {
