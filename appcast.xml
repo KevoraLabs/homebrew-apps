@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
+  <channel>
+    <title>KeyLaunch Updates</title>
+    <link>https://github.com/LanrenwenStudio/homebrew-apps/releases</link>
+    <description>KeyLaunch direct-download updates</description>
+    <language>en</language>
+    <item>
+      <title>KeyLaunch 1.3.12</title>
+      <sparkle:version>27</sparkle:version>
+      <sparkle:shortVersionString>1.3.12</sparkle:shortVersionString>
+      <pubDate>Fri, 31 Jul 2026 10:50:55 +0800</pubDate>
+      <enclosure url="https://github.com/LanrenwenStudio/homebrew-apps/releases/download/key-launch-v1.3.12/key-launch-1.3.12.dmg" type="application/octet-stream" sparkle:edSignature="1VW2wgOT4AioOM9rDVX4UgFWQcOAoLu13Rl0RxM8U5u0AruRXRfesjIIM811nuROGUJ0i9hJ45qFELo5gP3bBQ==" length="3684093" />
+    </item>
+  </channel>
+</rss>

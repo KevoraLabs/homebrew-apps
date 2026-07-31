@@ -1,6 +1,6 @@
 cask "key-launch" do
-  version "1.3.11"
-  sha256 "272ff29114dad5d4db0375f9839e6f56a5053a21177084a45186a29b4d475e95"
+  version "1.3.12"
+  sha256 "2c87c63639ef20994ee90649f645ff719ffe413edbd4d82befc1056b30c2d75d"
 
   url "https://github.com/LanrenwenStudio/homebrew-apps/releases/download/key-launch-v#{version}/key-launch-#{version}.dmg"
   name "KeyLaunch"
